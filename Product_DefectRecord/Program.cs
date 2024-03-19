@@ -1,8 +1,13 @@
-﻿using System;
+﻿using Product_DefectRecord._Repositories;
+using Product_DefectRecord.Models;
+using Product_DefectRecord.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
+using Product_DefectRecord.Presenters;
 
 namespace Product_DefectRecord
 {
@@ -16,7 +21,11 @@ namespace Product_DefectRecord
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            string sqlConnectionString = ConfigurationManager.ConnectionStrings["LSBUDBConnection"].ConnectionString;
+            IDefectView view = new DefectView();
+            IDefectRepository repository = new DefectRepository(sqlConnectionString);
+            new DefectPresenter(view,repository);
+            Application.Run((Form)view);
         }
     }
 }

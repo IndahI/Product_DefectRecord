@@ -8,3 +8,14 @@ D:\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.cspr
 D:\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.csproj.CoreCompileInputs.cache
 D:\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.exe
 D:\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.pdb
+D:\Perkuliahan\Semester6\Panasonic\Product_DefectRecord\Product_DefectRecord\bin\Debug\Product_DefectRecord.exe.config
+D:\Perkuliahan\Semester6\Panasonic\Product_DefectRecord\Product_DefectRecord\bin\Debug\Product_DefectRecord.exe
+D:\Perkuliahan\Semester6\Panasonic\Product_DefectRecord\Product_DefectRecord\bin\Debug\Product_DefectRecord.pdb
+D:\Perkuliahan\Semester6\Panasonic\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.csproj.AssemblyReference.cache
+D:\Perkuliahan\Semester6\Panasonic\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.Views.DefectView.resources
+D:\Perkuliahan\Semester6\Panasonic\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.Form1.resources
+D:\Perkuliahan\Semester6\Panasonic\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.Properties.Resources.resources
+D:\Perkuliahan\Semester6\Panasonic\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.csproj.GenerateResource.cache
+D:\Perkuliahan\Semester6\Panasonic\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.csproj.CoreCompileInputs.cache
+D:\Perkuliahan\Semester6\Panasonic\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.exe
+D:\Perkuliahan\Semester6\Panasonic\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.pdb
