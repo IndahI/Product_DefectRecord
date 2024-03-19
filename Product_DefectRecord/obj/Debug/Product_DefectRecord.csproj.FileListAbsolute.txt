@@ -1,0 +1,10 @@
+D:\Product_DefectRecord\Product_DefectRecord\bin\Debug\Product_DefectRecord.exe.config
+D:\Product_DefectRecord\Product_DefectRecord\bin\Debug\Product_DefectRecord.exe
+D:\Product_DefectRecord\Product_DefectRecord\bin\Debug\Product_DefectRecord.pdb
+D:\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.csproj.AssemblyReference.cache
+D:\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.Form1.resources
+D:\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.Properties.Resources.resources
+D:\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.csproj.GenerateResource.cache
+D:\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.csproj.CoreCompileInputs.cache
+D:\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.exe
+D:\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.pdb
