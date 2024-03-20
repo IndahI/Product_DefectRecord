@@ -48,6 +48,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Component\RdButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Models\DefectModel.cs" />
     <Compile Include="Models\IDefectRepository.cs" />
     <Compile Include="Presenters\Common\ModelDataValidation.cs" />
@@ -67,6 +70,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\IDefectView.cs" />
+    <Compile Include="Views\PopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\PopUp.Designer.cs">
+      <DependentUpon>PopUp.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\TcpServerWrapper.cs" />
     <Compile Include="_Repositories\BaseRepository.cs" />
     <Compile Include="_Repositories\DefectRepository.cs" />
@@ -84,7 +93,11 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Views\PopUp.resx">
+      <DependentUpon>PopUp.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -99,7 +112,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Component\" />
     <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

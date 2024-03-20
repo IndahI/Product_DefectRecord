@@ -4,6 +4,8 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 using System.Net.NetworkInformation;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
 
 public class TcpServerWrapper
 {
@@ -25,10 +27,11 @@ public class TcpServerWrapper
         NetworkInterface[] adapters = NetworkInterface.GetAllNetworkInterfaces();
         IPAddress ipAddress = null;
 
-        // Find the first operational adapter
+        // Find the first operational Ethernet adapter
         foreach (NetworkInterface adapter in adapters)
         {
-            if (adapter.OperationalStatus == OperationalStatus.Up)
+            // Check if the adapter is Ethernet and is operational
+            if (adapter.NetworkInterfaceType == NetworkInterfaceType.Ethernet && adapter.OperationalStatus == OperationalStatus.Up)
             {
                 foreach (UnicastIPAddressInformation ipInfo in adapter.GetIPProperties().UnicastAddresses)
                 {
@@ -55,7 +58,7 @@ public class TcpServerWrapper
         server.Start();
 
         // Display the server's IP address and port
-        updateUiCallback?.Invoke($"Server started on IP: {ipAddress.ToString()}, Port: {port}");
+        //updateUiCallback?.Invoke($"Server started on IP: {ipAddress.ToString()}, Port: {port}");
         TcpClient client = await server.AcceptTcpClientAsync();
         await SendMessageToClientAsync(client, "Connected to server.");
         await HandleClientAsync(client);
@@ -80,9 +83,22 @@ public class TcpServerWrapper
             string message = Encoding.UTF8.GetString(buffer, 0, bytesRead);
             // Invoke the callback on the UI thread to update the UI
 
-            updateUiCallback2?.Invoke(message);
+            string cleanedData = Regex.Replace(message, "<.*?>", "");
+            splitData1(cleanedData);
+            splitData2(cleanedData);
         }
-
         client.Close();
+    }
+
+    private void splitData1(string input)
+    {
+        string data1 = input.Substring(0, 2);
+        updateUiCallback?.Invoke(data1);
+    }
+
+    private void splitData2(string input)
+    {
+        string data2 = input.Substring(2);
+        updateUiCallback2?.Invoke(data2);
     }
 }

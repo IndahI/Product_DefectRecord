@@ -22,10 +22,7 @@ namespace Product_DefectRecord
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             string sqlConnectionString = ConfigurationManager.ConnectionStrings["LSBUDBConnection"].ConnectionString;
-            IDefectView view = new DefectView();
-            IDefectRepository repository = new DefectRepository(sqlConnectionString);
-            new DefectPresenter(view,repository);
-            Application.Run((Form)view);
+            Application.Run(new DefectView());
         }
     }
 }
