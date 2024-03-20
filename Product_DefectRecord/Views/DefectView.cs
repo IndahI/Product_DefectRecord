@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Product_DefectRecord.Views
 {
-    public partial class DefectView : Form
+    public partial class DefectView : Form, IDefectView
     {
         private TcpServerWrapper serverWrapper;
         private string message;
@@ -32,6 +32,21 @@ namespace Product_DefectRecord.Views
         public event EventHandler CancleEvent;
 
         //properties
+        public string SerialNumber
+        {
+            get { return textBoxSerial.Text; }
+            set { textBoxSerial.Text = value; }
+        }
+        public string ModelNumber
+        {
+            get { return textBoxModel.Text; }
+            set { textBoxModel.Text = value; }
+        }
+        public string ModelCode
+        {
+            get { return textBoxCode.Text; }
+            set { textBoxCode.Text = value; }
+        }
         public bool IsEdit 
         {   
             get { return isEdit; }
@@ -47,6 +62,11 @@ namespace Product_DefectRecord.Views
             get { return message; }
             set { message = value; } 
         }
+
+        public string DefectId { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public string PartId { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public string DefectName { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public string SearchValue { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         private void UpdateSerialBox(string message)
         {

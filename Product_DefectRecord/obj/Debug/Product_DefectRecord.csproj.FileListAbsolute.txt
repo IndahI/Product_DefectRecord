@@ -30,3 +30,4 @@ D:\Product_DefectRecord\yg baru\Product_DefectRecord\Product_DefectRecord\obj\De
 D:\Product_DefectRecord\yg baru\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.csproj.CoreCompileInputs.cache
 D:\Product_DefectRecord\yg baru\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.exe
 D:\Product_DefectRecord\yg baru\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.pdb
+D:\Perkuliahan\Semester6\Panasonic\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.Views.PopUp.resources
