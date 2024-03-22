@@ -30,6 +30,7 @@ namespace Product_DefectRecord.Views
         public event EventHandler SaveEvent;
         public event EventHandler DeleteEvent;
         public event EventHandler CancleEvent;
+        public event EventHandler SearchModelNumber;
 
         //properties
         public string SerialNumber

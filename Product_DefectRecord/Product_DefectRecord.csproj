@@ -53,6 +53,8 @@
     </Compile>
     <Compile Include="Models\DefectModel.cs" />
     <Compile Include="Models\IDefectRepository.cs" />
+    <Compile Include="Models\IModelNumberRepository.cs" />
+    <Compile Include="Models\ModelCode.cs" />
     <Compile Include="Presenters\Common\ModelDataValidation.cs" />
     <Compile Include="Presenters\DefectPresenter.cs" />
     <Compile Include="Views\DefectView.cs">
@@ -76,9 +78,16 @@
     <Compile Include="Views\PopUp.Designer.cs">
       <DependentUpon>PopUp.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Setting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Setting.Designer.cs">
+      <DependentUpon>Setting.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\TcpServerWrapper.cs" />
     <Compile Include="_Repositories\BaseRepository.cs" />
     <Compile Include="_Repositories\DefectRepository.cs" />
+    <Compile Include="_Repositories\ModelNumberRepository.cs" />
     <EmbeddedResource Include="Views\DefectView.resx">
       <DependentUpon>DefectView.cs</DependentUpon>
     </EmbeddedResource>
@@ -97,6 +106,9 @@
     </Compile>
     <EmbeddedResource Include="Views\PopUp.resx">
       <DependentUpon>PopUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Setting.resx">
+      <DependentUpon>Setting.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

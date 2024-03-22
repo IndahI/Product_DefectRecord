@@ -19,6 +19,8 @@ namespace Product_DefectRecord.Views
         bool IsEdit { get; set; }
         bool IsSuccessful { get; set; }
         string Message { get; set; }
+        string SerialNumber { get; set; }
+        string ModelCode { get; set; }
 
         //event
         event EventHandler SearchEvent;
@@ -27,6 +29,7 @@ namespace Product_DefectRecord.Views
         event EventHandler SaveEvent;
         event EventHandler DeleteEvent;
         event EventHandler CancleEvent;
+        event EventHandler SearchModelNumber;
 
         void SetDefectListBindingSource(BindingSource defectList);
         void Show();

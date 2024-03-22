@@ -24,10 +24,9 @@ namespace Product_DefectRecord
             string sqlConnectionString = ConfigurationManager.ConnectionStrings["LSBUDBConnection"].ConnectionString;
             IDefectView view = new DefectView();
             IDefectRepository repository = new DefectRepository(sqlConnectionString);
-            new DefectPresenter(view, repository);
+            IModelNumberRepository repository2 = new ModelNumberRepository(sqlConnectionString); // Instantiate ModelNumberRepository
+            new DefectPresenter(view, repository, repository2); // Provide repository2 to the constructor
             Application.Run((Form)view);
-            //Application.Run(new DefectView());
-
         }
     }
 }

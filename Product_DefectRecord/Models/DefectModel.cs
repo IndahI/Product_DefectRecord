@@ -14,6 +14,7 @@ namespace Product_DefectRecord.Models
         private int Id;
         private string PartId;
         private string DefectName;
+        private string Action;
 
         //properties
         [DisplayName("Defect Id")]
@@ -38,5 +39,6 @@ namespace Product_DefectRecord.Models
             get => DefectName;
             set => DefectName = value;
         }
+        public string Action1 { get => Action; set => Action = value; }
     }
 }

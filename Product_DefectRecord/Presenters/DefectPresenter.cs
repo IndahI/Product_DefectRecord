@@ -15,20 +15,23 @@ namespace Product_DefectRecord.Presenters
         //fields
         private IDefectView view;
         private IDefectRepository repository;
+        private IModelNumberRepository repository2;
         private BindingSource defectsBindingSource;
         private IEnumerable<DefectModel> defectList;
 
-        public DefectPresenter(IDefectView view, IDefectRepository repository)
+        public DefectPresenter(IDefectView view, IDefectRepository repository, IModelNumberRepository repository2)
         {
             this.defectsBindingSource = new BindingSource();
             this.view = view;
             this.repository = repository;
+            this.repository2 = repository2;
             this.view.SearchEvent += SearchDefect;
             this.view.AddEvent += AddNewDefect;
             this.view.EditEvent += LoadSelectedDefectToEdit;
             this.view.DeleteEvent += DeleteSelectedDefect;
             this.view.SaveEvent += SaveDefect;
             this.view.CancleEvent += CancleAction;
+            this.view.SearchModelNumber += SearchModelNumber;
             //set defect binding source
             this.view.SetDefectListBindingSource(defectsBindingSource);
             //load all defect to list
@@ -45,6 +48,15 @@ namespace Product_DefectRecord.Presenters
             defectsBindingSource.DataSource = defectList; //set data source
         }
 
+        private void SearchModelNumber(object sender, EventArgs e)
+        {
+            bool emptyValue = string.IsNullOrWhiteSpace(this.view.SerialNumber);
+            if (!emptyValue)
+            {
+                ModelCode modelCode = repository2.GetModelNumber(this.view.SerialNumber);
+                view.ModelCode = modelCode.ToString(); // Convert ModelCode to string
+            }
+        }
         private void SearchDefect(object sender, EventArgs e)
         {
             bool emptyValue = string.IsNullOrWhiteSpace(this.view.SearchValue);
