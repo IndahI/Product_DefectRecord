@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Product_DefectRecord._Repositories
 {
@@ -18,7 +19,6 @@ namespace Product_DefectRecord._Repositories
 
         public ModelCode GetModelNumber(string value)
         {
-            string modelCodeValue = value;
             ModelCode modelCode = null;
 
             using (var connection = new SqlConnection(connectionString))
@@ -26,17 +26,21 @@ namespace Product_DefectRecord._Repositories
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = @"SELECT * FROM Global_Model_Code WHERE modelCode = @ModelCode";
-                command.Parameters.Add("@ModelCode", SqlDbType.VarChar).Value = modelCodeValue;
+                command.CommandText = @"SELECT * FROM Global_Model_Code WHERE modelCode =@modelCode";
+                command.Parameters.Add("@ModelCode", SqlDbType.VarChar).Value = value;
 
                 using (var reader = command.ExecuteReader())
                 {
-                    if (reader.Read())
+                    if(reader.Read())
                     {
                         modelCode = new ModelCode();
-                        // Assuming ModelCode has appropriate constructor or initialization method
-                        // Set properties of ModelCode from reader's columns
-                        // Example: modelCode.ModelCode1 = (int)reader["modelCode"];
+                        modelCode.ModelNumber = reader["ModelNumber"].ToString();
+                        modelCode.modelCode1 = reader["modelCode"].ToString();
+                    }
+                     else
+                    {
+                        // Data tidak ditemukan, lakukan sesuatu di sini (misalnya, tampilkan pesan kesalahan)
+                        MessageBox.Show("Data tidak ditemukan");
                     }
                 }
             }

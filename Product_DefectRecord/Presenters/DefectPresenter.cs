@@ -14,32 +14,77 @@ namespace Product_DefectRecord.Presenters
     {
         //fields
         private IDefectView view;
+        private IEditDefect edit;
         private IDefectRepository repository;
         private IModelNumberRepository repository2;
         private BindingSource defectsBindingSource;
         private IEnumerable<DefectModel> defectList;
+        private List<IEditDefect> _selectEdit;
 
-        public DefectPresenter(IDefectView view, IDefectRepository repository, IModelNumberRepository repository2)
+        public DefectPresenter(IDefectView view, IDefectRepository repository, IModelNumberRepository repository2, IEditDefect edit, List<IEditDefect> selectEdit)
         {
             this.defectsBindingSource = new BindingSource();
             this.view = view;
+            _selectEdit = selectEdit;
             this.repository = repository;
             this.repository2 = repository2;
-            this.view.SearchEvent += SearchDefect;
-            this.view.AddEvent += AddNewDefect;
-            this.view.EditEvent += LoadSelectedDefectToEdit;
-            this.view.DeleteEvent += DeleteSelectedDefect;
-            this.view.SaveEvent += SaveDefect;
-            this.view.CancleEvent += CancleAction;
             this.view.SearchModelNumber += SearchModelNumber;
+            this.view.ClearEvent += ClearAction;
+            this.view.DefectFilterEvent += LoadFilterDefect;
+            this.view.EditButtonClicked += EditAction;
+            this.view.CellClicked += viewCellClicked;
             //set defect binding source
             this.view.SetDefectListBindingSource(defectsBindingSource);
             //load all defect to list
             loadAllDefectList();
             //show
             this.view.Show();
+
+            this.edit = edit;
+            this._selectEdit = selectEdit;
         }
 
+        private void viewCellClicked(object sender, DataGridViewCellEventArgs e)
+        {
+            int selectedIndex = e.RowIndex;
+            if (selectedIndex >= 0 && selectedIndex < _selectEdit.Count)
+            {
+                IEditDefect selectedPerson = _selectEdit[selectedIndex];
+                view.ShowPopupForm(selectedPerson);
+            }
+        }
+
+        private void EditAction(object sender, EventArgs e)
+        {
+            if (defectsBindingSource.Current != null)
+            {
+                var defect = (DefectModel)defectsBindingSource.Current;
+                //edit.DefectId = defect.Id1.ToString();
+                //edit.PartId = defect.PartId1;
+                //edit.DefectName = defect.DefectName1;
+                //edit.IsEdit = true;
+                EditDefectName editDefect = new EditDefectName();
+                editDefect.DefectId = defect.Id1.ToString();
+                editDefect.PartId = defect.PartId1;
+                editDefect.DefectName = defect.DefectName1;
+                editDefect.Show();
+            }
+            else
+            {
+                MessageBox.Show("gagal");
+            }
+        }
+
+        private void LoadFilterDefect(object sender, EventArgs e, int id)
+        {
+            defectList = repository.GetFilter(id);
+            defectsBindingSource.DataSource = defectList; //set data source
+        }
+
+        private void ClearAction(object sender, EventArgs e)
+        {
+            view.StatusText = "No Data";
+        }
 
         //Methods
         private void loadAllDefectList()
@@ -48,6 +93,7 @@ namespace Product_DefectRecord.Presenters
             defectsBindingSource.DataSource = defectList; //set data source
         }
 
+        public delegate void TopDefectEventHandler(object sender, EventArgs e, int id);
         private void SearchModelNumber(object sender, EventArgs e)
         {
             bool emptyValue = string.IsNullOrWhiteSpace(this.view.SerialNumber);
@@ -55,89 +101,8 @@ namespace Product_DefectRecord.Presenters
             {
                 ModelCode modelCode = repository2.GetModelNumber(this.view.SerialNumber);
                 view.ModelCode = modelCode.ToString(); // Convert ModelCode to string
+                view.SerialNumber = modelCode.ToString();
             }
-        }
-        private void SearchDefect(object sender, EventArgs e)
-        {
-            bool emptyValue = string.IsNullOrWhiteSpace(this.view.SearchValue);
-            if (emptyValue == false)
-                defectList = repository.GetByValue(this.view.SearchValue);
-            else defectList = repository.GetAll();
-            defectsBindingSource.DataSource = defectList;
-        }
-
-        private void CancleAction(object sender, EventArgs e)
-        {
-            CleanviewFields();
-        }
-
-        private void CleanviewFields()
-        {
-            view.DefectId = "0";
-            view.PartId = "0";
-            view.DefectName = "";
-        }
-
-        private void SaveDefect(object sender, EventArgs e)
-        {
-            var model = new DefectModel();
-            model.Id1 = Convert.ToInt32(view.DefectId);
-            model.PartId1 = view.PartId;
-            model.DefectName1 = view.DefectName;
-
-            try
-            {
-                new Common.ModelDataValidation().Validate(model);
-                if (view.IsEdit)//edit model
-                {
-                    repository.Edit(model);
-                    view.Message = "Defect terlah terubah";
-                }
-                else//add model
-                {
-                    repository.Add(model);
-                    view.Message = "defect berhasil ditambahkan";
-                }
-                view.IsSuccessful = true;
-                loadAllDefectList();
-                CleanviewFields();
-            }
-            catch (Exception ex)
-            {
-                view.IsSuccessful = false;
-                view.Message = ex.Message;
-            }
-        }
-
-        private void DeleteSelectedDefect(object sender, EventArgs e)
-        {
-            try
-            {
-                var defect = (DefectModel)defectsBindingSource.Current;
-                repository.Delete(defect.Id1);
-                view.IsSuccessful = true;
-                view.Message = "defect berhasil ditambahkan";
-                loadAllDefectList();
-            }
-            catch (Exception ex)
-            {
-                view.IsSuccessful = false;
-                view.Message = "error saat menghapus";
-            }
-        }
-
-        private void LoadSelectedDefectToEdit(object sender, EventArgs e)
-        {
-            var defect = (DefectModel)defectsBindingSource.Current;
-            view.DefectId = defect.Id1.ToString();
-            view.PartId = defect.PartId1;
-            view.DefectName = defect.DefectName1;
-            view.IsEdit = true;
-        }
-
-        private void AddNewDefect(object sender, EventArgs e)
-        {
-            view.IsEdit = false;
         }
     }
 }

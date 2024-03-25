@@ -18,17 +18,45 @@ namespace Product_DefectRecord._Repositories
         }
         public void Add(DefectModel defectmodel)
         {
-            throw new NotImplementedException();
+            using (var connection = new SqlConnection(connectionString))
+            using (var command = new SqlCommand())
+            {
+                connection.Open();
+                command.Connection = connection;
+                command.CommandText = "INSERT INTO Defect_Names values (@Id, @PartId, @DefectName)";
+                command.Parameters.Add("@Id", SqlDbType.Int).Value = defectmodel.Id1;
+                command.Parameters.Add("@PartId", SqlDbType.VarChar).Value = defectmodel.PartId1;
+                command.Parameters.Add("@DefectName", SqlDbType.VarChar).Value = defectmodel.DefectName1;
+                command.ExecuteNonQuery();
+            }
         }
 
         public void Delete(int Id)
         {
-            throw new NotImplementedException();
+            using (var connection = new SqlConnection(connectionString))
+            using (var command = new SqlCommand())
+            {
+                connection.Open();
+                command.Connection = connection;
+                command.CommandText = "DELETE from Defect_Names WHERE Id = @Id";
+                command.Parameters.Add("@Id", SqlDbType.Int).Value = Id;
+                command.ExecuteNonQuery();
+            }
         }
 
         public void Edit(DefectModel defectmodel)
         {
-            throw new NotImplementedException();
+            using (var connection = new SqlConnection(connectionString))
+            using (var command = new SqlCommand())
+            {
+                connection.Open();
+                command.Connection = connection;
+                command.CommandText = "UPDATE Defect_Names set Id=@Id, PartId=@PartId, DefectName=@DefectName WHERE Id=@Id";
+                command.Parameters.Add("@Id", SqlDbType.Int).Value = defectmodel.Id1;
+                command.Parameters.Add("@PartId", SqlDbType.VarChar).Value = defectmodel.PartId1;
+                command.Parameters.Add("@DefectName", SqlDbType.VarChar).Value = defectmodel.DefectName1;
+                command.ExecuteNonQuery();
+            }
         }
 
         public IEnumerable<DefectModel> GetAll()
@@ -39,13 +67,16 @@ namespace Product_DefectRecord._Repositories
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "SELECT * from Defect_Names ORDER BY Id desc";
+                command.CommandText = "SELECT Defect_Names.Id, Parts.PartName, Defect_Names.DefectName " +
+                                        "FROM Defect_Names " +
+                                        "INNER JOIN Parts ON Defect_Names.PartId = Parts.Id " +
+                                        "ORDER BY Id desc";
                 using (var reader = command.ExecuteReader())
                 {
                     while (reader.Read())
                     {
                         var defectModel = new DefectModel();
-                        defectModel.Id1 = (int)reader[0];
+                        defectModel.Id1 = int.Parse(reader[0].ToString());
                         defectModel.PartId1 = reader[1].ToString();
                         defectModel.DefectName1 = reader[2].ToString();
                         defectList.Add(defectModel);
@@ -78,6 +109,37 @@ namespace Product_DefectRecord._Repositories
                     {
                         var defectModel = new DefectModel();
                         defectModel.Id1 = (int)reader[0];
+                        defectModel.PartId1 = reader[1].ToString();
+                        defectModel.DefectName1 = reader[2].ToString();
+                        defectList.Add(defectModel);
+                    }
+
+                }
+            }
+
+            return defectList;
+        }
+
+        public IEnumerable<DefectModel> GetFilter(int id)
+        {
+            var defectList = new List<DefectModel>();
+            using (var connection = new SqlConnection(connectionString))
+            using (var command = new SqlCommand())
+            {
+                connection.Open();
+                command.Connection = connection;
+                command.CommandText = "SELECT Defect_Names.Id, Parts.PartName, Defect_Names.DefectName " +
+                              "FROM Defect_Names " +
+                              "INNER JOIN Parts ON Defect_Names.PartId = Parts.Id " +
+                              "WHERE Defect_Names.PartId = @selectedId";
+
+                command.Parameters.AddWithValue("@selectedId", id);
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        var defectModel = new DefectModel();
+                        defectModel.Id1 = int.Parse(reader[0].ToString());
                         defectModel.PartId1 = reader[1].ToString();
                         defectModel.DefectName1 = reader[2].ToString();
                         defectList.Add(defectModel);

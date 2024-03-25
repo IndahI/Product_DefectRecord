@@ -22,10 +22,11 @@ namespace Product_DefectRecord
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             string sqlConnectionString = ConfigurationManager.ConnectionStrings["LSBUDBConnection"].ConnectionString;
+            List<IEditDefect> selectEditList = new List<IEditDefect>();
             IDefectView view = new DefectView();
             IDefectRepository repository = new DefectRepository(sqlConnectionString);
             IModelNumberRepository repository2 = new ModelNumberRepository(sqlConnectionString); // Instantiate ModelNumberRepository
-            new DefectPresenter(view, repository, repository2); // Provide repository2 to the constructor
+            new DefectPresenter(view, repository, repository2, new EditDefectName(), selectEditList); // Provide repository2 to the constructor
             Application.Run((Form)view);
         }
     }

@@ -12,6 +12,7 @@ namespace Product_DefectRecord.Models
         void Edit(DefectModel defectmodel);
         void Delete(int Id);
 
+        IEnumerable<DefectModel> GetFilter(int id);
         IEnumerable<DefectModel> GetAll();
         IEnumerable<DefectModel> GetByValue(string value);
     }

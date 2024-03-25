@@ -14,24 +14,23 @@ namespace Product_DefectRecord.Models
         private int Id;
         private string PartId;
         private string DefectName;
-        private string Action;
 
         //properties
-        [DisplayName("Defect Id")]
+        [DisplayName("No")]
         public int Id1
         {
             get => Id;
             set => Id = value;
         }
 
-        [DisplayName("Part Id")]
+        [DisplayName("Part Name")]
         public string PartId1
         {
             get => PartId;
             set => PartId = value;
         }
 
-        [DisplayName("Defect Id")]
+        [DisplayName("Defect Name")]
         [Required(ErrorMessage = "Name defect perlu diisi")]
         [StringLength(50, MinimumLength = 3, ErrorMessage = "nama defect minimal berisi 3 karakter dan maxsimal 50 karakter")]
         public string DefectName1
@@ -39,6 +38,5 @@ namespace Product_DefectRecord.Models
             get => DefectName;
             set => DefectName = value;
         }
-        public string Action1 { get => Action; set => Action = value; }
     }
 }

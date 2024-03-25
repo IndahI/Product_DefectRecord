@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Product_DefectRecord.Presenters;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,30 +8,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Product_DefectRecord.Presenters.DefectPresenter;
 
 namespace Product_DefectRecord.Views
 {
     public partial class DefectView : Form, IDefectView
     {
         private TcpServerWrapper serverWrapper;
-        private string message;
-        private bool isSuccessful;
-        private bool isEdit;
 
         public DefectView()
         {
             InitializeComponent();
-            
+            AssociateAndRaiseViewEvents();
+
         }
 
         //event
-        public event EventHandler SearchEvent;
-        public event EventHandler AddEvent;
-        public event EventHandler EditEvent;
-        public event EventHandler SaveEvent;
-        public event EventHandler DeleteEvent;
-        public event EventHandler CancleEvent;
         public event EventHandler SearchModelNumber;
+        public event EventHandler ClearEvent;
+        public event TopDefectEventHandler DefectFilterEvent;
+        public event EventHandler EditButtonClicked;
+        public event EventHandler<DataGridViewCellEventArgs> CellClicked;
 
         //properties
         public string SerialNumber
@@ -48,26 +46,12 @@ namespace Product_DefectRecord.Views
             get { return textBoxCode.Text; }
             set { textBoxCode.Text = value; }
         }
-        public bool IsEdit 
-        {   
-            get { return isEdit; }
-            set {  isEdit = value; }
-        }
-        public bool IsSuccessful 
+        
+        public string StatusText
         {
-            get { return isSuccessful; }
-            set { isSuccessful = value; } 
+            get { return btnStatus.Text; }
+            set { btnStatus.Text = value; }
         }
-        public string Message 
-        {
-            get { return message; }
-            set { message = value; } 
-        }
-
-        public string DefectId { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string PartId { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string DefectName { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string SearchValue { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         private void UpdateSerialBox(string message)
         {
@@ -95,16 +79,154 @@ namespace Product_DefectRecord.Views
             }
         }
 
+        private void UpdateModelBox(string message)
+        {
+            // Invoke UI updates on the UI thread
+            if (textBoxModel.InvokeRequired)
+            {
+                textBoxModel.Invoke((MethodInvoker)(() => UpdateModelBox(message)));
+            }
+            else
+            {
+                textBoxModel.Text = message;
+            }
+        }
+
         private async void DefectView_Load(object sender, EventArgs e)
         {
-            serverWrapper = new TcpServerWrapper(1234, UpdateCodeBox, UpdateSerialBox); // Passing both update methods
+            serverWrapper = new TcpServerWrapper(1234, UpdateCodeBox, UpdateSerialBox, UpdateModelBox); // Passing both update methods
             await serverWrapper.StartServerAsync();
         }
 
         //Methods
+        private void AssociateAndRaiseViewEvents()
+        {
+            //Clear
+            btnClear.Click += delegate
+            {
+                ClearEvent?.Invoke(this, EventArgs.Empty);
+            };
+
+            btnTop.Click += delegate
+            {
+                DefectFilterEvent?.Invoke(this, EventArgs.Empty, int.Parse(btnTop.Tag.ToString()));
+            };
+
+            btnPulsator.Click += delegate
+            {
+                DefectFilterEvent?.Invoke(this, EventArgs.Empty, int.Parse(btnPulsator.Tag.ToString()));
+            };
+
+            textBoxSerial.TextChanged += (sender, e) =>
+            {
+                // Periksa apakah textBoxSerial berisi data
+                if (!string.IsNullOrWhiteSpace(textBoxSerial.Text))
+                {
+                    // Ubah teks btnStatus menjadi "Print"
+                    btnStatus.Text = "Save And Print";
+                }
+            };
+
+            btnLogout.Click += delegate
+            {
+                Application.Exit();
+            };
+
+            dataGridView1.CellContentClick += (sender, e) =>
+            {
+                if (dataGridView1.Columns[e.ColumnIndex].Name == "Edit")
+                {
+                    // Ambil data dari baris yang diklik
+                    DataGridViewRow selectedRow = dataGridView1.Rows[e.RowIndex];
+                    List<string> rowData = new List<string>();
+
+                    foreach (DataGridViewCell cell in selectedRow.Cells)
+                    {
+                        // Ambil nilai dari sel dan tambahkan ke dalam list
+                        rowData.Add(cell.Value.ToString());
+                    } // Ganti "DefectId" dengan nama kolom yang sesuai
+
+                    // Panggil event EditButtonClicked dan kirimkan data yang diperlukan
+                    EditButtonClicked?.Invoke(this, new EventArgs());
+                }
+                OnCellClicked(e);
+            };
+
+
+            btnSetting.Click += delegate
+            {
+                Setting setting = new Setting();
+                setting.Show();
+            };
+            /*//search
+            btnClose.Click += delegate { SearchEvent?.Invoke(this, EventArgs.Empty); };
+            textSearch.KeyDown += (s, e) =>
+            {
+                if (e.KeyCode == Keys.Enter)
+                    SearchEvent?.Invoke(this, EventArgs.Empty);
+            };
+
+            //Add New
+            btnAdd.Click += delegate
+            {
+                AddEvent?.Invoke(this, EventArgs.Empty);
+                tabControl1.TabPages.Remove(tabPage1);
+                tabControl1.TabPages.Add(tabPage2);
+                tabPage2.Text = "Add new Defect";
+            };
+
+            //Delete
+            btnDelete.Click += delegate
+            {
+                var result = MessageBox.Show("Yakin untuk menghapus", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
+                    DeleteEvent?.Invoke(this, EventArgs.Empty);
+                    MessageBox.Show(Message);
+                }
+            };
+
+            //saveNewItem
+            btnNewSave.Click += delegate
+            {
+                SaveEvent?.Invoke(this, EventArgs.Empty);
+                if (isSuccessful)
+                {
+                    tabControl1.TabPages.Remove(tabPage2);
+                    tabControl1.TabPages.Add(tabPage1);
+                }
+                MessageBox.Show(Message);
+            };
+
+            
+
+
+            //print
+            btnPrint.Click += delegate
+            {
+                PrintEvent?.Invoke(this, EventArgs.Empty);
+            };*/
+        }
+
+        private void OnCellClicked(DataGridViewCellEventArgs e)
+        {
+            CellClicked?.Invoke(this, e);
+        }
+
         public void SetDefectListBindingSource(BindingSource defectList)
         {
             dataGridView1.DataSource = defectList;
+        }
+
+        public void FilterByPartId(int partId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void ShowPopupForm(IEditDefect selectDefect)
+        {
+            PopUp popupForm = new PopUp(selectDefect);
+            popupForm.ShowDialog();
         }
     }
 }

@@ -12,7 +12,7 @@ namespace Product_DefectRecord.Views
 {
     public partial class PopUp : Form
     {
-        public PopUp()
+        public PopUp(IEditDefect selectDefect)
         {
             InitializeComponent();
         }

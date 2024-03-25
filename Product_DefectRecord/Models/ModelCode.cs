@@ -10,6 +10,7 @@ namespace Product_DefectRecord.Models
     public class ModelCode
     {
         private string modelCode;
+        private string modelNumber;
 
         //properties
         [DisplayName("modelCode")]
@@ -17,6 +18,13 @@ namespace Product_DefectRecord.Models
         {
             get => modelCode;
             set => modelCode = value;
+        }
+
+        [DisplayName("ModelNumber")]
+        public string ModelNumber 
+        { 
+            get => modelNumber; 
+            set => modelNumber = value;
         }
     }
 }
