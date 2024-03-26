@@ -16,10 +16,11 @@ namespace Product_DefectRecord.Views
 
         string SerialNumber { get; set; }
         string ModelCode { get; set; }
+        string ModelNumber { get; set; }
         string StatusText { get; set; }
 
         //event
-        event EventHandler SearchModelNumber;
+        event EventHandler<ModelEventArgs> SearchModelNumber;
         event EventHandler ClearEvent;
         event TopDefectEventHandler DefectFilterEvent;
         event EventHandler EditButtonClicked;
@@ -30,5 +31,15 @@ namespace Product_DefectRecord.Views
 
         void SetDefectListBindingSource(BindingSource defectList);
         void Show();
+    }
+
+    public class ModelEventArgs : EventArgs
+    {
+        public string Message { get; set; }
+
+        public ModelEventArgs(string message)
+        {
+            Message = message;
+        }
     }
 }

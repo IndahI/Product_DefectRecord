@@ -13,15 +13,12 @@ public class TcpServerWrapper
     private int port;
     private Action<string> updateUiCallback;
     private Action<string> updateUiCallback2;
-    private Action<string> updateUiCallback3;// Added this field
 
-    public TcpServerWrapper(int port, Action<string> updateUiCallback, Action<string> updateUiCallback2, Action<string> updateUiCallback3) // Added updateUiCallback2 as a parameter
+    public TcpServerWrapper(int port, Action<string> updateUiCallback, Action<string> updateUiCallback2) // Added updateUiCallback2 as a parameter
     {
         this.port = port;
         this.updateUiCallback = updateUiCallback;
         this.updateUiCallback2 = updateUiCallback2; // Assigned updateUiCallback2
-        this.updateUiCallback3 = updateUiCallback3;
-
     }
 
     public async Task StartServerAsync()

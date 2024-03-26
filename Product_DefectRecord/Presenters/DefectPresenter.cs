@@ -94,15 +94,20 @@ namespace Product_DefectRecord.Presenters
         }
 
         public delegate void TopDefectEventHandler(object sender, EventArgs e, int id);
-        private void SearchModelNumber(object sender, EventArgs e)
+        private void SearchModelNumber(object sender, ModelEventArgs e)
         {
-            bool emptyValue = string.IsNullOrWhiteSpace(this.view.SerialNumber);
-            if (!emptyValue)
+            string message = e.Message;
+            var searchModel = repository2.GetModelNumber(message);
+
+            if (searchModel != null)
             {
-                ModelCode modelCode = repository2.GetModelNumber(this.view.SerialNumber);
-                view.ModelCode = modelCode.ToString(); // Convert ModelCode to string
-                view.SerialNumber = modelCode.ToString();
+                view.ModelNumber = searchModel.ToString();
+            }
+            else
+            {
+                MessageBox.Show("Data tidak ditemukan.");
             }
         }
+
     }
 }

@@ -24,7 +24,7 @@ namespace Product_DefectRecord.Views
         }
 
         //event
-        public event EventHandler SearchModelNumber;
+        public event EventHandler<ModelEventArgs> SearchModelNumber;
         public event EventHandler ClearEvent;
         public event TopDefectEventHandler DefectFilterEvent;
         public event EventHandler EditButtonClicked;
@@ -53,6 +53,14 @@ namespace Product_DefectRecord.Views
             set { btnStatus.Text = value; }
         }
 
+        // Call this method when you need to perform a model search
+        private void PerformModelSearch()
+        {
+            // Raise the event with the data from the view
+            SearchModelNumber?.Invoke(this, new ModelEventArgs(SerialNumber));
+        }
+
+
         private void UpdateSerialBox(string message)
         {
             // Invoke UI updates on the UI thread
@@ -64,6 +72,7 @@ namespace Product_DefectRecord.Views
             {
                 textBoxSerial.Text = message;
             }
+            
         }
 
         private void UpdateCodeBox(string message)
@@ -77,24 +86,13 @@ namespace Product_DefectRecord.Views
             {
                 textBoxCode.Text = message;
             }
+            PerformModelSearch();
         }
 
-        private void UpdateModelBox(string message)
-        {
-            // Invoke UI updates on the UI thread
-            if (textBoxModel.InvokeRequired)
-            {
-                textBoxModel.Invoke((MethodInvoker)(() => UpdateModelBox(message)));
-            }
-            else
-            {
-                textBoxModel.Text = message;
-            }
-        }
 
         private async void DefectView_Load(object sender, EventArgs e)
         {
-            serverWrapper = new TcpServerWrapper(1234, UpdateCodeBox, UpdateSerialBox, UpdateModelBox); // Passing both update methods
+            serverWrapper = new TcpServerWrapper(1234, UpdateCodeBox, UpdateSerialBox); // Passing both update methods
             await serverWrapper.StartServerAsync();
         }
 

@@ -23,7 +23,6 @@ D:\Product_DefectRecord\yg baru\Product_DefectRecord\Product_DefectRecord\bin\De
 D:\Product_DefectRecord\yg baru\Product_DefectRecord\Product_DefectRecord\bin\Debug\Product_DefectRecord.pdb
 D:\Product_DefectRecord\yg baru\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.csproj.AssemblyReference.cache
 D:\Product_DefectRecord\yg baru\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.Views.DefectView.resources
-D:\Product_DefectRecord\yg baru\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.Form1.resources
 D:\Product_DefectRecord\yg baru\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.Properties.Resources.resources
 D:\Product_DefectRecord\yg baru\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.csproj.GenerateResource.cache
 D:\Product_DefectRecord\yg baru\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.csproj.CoreCompileInputs.cache
@@ -34,3 +33,4 @@ D:\Product_DefectRecord\yg baru\Product_DefectRecord\Product_DefectRecord\obj\De
 D:\Product_DefectRecord\yg baru\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.Views.Setting.resources
 D:\Perkuliahan\Semester6\Panasonic\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.Views.Setting.resources
 D:\Perkuliahan\Semester6\Panasonic\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.Views.EditDefectName.resources
+D:\Product_DefectRecord\yg baru\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.Views.EditDefectName.resources
