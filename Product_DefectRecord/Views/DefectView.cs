@@ -1,4 +1,5 @@
-﻿using Product_DefectRecord.Presenters;
+﻿using Product_DefectRecord.Models;
+using Product_DefectRecord.Presenters;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,7 +29,7 @@ namespace Product_DefectRecord.Views
         public event EventHandler ClearEvent;
         public event TopDefectEventHandler DefectFilterEvent;
         public event EventHandler EditButtonClicked;
-        public event EventHandler<DataGridViewCellEventArgs> CellClicked;
+        public event EventHandler CellClicked;
 
         //properties
         public string SerialNumber
@@ -114,6 +115,20 @@ namespace Product_DefectRecord.Views
             {
                 DefectFilterEvent?.Invoke(this, EventArgs.Empty, int.Parse(btnPulsator.Tag.ToString()));
             };
+            btnDll.Click += delegate
+            {
+                DefectFilterEvent?.Invoke(this, EventArgs.Empty, int.Parse(btnDll.Tag.ToString()));
+            };
+
+            btnMotorSpin.Click += delegate
+            {
+                DefectFilterEvent?.Invoke(this, EventArgs.Empty, int.Parse(btnMotorSpin.Tag.ToString()));
+            };
+
+            btnTubA.Click += delegate
+            {
+                DefectFilterEvent?.Invoke(this, EventArgs.Empty, int.Parse(btnTubA.Tag.ToString()));
+            };
 
             textBoxSerial.TextChanged += (sender, e) =>
             {
@@ -134,20 +149,17 @@ namespace Product_DefectRecord.Views
             {
                 if (dataGridView1.Columns[e.ColumnIndex].Name == "Edit")
                 {
-                    // Ambil data dari baris yang diklik
-                    DataGridViewRow selectedRow = dataGridView1.Rows[e.RowIndex];
-                    List<string> rowData = new List<string>();
-
-                    foreach (DataGridViewCell cell in selectedRow.Cells)
-                    {
-                        // Ambil nilai dari sel dan tambahkan ke dalam list
-                        rowData.Add(cell.Value.ToString());
-                    } // Ganti "DefectId" dengan nama kolom yang sesuai
-
                     // Panggil event EditButtonClicked dan kirimkan data yang diperlukan
                     EditButtonClicked?.Invoke(this, new EventArgs());
                 }
-                OnCellClicked(e);
+                else
+                {
+                    DataGridViewRow selectedRow = dataGridView1.Rows[e.RowIndex];
+                    var selectedPerson = selectedRow.DataBoundItem as DefectModel;
+                    CellClicked?.Invoke(this, EventArgs.Empty);
+                    btnStatus.Text = "Save And Print";
+                    //textBoxDefectName.Text = selectedPerson.DefectName1;
+                }
             };
 
 
@@ -206,11 +218,6 @@ namespace Product_DefectRecord.Views
             };*/
         }
 
-        private void OnCellClicked(DataGridViewCellEventArgs e)
-        {
-            CellClicked?.Invoke(this, e);
-        }
-
         public void SetDefectListBindingSource(BindingSource defectList)
         {
             dataGridView1.DataSource = defectList;
@@ -221,9 +228,9 @@ namespace Product_DefectRecord.Views
             throw new NotImplementedException();
         }
 
-        public void ShowPopupForm(IEditDefect selectDefect)
+        public void ShowPopupForm()
         {
-            PopUp popupForm = new PopUp(selectDefect);
+            PopUp popupForm = new PopUp();
             popupForm.ShowDialog();
         }
     }

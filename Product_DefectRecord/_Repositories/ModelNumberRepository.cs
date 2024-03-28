@@ -17,7 +17,7 @@ namespace Product_DefectRecord._Repositories
             this.connectionString = connetionString;
         }
 
-        public ModelCode GetModelNumber(string value)
+        public ModelCode GetModelNumber(ModelCode model)
         {
             ModelCode modelCode = null;
 
@@ -26,21 +26,17 @@ namespace Product_DefectRecord._Repositories
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = @"SELECT * FROM Global_Model_Code WHERE modelCode =@modelCode";
-                command.Parameters.Add("@ModelCode", SqlDbType.VarChar).Value = value;
+                command.CommandText = @"SELECT * FROM Global_Model_Code WHERE modelCode = @modelCode";
+                command.Parameters.Add("@modelCode", SqlDbType.VarChar).Value = model.modelCode1;
 
                 using (var reader = command.ExecuteReader())
                 {
-                    if(reader.Read())
+                    if (reader.Read())
                     {
                         modelCode = new ModelCode();
                         modelCode.ModelNumber = reader["ModelNumber"].ToString();
                         modelCode.modelCode1 = reader["modelCode"].ToString();
-                    }
-                     else
-                    {
-                        // Data tidak ditemukan, lakukan sesuatu di sini (misalnya, tampilkan pesan kesalahan)
-                        MessageBox.Show("Data tidak ditemukan");
+                        Console.WriteLine("Value of variable: " + modelCode.modelCode1);
                     }
                 }
             }

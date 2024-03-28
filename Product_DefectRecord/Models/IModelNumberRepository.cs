@@ -8,6 +8,6 @@ namespace Product_DefectRecord.Models
 {
     public interface IModelNumberRepository
     {
-        ModelCode GetModelNumber(string value);
+        ModelCode GetModelNumber(ModelCode model);
     }
 }

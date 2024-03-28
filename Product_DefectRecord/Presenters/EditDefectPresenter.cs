@@ -12,22 +12,52 @@ namespace Product_DefectRecord.Presenters
     public class EditDefectPresenter
     {
         //fields
+        IDefectView view;
         IEditDefect Edit;
         IDefectRepository Repository;
         private IEnumerable<DefectModel> defectList;
         private BindingSource defectsBindingSource;
 
-        public EditDefectPresenter(IEditDefect edit, IDefectRepository repository)
+        public EditDefectPresenter(IDefectView view,IEditDefect edit, IDefectRepository repository)
         {
             Edit = edit;
-            Repository = repository;
-            this.Edit.SearchEvent += SearchDefect;
+            this.view = view;
+            this.Repository = repository;
             this.Edit.AddEvent += AddNewDefect;
             this.Edit.EditEvent += LoadSelectedDefectToEdit;
             this.Edit.DeleteEvent += DeleteSelectedDefect;
-            this.Edit.SaveDefectEvent += SaveDefect;
+            this.Edit.SaveDefectEvent += SaveDefectEvent;
             this.Edit.CancleEvent += CancleAction;
+            this.view.CellClicked += CellClicked;
+            this.view.SetDefectListBindingSource(defectsBindingSource);
             loadAllDefectList();
+        }
+
+        public void HandleEditDefect()
+        {
+            if (defectsBindingSource.Current != null)
+            {
+                var defect = (DefectModel)defectsBindingSource.Current;
+                Edit.DefectId = defect.Id1.ToString();
+                Edit.PartId = defect.PartId1;
+                Edit.DefectName = defect.DefectName1;
+                Edit.IsEdit = true;
+                //Edit.Show();
+            }
+            else
+            {
+                MessageBox.Show("gagal");
+            }
+        }
+
+        private void CellClicked(object sender, EventArgs e)
+        {
+            var defect = (DefectModel)defectsBindingSource.Current;
+            PopUp popUp = new PopUp();
+            popUp.SerialNumber = view.SerialNumber;
+            popUp.ModelNumber = view.ModelNumber;
+            popUp.DefectName = defect.DefectName1;
+            popUp.Show();
         }
 
         private void loadAllDefectList()
@@ -43,7 +73,7 @@ namespace Product_DefectRecord.Presenters
             CleanviewFields();
         }
 
-        private void SaveDefect(object sender, EventArgs e)
+        private void SaveDefectEvent(object sender, EventArgs e)
         {
             var model = new DefectModel();
             model.Id1 = Convert.ToInt32(Edit.DefectId);
@@ -58,11 +88,6 @@ namespace Product_DefectRecord.Presenters
                     Repository.Edit(model);
                     Edit.Message = "Defect terlah terubah";
                 }
-                else//add model
-                {
-                    Repository.Add(model);
-                    Edit.Message = "defect berhasil ditambahkan";
-                }
                 Edit.IsSuccessful = true;
                 loadAllDefectList();
                 CleanviewFields();
@@ -76,9 +101,9 @@ namespace Product_DefectRecord.Presenters
 
         private void CleanviewFields()
         {
-            Edit.DefectId = "0";
-            Edit.PartId = "0";
-            Edit.DefectName = "";
+            //Edit.DefectId = "0";
+            //Edit.PartId = "0";
+            //Edit.DefectName = "";
         }
 
         private void DeleteSelectedDefect(object sender, EventArgs e)
@@ -94,7 +119,7 @@ namespace Product_DefectRecord.Presenters
             catch (Exception ex)
             {
                 Edit.IsSuccessful = false;
-                Edit.Message = "error saat menghapus";
+                Edit.Message = ex.Message + "error saat menghapus";
             }
         }
 
@@ -104,21 +129,14 @@ namespace Product_DefectRecord.Presenters
             Edit.DefectId = defect.Id1.ToString();
             Edit.PartId = defect.PartId1;
             Edit.DefectName = defect.DefectName1;
-            Edit.IsEdit = true;
+
+            // Memperbarui defect yang ada di repositori
+            Repository.Edit(defect);
         }
 
         private void AddNewDefect(object sender, EventArgs e)
         {
             Edit.IsEdit = false;
-        }
-
-        private void SearchDefect(object sender, EventArgs e)
-        {
-            bool emptyValue = string.IsNullOrWhiteSpace(this.Edit.SearchValue);
-            if (emptyValue == false)
-                defectList = Repository.GetByValue(this.Edit.SearchValue);
-            else defectList = Repository.GetAll();
-            defectsBindingSource.DataSource = defectList;
         }
     }
 }

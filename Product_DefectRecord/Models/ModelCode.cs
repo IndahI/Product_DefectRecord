@@ -9,10 +9,18 @@ namespace Product_DefectRecord.Models
 {
     public class ModelCode
     {
+        private string serialNumber;
         private string modelCode;
         private string modelNumber;
 
         //properties
+        public string SerialNumber 
+        {
+            get => serialNumber;
+            set => serialNumber = value;
+        }
+
+
         [DisplayName("modelCode")]
         public string modelCode1
         {

@@ -41,26 +41,26 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.rdButton12 = new Product_DefectRecord.Component.RdButton();
-            this.rdButton11 = new Product_DefectRecord.Component.RdButton();
-            this.rdButton10 = new Product_DefectRecord.Component.RdButton();
-            this.rdButton9 = new Product_DefectRecord.Component.RdButton();
-            this.btnEdit = new Product_DefectRecord.Component.RdButton();
-            this.rdButton7 = new Product_DefectRecord.Component.RdButton();
-            this.rdButton6 = new Product_DefectRecord.Component.RdButton();
-            this.btnPulsator = new Product_DefectRecord.Component.RdButton();
-            this.rdButton4 = new Product_DefectRecord.Component.RdButton();
-            this.rdButton3 = new Product_DefectRecord.Component.RdButton();
-            this.rdButton2 = new Product_DefectRecord.Component.RdButton();
-            this.btnTop = new Product_DefectRecord.Component.RdButton();
             this.btnStatus = new Product_DefectRecord.Component.RdButton();
             this.btnClear = new Product_DefectRecord.Component.RdButton();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.btnLogout = new Product_DefectRecord.Component.RdButton();
             this.btnSetting = new Product_DefectRecord.Component.RdButton();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnMotorWash = new Product_DefectRecord.Component.RdButton();
+            this.btnPanel = new Product_DefectRecord.Component.RdButton();
+            this.btnMotorSpin = new Product_DefectRecord.Component.RdButton();
+            this.btnBodyB = new Product_DefectRecord.Component.RdButton();
+            this.btnDll = new Product_DefectRecord.Component.RdButton();
+            this.btnLib = new Product_DefectRecord.Component.RdButton();
+            this.rdButton6 = new Product_DefectRecord.Component.RdButton();
+            this.btnPulsator = new Product_DefectRecord.Component.RdButton();
+            this.btnSf = new Product_DefectRecord.Component.RdButton();
+            this.btnBaseA = new Product_DefectRecord.Component.RdButton();
+            this.btnTubA = new Product_DefectRecord.Component.RdButton();
+            this.btnTop = new Product_DefectRecord.Component.RdButton();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -228,321 +228,6 @@
             this.tableLayoutPanel5.Size = new System.Drawing.Size(537, 142);
             this.tableLayoutPanel5.TabIndex = 1;
             // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.CustomFormat = "HH:mm:ss | dddd, dd-MM-yyyy";
-            this.dateTimePicker1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(4, 5);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(260, 26);
-            this.dateTimePicker1.TabIndex = 6;
-            // 
-            // tableLayoutPanel6
-            // 
-            this.tableLayoutPanel6.ColumnCount = 2;
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Controls.Add(this.btnLogout, 0, 0);
-            this.tableLayoutPanel6.Controls.Add(this.btnSetting, 0, 0);
-            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(272, 5);
-            this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
-            this.tableLayoutPanel6.RowCount = 1;
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(261, 45);
-            this.tableLayoutPanel6.TabIndex = 7;
-            // 
-            // tableLayoutPanel3
-            // 
-            this.tableLayoutPanel3.ColumnCount = 6;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66666F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66666F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66666F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66666F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66666F));
-            this.tableLayoutPanel3.Controls.Add(this.rdButton12, 0, 2);
-            this.tableLayoutPanel3.Controls.Add(this.rdButton11, 0, 2);
-            this.tableLayoutPanel3.Controls.Add(this.rdButton10, 0, 2);
-            this.tableLayoutPanel3.Controls.Add(this.rdButton9, 0, 2);
-            this.tableLayoutPanel3.Controls.Add(this.btnEdit, 1, 2);
-            this.tableLayoutPanel3.Controls.Add(this.rdButton7, 0, 2);
-            this.tableLayoutPanel3.Controls.Add(this.rdButton6, 5, 1);
-            this.tableLayoutPanel3.Controls.Add(this.btnPulsator, 4, 1);
-            this.tableLayoutPanel3.Controls.Add(this.rdButton4, 3, 1);
-            this.tableLayoutPanel3.Controls.Add(this.rdButton3, 2, 1);
-            this.tableLayoutPanel3.Controls.Add(this.rdButton2, 1, 1);
-            this.tableLayoutPanel3.Controls.Add(this.btnTop, 0, 1);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 151);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 3;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 15F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1088, 171);
-            this.tableLayoutPanel3.TabIndex = 5;
-            // 
-            // tableLayoutPanel4
-            // 
-            this.tableLayoutPanel4.ColumnCount = 1;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Controls.Add(this.dataGridView1, 0, 0);
-            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 322);
-            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 1;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(1088, 269);
-            this.tableLayoutPanel4.TabIndex = 6;
-            // 
-            // rdButton12
-            // 
-            this.rdButton12.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.rdButton12.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.rdButton12.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rdButton12.BorderRadius = 10;
-            this.rdButton12.BorderSize = 0;
-            this.rdButton12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rdButton12.FlatAppearance.BorderSize = 0;
-            this.rdButton12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rdButton12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdButton12.ForeColor = System.Drawing.Color.White;
-            this.rdButton12.Location = new System.Drawing.Point(3, 96);
-            this.rdButton12.Name = "rdButton12";
-            this.rdButton12.Size = new System.Drawing.Size(175, 72);
-            this.rdButton12.TabIndex = 11;
-            this.rdButton12.Text = "Motor Wash";
-            this.rdButton12.TextColor = System.Drawing.Color.White;
-            this.rdButton12.UseVisualStyleBackColor = false;
-            // 
-            // rdButton11
-            // 
-            this.rdButton11.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.rdButton11.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.rdButton11.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rdButton11.BorderRadius = 10;
-            this.rdButton11.BorderSize = 0;
-            this.rdButton11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rdButton11.FlatAppearance.BorderSize = 0;
-            this.rdButton11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rdButton11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdButton11.ForeColor = System.Drawing.Color.White;
-            this.rdButton11.Location = new System.Drawing.Point(365, 96);
-            this.rdButton11.Name = "rdButton11";
-            this.rdButton11.Size = new System.Drawing.Size(175, 72);
-            this.rdButton11.TabIndex = 10;
-            this.rdButton11.Text = "Panel";
-            this.rdButton11.TextColor = System.Drawing.Color.White;
-            this.rdButton11.UseVisualStyleBackColor = false;
-            // 
-            // rdButton10
-            // 
-            this.rdButton10.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.rdButton10.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.rdButton10.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rdButton10.BorderRadius = 10;
-            this.rdButton10.BorderSize = 0;
-            this.rdButton10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rdButton10.FlatAppearance.BorderSize = 0;
-            this.rdButton10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rdButton10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdButton10.ForeColor = System.Drawing.Color.White;
-            this.rdButton10.Location = new System.Drawing.Point(184, 96);
-            this.rdButton10.Name = "rdButton10";
-            this.rdButton10.Size = new System.Drawing.Size(175, 72);
-            this.rdButton10.TabIndex = 9;
-            this.rdButton10.Text = "Motor Spin";
-            this.rdButton10.TextColor = System.Drawing.Color.White;
-            this.rdButton10.UseVisualStyleBackColor = false;
-            // 
-            // rdButton9
-            // 
-            this.rdButton9.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.rdButton9.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.rdButton9.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rdButton9.BorderRadius = 10;
-            this.rdButton9.BorderSize = 0;
-            this.rdButton9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rdButton9.FlatAppearance.BorderSize = 0;
-            this.rdButton9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rdButton9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdButton9.ForeColor = System.Drawing.Color.White;
-            this.rdButton9.Location = new System.Drawing.Point(546, 96);
-            this.rdButton9.Name = "rdButton9";
-            this.rdButton9.Size = new System.Drawing.Size(175, 72);
-            this.rdButton9.TabIndex = 8;
-            this.rdButton9.Text = "Body B";
-            this.rdButton9.TextColor = System.Drawing.Color.White;
-            this.rdButton9.UseVisualStyleBackColor = false;
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnEdit.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnEdit.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnEdit.BorderRadius = 10;
-            this.btnEdit.BorderSize = 0;
-            this.btnEdit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnEdit.FlatAppearance.BorderSize = 0;
-            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.ForeColor = System.Drawing.Color.White;
-            this.btnEdit.Location = new System.Drawing.Point(908, 96);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(177, 72);
-            this.btnEdit.TabIndex = 7;
-            this.btnEdit.Text = "Dll";
-            this.btnEdit.TextColor = System.Drawing.Color.White;
-            this.btnEdit.UseVisualStyleBackColor = false;
-            // 
-            // rdButton7
-            // 
-            this.rdButton7.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.rdButton7.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.rdButton7.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rdButton7.BorderRadius = 10;
-            this.rdButton7.BorderSize = 0;
-            this.rdButton7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rdButton7.FlatAppearance.BorderSize = 0;
-            this.rdButton7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rdButton7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdButton7.ForeColor = System.Drawing.Color.White;
-            this.rdButton7.Location = new System.Drawing.Point(727, 96);
-            this.rdButton7.Name = "rdButton7";
-            this.rdButton7.Size = new System.Drawing.Size(175, 72);
-            this.rdButton7.TabIndex = 6;
-            this.rdButton7.Text = "Lib";
-            this.rdButton7.TextColor = System.Drawing.Color.White;
-            this.rdButton7.UseVisualStyleBackColor = false;
-            // 
-            // rdButton6
-            // 
-            this.rdButton6.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.rdButton6.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.rdButton6.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rdButton6.BorderRadius = 10;
-            this.rdButton6.BorderSize = 0;
-            this.rdButton6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rdButton6.FlatAppearance.BorderSize = 0;
-            this.rdButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rdButton6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdButton6.ForeColor = System.Drawing.Color.White;
-            this.rdButton6.Location = new System.Drawing.Point(908, 18);
-            this.rdButton6.Name = "rdButton6";
-            this.rdButton6.Size = new System.Drawing.Size(177, 72);
-            this.rdButton6.TabIndex = 5;
-            this.rdButton6.Text = "Pulsator";
-            this.rdButton6.TextColor = System.Drawing.Color.White;
-            this.rdButton6.UseVisualStyleBackColor = false;
-            // 
-            // btnPulsator
-            // 
-            this.btnPulsator.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnPulsator.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnPulsator.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnPulsator.BorderRadius = 10;
-            this.btnPulsator.BorderSize = 0;
-            this.btnPulsator.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnPulsator.FlatAppearance.BorderSize = 0;
-            this.btnPulsator.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPulsator.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPulsator.ForeColor = System.Drawing.Color.White;
-            this.btnPulsator.Location = new System.Drawing.Point(727, 18);
-            this.btnPulsator.Name = "btnPulsator";
-            this.btnPulsator.Size = new System.Drawing.Size(175, 72);
-            this.btnPulsator.TabIndex = 4;
-            this.btnPulsator.Tag = "1";
-            this.btnPulsator.Text = "Pulsator";
-            this.btnPulsator.TextColor = System.Drawing.Color.White;
-            this.btnPulsator.UseVisualStyleBackColor = false;
-            // 
-            // rdButton4
-            // 
-            this.rdButton4.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.rdButton4.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.rdButton4.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rdButton4.BorderRadius = 10;
-            this.rdButton4.BorderSize = 0;
-            this.rdButton4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rdButton4.FlatAppearance.BorderSize = 0;
-            this.rdButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rdButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdButton4.ForeColor = System.Drawing.Color.White;
-            this.rdButton4.Location = new System.Drawing.Point(546, 18);
-            this.rdButton4.Name = "rdButton4";
-            this.rdButton4.Size = new System.Drawing.Size(175, 72);
-            this.rdButton4.TabIndex = 3;
-            this.rdButton4.Text = "SF Switch";
-            this.rdButton4.TextColor = System.Drawing.Color.White;
-            this.rdButton4.UseVisualStyleBackColor = false;
-            // 
-            // rdButton3
-            // 
-            this.rdButton3.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.rdButton3.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.rdButton3.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rdButton3.BorderRadius = 10;
-            this.rdButton3.BorderSize = 0;
-            this.rdButton3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rdButton3.FlatAppearance.BorderSize = 0;
-            this.rdButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rdButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdButton3.ForeColor = System.Drawing.Color.White;
-            this.rdButton3.Location = new System.Drawing.Point(365, 18);
-            this.rdButton3.Name = "rdButton3";
-            this.rdButton3.Size = new System.Drawing.Size(175, 72);
-            this.rdButton3.TabIndex = 2;
-            this.rdButton3.Text = "Base A";
-            this.rdButton3.TextColor = System.Drawing.Color.White;
-            this.rdButton3.UseVisualStyleBackColor = false;
-            // 
-            // rdButton2
-            // 
-            this.rdButton2.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.rdButton2.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.rdButton2.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rdButton2.BorderRadius = 10;
-            this.rdButton2.BorderSize = 0;
-            this.rdButton2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rdButton2.FlatAppearance.BorderSize = 0;
-            this.rdButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rdButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdButton2.ForeColor = System.Drawing.Color.White;
-            this.rdButton2.Location = new System.Drawing.Point(184, 18);
-            this.rdButton2.Name = "rdButton2";
-            this.rdButton2.Size = new System.Drawing.Size(175, 72);
-            this.rdButton2.TabIndex = 1;
-            this.rdButton2.Text = "Tub A";
-            this.rdButton2.TextColor = System.Drawing.Color.White;
-            this.rdButton2.UseVisualStyleBackColor = false;
-            // 
-            // btnTop
-            // 
-            this.btnTop.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnTop.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnTop.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnTop.BorderRadius = 10;
-            this.btnTop.BorderSize = 0;
-            this.btnTop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnTop.FlatAppearance.BorderSize = 0;
-            this.btnTop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTop.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTop.ForeColor = System.Drawing.Color.White;
-            this.btnTop.Location = new System.Drawing.Point(3, 18);
-            this.btnTop.Name = "btnTop";
-            this.btnTop.Size = new System.Drawing.Size(175, 72);
-            this.btnTop.TabIndex = 0;
-            this.btnTop.Tag = "2";
-            this.btnTop.Text = "Top Defect";
-            this.btnTop.TextColor = System.Drawing.Color.White;
-            this.btnTop.UseVisualStyleBackColor = false;
-            // 
             // btnStatus
             // 
             this.btnStatus.BackColor = System.Drawing.Color.MediumSlateBlue;
@@ -585,6 +270,33 @@
             this.btnClear.TextColor = System.Drawing.Color.White;
             this.btnClear.UseVisualStyleBackColor = false;
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CustomFormat = "HH:mm:ss | dddd, dd-MM-yyyy";
+            this.dateTimePicker1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker1.Location = new System.Drawing.Point(4, 5);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(260, 26);
+            this.dateTimePicker1.TabIndex = 6;
+            // 
+            // tableLayoutPanel6
+            // 
+            this.tableLayoutPanel6.ColumnCount = 2;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.Controls.Add(this.btnLogout, 0, 0);
+            this.tableLayoutPanel6.Controls.Add(this.btnSetting, 0, 0);
+            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(272, 5);
+            this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 1;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(261, 45);
+            this.tableLayoutPanel6.TabIndex = 7;
+            // 
             // btnLogout
             // 
             this.btnLogout.BackColor = System.Drawing.Color.MediumSlateBlue;
@@ -626,6 +338,297 @@
             this.btnSetting.Text = "Setting";
             this.btnSetting.TextColor = System.Drawing.Color.White;
             this.btnSetting.UseVisualStyleBackColor = false;
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 6;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66666F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66666F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66666F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66666F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66666F));
+            this.tableLayoutPanel3.Controls.Add(this.btnMotorWash, 0, 2);
+            this.tableLayoutPanel3.Controls.Add(this.btnPanel, 0, 2);
+            this.tableLayoutPanel3.Controls.Add(this.btnMotorSpin, 0, 2);
+            this.tableLayoutPanel3.Controls.Add(this.btnBodyB, 0, 2);
+            this.tableLayoutPanel3.Controls.Add(this.btnDll, 1, 2);
+            this.tableLayoutPanel3.Controls.Add(this.btnLib, 0, 2);
+            this.tableLayoutPanel3.Controls.Add(this.rdButton6, 5, 1);
+            this.tableLayoutPanel3.Controls.Add(this.btnPulsator, 4, 1);
+            this.tableLayoutPanel3.Controls.Add(this.btnSf, 3, 1);
+            this.tableLayoutPanel3.Controls.Add(this.btnBaseA, 2, 1);
+            this.tableLayoutPanel3.Controls.Add(this.btnTubA, 1, 1);
+            this.tableLayoutPanel3.Controls.Add(this.btnTop, 0, 1);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 151);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 3;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 15F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1088, 171);
+            this.tableLayoutPanel3.TabIndex = 5;
+            // 
+            // btnMotorWash
+            // 
+            this.btnMotorWash.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnMotorWash.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnMotorWash.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnMotorWash.BorderRadius = 10;
+            this.btnMotorWash.BorderSize = 0;
+            this.btnMotorWash.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnMotorWash.FlatAppearance.BorderSize = 0;
+            this.btnMotorWash.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMotorWash.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMotorWash.ForeColor = System.Drawing.Color.White;
+            this.btnMotorWash.Location = new System.Drawing.Point(3, 96);
+            this.btnMotorWash.Name = "btnMotorWash";
+            this.btnMotorWash.Size = new System.Drawing.Size(175, 72);
+            this.btnMotorWash.TabIndex = 11;
+            this.btnMotorWash.Text = "Motor Wash";
+            this.btnMotorWash.TextColor = System.Drawing.Color.White;
+            this.btnMotorWash.UseVisualStyleBackColor = false;
+            // 
+            // btnPanel
+            // 
+            this.btnPanel.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnPanel.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnPanel.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnPanel.BorderRadius = 10;
+            this.btnPanel.BorderSize = 0;
+            this.btnPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnPanel.FlatAppearance.BorderSize = 0;
+            this.btnPanel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPanel.ForeColor = System.Drawing.Color.White;
+            this.btnPanel.Location = new System.Drawing.Point(365, 96);
+            this.btnPanel.Name = "btnPanel";
+            this.btnPanel.Size = new System.Drawing.Size(175, 72);
+            this.btnPanel.TabIndex = 10;
+            this.btnPanel.Text = "Panel";
+            this.btnPanel.TextColor = System.Drawing.Color.White;
+            this.btnPanel.UseVisualStyleBackColor = false;
+            // 
+            // btnMotorSpin
+            // 
+            this.btnMotorSpin.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnMotorSpin.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnMotorSpin.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnMotorSpin.BorderRadius = 10;
+            this.btnMotorSpin.BorderSize = 0;
+            this.btnMotorSpin.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnMotorSpin.FlatAppearance.BorderSize = 0;
+            this.btnMotorSpin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMotorSpin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMotorSpin.ForeColor = System.Drawing.Color.White;
+            this.btnMotorSpin.Location = new System.Drawing.Point(184, 96);
+            this.btnMotorSpin.Name = "btnMotorSpin";
+            this.btnMotorSpin.Size = new System.Drawing.Size(175, 72);
+            this.btnMotorSpin.TabIndex = 9;
+            this.btnMotorSpin.Tag = "2";
+            this.btnMotorSpin.Text = "Motor Spin";
+            this.btnMotorSpin.TextColor = System.Drawing.Color.White;
+            this.btnMotorSpin.UseVisualStyleBackColor = false;
+            // 
+            // btnBodyB
+            // 
+            this.btnBodyB.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnBodyB.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnBodyB.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnBodyB.BorderRadius = 10;
+            this.btnBodyB.BorderSize = 0;
+            this.btnBodyB.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnBodyB.FlatAppearance.BorderSize = 0;
+            this.btnBodyB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBodyB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBodyB.ForeColor = System.Drawing.Color.White;
+            this.btnBodyB.Location = new System.Drawing.Point(546, 96);
+            this.btnBodyB.Name = "btnBodyB";
+            this.btnBodyB.Size = new System.Drawing.Size(175, 72);
+            this.btnBodyB.TabIndex = 8;
+            this.btnBodyB.Text = "Body B";
+            this.btnBodyB.TextColor = System.Drawing.Color.White;
+            this.btnBodyB.UseVisualStyleBackColor = false;
+            // 
+            // btnDll
+            // 
+            this.btnDll.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnDll.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnDll.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnDll.BorderRadius = 10;
+            this.btnDll.BorderSize = 0;
+            this.btnDll.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnDll.FlatAppearance.BorderSize = 0;
+            this.btnDll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDll.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDll.ForeColor = System.Drawing.Color.White;
+            this.btnDll.Location = new System.Drawing.Point(908, 96);
+            this.btnDll.Name = "btnDll";
+            this.btnDll.Size = new System.Drawing.Size(177, 72);
+            this.btnDll.TabIndex = 7;
+            this.btnDll.Tag = "0";
+            this.btnDll.Text = "Dll";
+            this.btnDll.TextColor = System.Drawing.Color.White;
+            this.btnDll.UseVisualStyleBackColor = false;
+            // 
+            // btnLib
+            // 
+            this.btnLib.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnLib.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnLib.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnLib.BorderRadius = 10;
+            this.btnLib.BorderSize = 0;
+            this.btnLib.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnLib.FlatAppearance.BorderSize = 0;
+            this.btnLib.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLib.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLib.ForeColor = System.Drawing.Color.White;
+            this.btnLib.Location = new System.Drawing.Point(727, 96);
+            this.btnLib.Name = "btnLib";
+            this.btnLib.Size = new System.Drawing.Size(175, 72);
+            this.btnLib.TabIndex = 6;
+            this.btnLib.Text = "Lib";
+            this.btnLib.TextColor = System.Drawing.Color.White;
+            this.btnLib.UseVisualStyleBackColor = false;
+            // 
+            // rdButton6
+            // 
+            this.rdButton6.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.rdButton6.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.rdButton6.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rdButton6.BorderRadius = 10;
+            this.rdButton6.BorderSize = 0;
+            this.rdButton6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rdButton6.FlatAppearance.BorderSize = 0;
+            this.rdButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rdButton6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdButton6.ForeColor = System.Drawing.Color.White;
+            this.rdButton6.Location = new System.Drawing.Point(908, 18);
+            this.rdButton6.Name = "rdButton6";
+            this.rdButton6.Size = new System.Drawing.Size(177, 72);
+            this.rdButton6.TabIndex = 5;
+            this.rdButton6.Text = "Pulsator";
+            this.rdButton6.TextColor = System.Drawing.Color.White;
+            this.rdButton6.UseVisualStyleBackColor = false;
+            // 
+            // btnPulsator
+            // 
+            this.btnPulsator.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnPulsator.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnPulsator.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnPulsator.BorderRadius = 10;
+            this.btnPulsator.BorderSize = 0;
+            this.btnPulsator.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnPulsator.FlatAppearance.BorderSize = 0;
+            this.btnPulsator.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPulsator.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPulsator.ForeColor = System.Drawing.Color.White;
+            this.btnPulsator.Location = new System.Drawing.Point(727, 18);
+            this.btnPulsator.Name = "btnPulsator";
+            this.btnPulsator.Size = new System.Drawing.Size(175, 72);
+            this.btnPulsator.TabIndex = 4;
+            this.btnPulsator.Tag = "1";
+            this.btnPulsator.Text = "Pulsator";
+            this.btnPulsator.TextColor = System.Drawing.Color.White;
+            this.btnPulsator.UseVisualStyleBackColor = false;
+            // 
+            // btnSf
+            // 
+            this.btnSf.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnSf.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnSf.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnSf.BorderRadius = 10;
+            this.btnSf.BorderSize = 0;
+            this.btnSf.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSf.FlatAppearance.BorderSize = 0;
+            this.btnSf.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSf.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSf.ForeColor = System.Drawing.Color.White;
+            this.btnSf.Location = new System.Drawing.Point(546, 18);
+            this.btnSf.Name = "btnSf";
+            this.btnSf.Size = new System.Drawing.Size(175, 72);
+            this.btnSf.TabIndex = 3;
+            this.btnSf.Text = "SF Switch";
+            this.btnSf.TextColor = System.Drawing.Color.White;
+            this.btnSf.UseVisualStyleBackColor = false;
+            // 
+            // btnBaseA
+            // 
+            this.btnBaseA.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnBaseA.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnBaseA.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnBaseA.BorderRadius = 10;
+            this.btnBaseA.BorderSize = 0;
+            this.btnBaseA.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnBaseA.FlatAppearance.BorderSize = 0;
+            this.btnBaseA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBaseA.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBaseA.ForeColor = System.Drawing.Color.White;
+            this.btnBaseA.Location = new System.Drawing.Point(365, 18);
+            this.btnBaseA.Name = "btnBaseA";
+            this.btnBaseA.Size = new System.Drawing.Size(175, 72);
+            this.btnBaseA.TabIndex = 2;
+            this.btnBaseA.Text = "Base A";
+            this.btnBaseA.TextColor = System.Drawing.Color.White;
+            this.btnBaseA.UseVisualStyleBackColor = false;
+            // 
+            // btnTubA
+            // 
+            this.btnTubA.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnTubA.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnTubA.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnTubA.BorderRadius = 10;
+            this.btnTubA.BorderSize = 0;
+            this.btnTubA.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnTubA.FlatAppearance.BorderSize = 0;
+            this.btnTubA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTubA.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTubA.ForeColor = System.Drawing.Color.White;
+            this.btnTubA.Location = new System.Drawing.Point(184, 18);
+            this.btnTubA.Name = "btnTubA";
+            this.btnTubA.Size = new System.Drawing.Size(175, 72);
+            this.btnTubA.TabIndex = 1;
+            this.btnTubA.Tag = "3";
+            this.btnTubA.Text = "Tub A";
+            this.btnTubA.TextColor = System.Drawing.Color.White;
+            this.btnTubA.UseVisualStyleBackColor = false;
+            // 
+            // btnTop
+            // 
+            this.btnTop.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnTop.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnTop.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnTop.BorderRadius = 10;
+            this.btnTop.BorderSize = 0;
+            this.btnTop.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnTop.FlatAppearance.BorderSize = 0;
+            this.btnTop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTop.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTop.ForeColor = System.Drawing.Color.White;
+            this.btnTop.Location = new System.Drawing.Point(3, 18);
+            this.btnTop.Name = "btnTop";
+            this.btnTop.Size = new System.Drawing.Size(175, 72);
+            this.btnTop.TabIndex = 0;
+            this.btnTop.Tag = "2";
+            this.btnTop.Text = "Top Defect";
+            this.btnTop.TextColor = System.Drawing.Color.White;
+            this.btnTop.UseVisualStyleBackColor = false;
+            // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.ColumnCount = 1;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.Controls.Add(this.dataGridView1, 0, 0);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 322);
+            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 1;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(1088, 269);
+            this.tableLayoutPanel4.TabIndex = 6;
             // 
             // DefectView
             // 
@@ -672,17 +675,17 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private Component.RdButton btnLogout;
         private Component.RdButton btnSetting;
-        private Component.RdButton rdButton12;
-        private Component.RdButton rdButton11;
-        private Component.RdButton rdButton10;
-        private Component.RdButton rdButton9;
-        private Component.RdButton btnEdit;
-        private Component.RdButton rdButton7;
+        private Component.RdButton btnMotorWash;
+        private Component.RdButton btnPanel;
+        private Component.RdButton btnMotorSpin;
+        private Component.RdButton btnBodyB;
+        private Component.RdButton btnDll;
+        private Component.RdButton btnLib;
         private Component.RdButton rdButton6;
         private Component.RdButton btnPulsator;
-        private Component.RdButton rdButton4;
-        private Component.RdButton rdButton3;
-        private Component.RdButton rdButton2;
+        private Component.RdButton btnSf;
+        private Component.RdButton btnBaseA;
+        private Component.RdButton btnTubA;
         private System.Windows.Forms.DataGridViewButtonColumn Edit;
     }
 }

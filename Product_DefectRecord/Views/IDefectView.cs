@@ -24,10 +24,10 @@ namespace Product_DefectRecord.Views
         event EventHandler ClearEvent;
         event TopDefectEventHandler DefectFilterEvent;
         event EventHandler EditButtonClicked;
-        event EventHandler<DataGridViewCellEventArgs> CellClicked;
+        event EventHandler CellClicked;
 
         void FilterByPartId(int partId);
-        void ShowPopupForm(IEditDefect selectDefect);
+        void ShowPopupForm();
 
         void SetDefectListBindingSource(BindingSource defectList);
         void Show();

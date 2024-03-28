@@ -30,14 +30,17 @@ namespace Product_DefectRecord.Views
             btnSave.Click += delegate
             {
                 SaveDefectEvent?.Invoke(this, EventArgs.Empty);
+                if (isSuccessful)
+                {
+                    MessageBox.Show("Berhasil");
+                }
+                MessageBox.Show("Gagal");
             };
 
             //cancle
             btnCancle.Click += delegate
             {
-                CancleEvent?.Invoke(this, EventArgs.Empty);
-                DefectView view = new DefectView();
-                view.Show();
+                this.Close();
             };
         }
 
@@ -75,20 +78,10 @@ namespace Product_DefectRecord.Views
             set { textDefectName.Text = value; }
         }
 
-        public string SearchValue { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-
-        public event EventHandler SearchEvent;
         public event EventHandler AddEvent;
         public event EventHandler EditEvent;
         public event EventHandler SaveDefectEvent;
         public event EventHandler DeleteEvent;
         public event EventHandler CancleEvent;
-
-        private void SetDefect(DefectModel defect)
-        {
-            textDefectId.Text = defect.Id1.ToString();
-            textPartId.Text = defect.PartId1;
-            textDefectName.Text = defect.DefectName1;
-        }
     }
 }
