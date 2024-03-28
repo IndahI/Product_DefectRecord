@@ -22,5 +22,6 @@ namespace Product_DefectRecord.Views
         event EventHandler SaveDefectEvent;
         event EventHandler DeleteEvent;
         event EventHandler CancleEvent;
+        event EventHandler EditButtonClicked;
     }
 }

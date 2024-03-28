@@ -16,6 +16,8 @@ namespace Product_DefectRecord.Views
     public partial class DefectView : Form, IDefectView
     {
         private TcpServerWrapper serverWrapper;
+        private bool isEdit;
+        private bool isSuccessful;
 
         public DefectView()
         {
@@ -52,6 +54,17 @@ namespace Product_DefectRecord.Views
         {
             get { return btnStatus.Text; }
             set { btnStatus.Text = value; }
+        }
+
+        public bool IsEdit 
+        {
+            get { return isEdit; }
+            set { isEdit = value; }
+        }
+        public bool IsSuccessful 
+        {
+            get { return isSuccessful; } 
+            set { isSuccessful = value; }
         }
 
         // Call this method when you need to perform a model search
@@ -151,6 +164,8 @@ namespace Product_DefectRecord.Views
                 {
                     // Panggil event EditButtonClicked dan kirimkan data yang diperlukan
                     EditButtonClicked?.Invoke(this, new EventArgs());
+                    EditDefectName editDefect = new EditDefectName();
+                    editDefect.ShowDialog();
                 }
                 else
                 {

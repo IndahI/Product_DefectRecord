@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Reflection;
 
 namespace Product_DefectRecord.Presenters
 {
@@ -30,7 +31,7 @@ namespace Product_DefectRecord.Presenters
             this.view.SearchModelNumber += SearchModelNumber;
             this.view.ClearEvent += ClearAction;
             this.view.DefectFilterEvent += LoadFilterDefect;
-            this.view.EditButtonClicked += EditAction;
+            //this.view.EditButtonClicked += EditAction;
             this.view.CellClicked += CellClicked;
             //set defect binding source
             this.view.SetDefectListBindingSource(defectsBindingSource);
@@ -50,24 +51,25 @@ namespace Product_DefectRecord.Presenters
             popUp.Show();
         }
 
-        private void EditAction(object sender, EventArgs e)
-        {
-            //editDefectPresenter.HandleEditDefect();
-            if (defectsBindingSource.Current != null)
-            {
-                var defect = (DefectModel)defectsBindingSource.Current;
-                EditDefectName editDefect = new EditDefectName();
-                editDefect.DefectId = defect.Id1.ToString();
-                editDefect.PartId = defect.PartId1;
-                editDefect.DefectName = defect.DefectName1;
-                editDefect.IsEdit = true;
-                editDefect.Show();
-            }
-            else
-            {
-                MessageBox.Show("gagal");
-            }
-        }
+        //private void EditAction(object sender, EventArgs e)
+        //{
+        //    editDefectPresenter.HandleEditDefect();
+        //    if (defectsBindingSource.Current != null)
+        //    {
+        //        var defect = (DefectModel)defectsBindingSource.Current;
+        //        EditDefectName editDefect = new EditDefectName();
+        //        editDefect.DefectId = defect.Id1.ToString();
+        //        editDefect.PartId = defect.PartId1;
+        //        editDefect.DefectName = defect.DefectName1;
+        //        editDefect.IsEdit = true;
+        //        view.IsEdit = true;
+        //        editDefect.Show();
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("gagal disni");
+        //    }
+        //}
 
         private void LoadFilterDefect(object sender, EventArgs e, int id)
         {

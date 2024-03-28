@@ -12,12 +12,12 @@ namespace Product_DefectRecord.Views
     {
 
         //properties - fields
-
-
         string SerialNumber { get; set; }
         string ModelCode { get; set; }
         string ModelNumber { get; set; }
         string StatusText { get; set; }
+        bool IsEdit { get; set; }
+        bool IsSuccessful { get; set; }
 
         //event
         event EventHandler<ModelEventArgs> SearchModelNumber;

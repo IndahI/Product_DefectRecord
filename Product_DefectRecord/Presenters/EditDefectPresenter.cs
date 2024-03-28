@@ -29,11 +29,12 @@ namespace Product_DefectRecord.Presenters
             this.Edit.SaveDefectEvent += SaveDefectEvent;
             this.Edit.CancleEvent += CancleAction;
             this.view.CellClicked += CellClicked;
+            this.view.EditButtonClicked += EditAction;
             this.view.SetDefectListBindingSource(defectsBindingSource);
             loadAllDefectList();
         }
 
-        public void HandleEditDefect()
+        private void EditAction(object sender, EventArgs e)
         {
             if (defectsBindingSource.Current != null)
             {
@@ -41,14 +42,33 @@ namespace Product_DefectRecord.Presenters
                 Edit.DefectId = defect.Id1.ToString();
                 Edit.PartId = defect.PartId1;
                 Edit.DefectName = defect.DefectName1;
+                Edit.DefectName = "cotoh";
                 Edit.IsEdit = true;
                 //Edit.Show();
+                
             }
             else
             {
-                MessageBox.Show("gagal");
+                MessageBox.Show("gagal disni");
             }
         }
+
+        //public void HandleEditDefect()
+        //{
+        //    if (defectsBindingSource.Current != null)
+        //    {
+        //        var defect = (DefectModel)defectsBindingSource.Current;
+        //        Edit.DefectId = defect.Id1.ToString();
+        //        Edit.PartId = defect.PartId1;
+        //        Edit.DefectName = defect.DefectName1;
+        //        Edit.IsEdit = true;
+        //        //Edit.Show();
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("gagal");
+        //    }
+        //}
 
         private void CellClicked(object sender, EventArgs e)
         {
@@ -79,6 +99,7 @@ namespace Product_DefectRecord.Presenters
             model.Id1 = Convert.ToInt32(Edit.DefectId);
             model.PartId1 = Edit.PartId;
             model.DefectName1 = Edit.DefectName;
+            Console.WriteLine("ini defect" +Edit.DefectName);
 
             try
             {
@@ -86,7 +107,7 @@ namespace Product_DefectRecord.Presenters
                 if (Edit.IsEdit)//edit model
                 {
                     Repository.Edit(model);
-                    Edit.Message = "Defect terlah terubah";
+                    Edit.Message = "Defect telah terubah";
                 }
                 Edit.IsSuccessful = true;
                 loadAllDefectList();
@@ -96,6 +117,16 @@ namespace Product_DefectRecord.Presenters
             {
                 Edit.IsSuccessful = false;
                 Edit.Message = ex.Message;
+            }
+
+            // Setelah penyimpanan, tampilkan MessageBox sesuai hasil
+            if (Edit.IsSuccessful)
+            {
+                MessageBox.Show("Berhasil");
+            }
+            else
+            {
+                MessageBox.Show("Gagal: " + Edit.Message); // Tampilkan pesan kesalahan
             }
         }
 

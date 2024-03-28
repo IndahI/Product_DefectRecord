@@ -34,7 +34,7 @@ namespace Product_DefectRecord.Views
                 {
                     MessageBox.Show("Berhasil");
                 }
-                MessageBox.Show("Gagal");
+                MessageBox.Show("Gagal diEdit");
             };
 
             //cancle
@@ -83,5 +83,6 @@ namespace Product_DefectRecord.Views
         public event EventHandler SaveDefectEvent;
         public event EventHandler DeleteEvent;
         public event EventHandler CancleEvent;
+        public event EventHandler EditButtonClicked;
     }
 }
