@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static Product_DefectRecord.Presenters.DefectPresenter;
+using static Product_DefectRecord.Presenters.DefectListPresenter;
 
 namespace Product_DefectRecord.Views
 {
-    public interface IDefectView
+    public interface IDefectListView
     {
 
         //properties - fields
@@ -16,8 +12,6 @@ namespace Product_DefectRecord.Views
         string ModelCode { get; set; }
         string ModelNumber { get; set; }
         string StatusText { get; set; }
-        bool IsEdit { get; set; }
-        bool IsSuccessful { get; set; }
 
         //event
         event EventHandler<ModelEventArgs> SearchModelNumber;
@@ -26,10 +20,9 @@ namespace Product_DefectRecord.Views
         event EventHandler EditButtonClicked;
         event EventHandler CellClicked;
 
+        void SetDefectListBindingSource(BindingSource defectList);
         void FilterByPartId(int partId);
         void ShowPopupForm();
-
-        void SetDefectListBindingSource(BindingSource defectList);
         void Show();
     }
 

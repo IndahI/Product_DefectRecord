@@ -1,25 +1,16 @@
 ﻿using Product_DefectRecord.Models;
-using Product_DefectRecord.Presenters;
+using Product_DefectRecord.Views;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static Product_DefectRecord.Presenters.DefectPresenter;
+using static Product_DefectRecord.Presenters.DefectListPresenter;
 
 namespace Product_DefectRecord.Views
 {
-    public partial class DefectView : Form, IDefectView
+    public partial class DefectListView : Form, IDefectListView
     {
         private TcpServerWrapper serverWrapper;
-        private bool isEdit;
-        private bool isSuccessful;
 
-        public DefectView()
+        public DefectListView()
         {
             InitializeComponent();
             AssociateAndRaiseViewEvents();
@@ -54,17 +45,6 @@ namespace Product_DefectRecord.Views
         {
             get { return btnStatus.Text; }
             set { btnStatus.Text = value; }
-        }
-
-        public bool IsEdit 
-        {
-            get { return isEdit; }
-            set { isEdit = value; }
-        }
-        public bool IsSuccessful 
-        {
-            get { return isSuccessful; } 
-            set { isSuccessful = value; }
         }
 
         // Call this method when you need to perform a model search
@@ -145,10 +125,8 @@ namespace Product_DefectRecord.Views
 
             textBoxSerial.TextChanged += (sender, e) =>
             {
-                // Periksa apakah textBoxSerial berisi data
                 if (!string.IsNullOrWhiteSpace(textBoxSerial.Text))
                 {
-                    // Ubah teks btnStatus menjadi "Print"
                     btnStatus.Text = "Save And Print";
                 }
             };
@@ -162,10 +140,7 @@ namespace Product_DefectRecord.Views
             {
                 if (dataGridView1.Columns[e.ColumnIndex].Name == "Edit")
                 {
-                    // Panggil event EditButtonClicked dan kirimkan data yang diperlukan
                     EditButtonClicked?.Invoke(this, new EventArgs());
-                    EditDefectName editDefect = new EditDefectName();
-                    editDefect.ShowDialog();
                 }
                 else
                 {
@@ -183,54 +158,6 @@ namespace Product_DefectRecord.Views
                 Setting setting = new Setting();
                 setting.Show();
             };
-            /*//search
-            btnClose.Click += delegate { SearchEvent?.Invoke(this, EventArgs.Empty); };
-            textSearch.KeyDown += (s, e) =>
-            {
-                if (e.KeyCode == Keys.Enter)
-                    SearchEvent?.Invoke(this, EventArgs.Empty);
-            };
-
-            //Add New
-            btnAdd.Click += delegate
-            {
-                AddEvent?.Invoke(this, EventArgs.Empty);
-                tabControl1.TabPages.Remove(tabPage1);
-                tabControl1.TabPages.Add(tabPage2);
-                tabPage2.Text = "Add new Defect";
-            };
-
-            //Delete
-            btnDelete.Click += delegate
-            {
-                var result = MessageBox.Show("Yakin untuk menghapus", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if (result == DialogResult.Yes)
-                {
-                    DeleteEvent?.Invoke(this, EventArgs.Empty);
-                    MessageBox.Show(Message);
-                }
-            };
-
-            //saveNewItem
-            btnNewSave.Click += delegate
-            {
-                SaveEvent?.Invoke(this, EventArgs.Empty);
-                if (isSuccessful)
-                {
-                    tabControl1.TabPages.Remove(tabPage2);
-                    tabControl1.TabPages.Add(tabPage1);
-                }
-                MessageBox.Show(Message);
-            };
-
-            
-
-
-            //print
-            btnPrint.Click += delegate
-            {
-                PrintEvent?.Invoke(this, EventArgs.Empty);
-            };*/
         }
 
         public void SetDefectListBindingSource(BindingSource defectList)
@@ -245,7 +172,7 @@ namespace Product_DefectRecord.Views
 
         public void ShowPopupForm()
         {
-            PopUp popupForm = new PopUp();
+            DetailDefectView popupForm = new DetailDefectView();
             popupForm.ShowDialog();
         }
     }

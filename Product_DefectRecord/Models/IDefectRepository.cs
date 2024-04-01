@@ -8,7 +8,7 @@ namespace Product_DefectRecord.Models
 {
     public interface IDefectRepository
     {
-        void Add(DefectModel defectmodel);
+        void Add(dynamic model);
         void Edit(DefectModel defectmodel);
         void Delete(int Id);
 

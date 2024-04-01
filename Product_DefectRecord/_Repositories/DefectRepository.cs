@@ -3,9 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Reflection;
 
 namespace Product_DefectRecord._Repositories
 {
@@ -16,17 +14,19 @@ namespace Product_DefectRecord._Repositories
         {
             this.connectionString = connetionString;
         }
-        public void Add(DefectModel defectmodel)
+        public void Add(dynamic model)
         {
             using (var connection = new SqlConnection(connectionString))
             using (var command = new SqlCommand())
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "INSERT INTO Defect_Names values (@Id, @PartId, @DefectName)";
-                command.Parameters.Add("@Id", SqlDbType.Int).Value = defectmodel.Id1;
-                command.Parameters.Add("@PartId", SqlDbType.VarChar).Value = defectmodel.PartId1;
-                command.Parameters.Add("@DefectName", SqlDbType.VarChar).Value = defectmodel.DefectName1;
+                command.CommandText = "INSERT INTO Defect_Results (DateTime, SerialNumber, ModelCode, DefectId, InspectorId) values (@DateTime, @SerialNumber, @ModelCode, @DefectId, @InspectorId)";
+                command.Parameters.Add("@DateTime", SqlDbType.SmallDateTime).Value = DateTime.Now;
+                command.Parameters.Add("@SerialNumber", SqlDbType.VarChar).Value = model.SerialNumber;
+                command.Parameters.Add("@ModelCode", SqlDbType.VarChar).Value = model.ModelCode;
+                command.Parameters.Add("@DefectId", SqlDbType.Int).Value = model.DefectId;
+                command.Parameters.Add("@InspectorId", SqlDbType.VarChar).Value = model.InspectorId;
                 command.ExecuteNonQuery();
             }
         }

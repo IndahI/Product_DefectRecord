@@ -1,6 +1,6 @@
 ﻿namespace Product_DefectRecord.Views
 {
-    partial class DefectView
+    partial class DefectListView
     {
         /// <summary>
         /// Required designer variable.
@@ -630,7 +630,7 @@
             this.tableLayoutPanel4.Size = new System.Drawing.Size(1088, 269);
             this.tableLayoutPanel4.TabIndex = 6;
             // 
-            // DefectView
+            // DefectListView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -638,7 +638,7 @@
             this.Controls.Add(this.tableLayoutPanel4);
             this.Controls.Add(this.tableLayoutPanel3);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "DefectView";
+            this.Name = "DefectListView";
             this.Text = "DefectView";
             this.Load += new System.EventHandler(this.DefectView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

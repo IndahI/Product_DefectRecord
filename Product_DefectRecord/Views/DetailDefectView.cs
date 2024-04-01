@@ -11,9 +11,15 @@ using System.Windows.Forms;
 
 namespace Product_DefectRecord.Views
 {
-    public partial class PopUp : Form, IPopUp
+    public partial class DetailDefectView : Form, IDetailDefectView
     {
-        public PopUp()
+        private string modelCode;
+        private int defectId;
+        private string inspectorId;
+        private string message;
+        public string currentDate = DateTime.Now.ToString("dd/MM/yyyy");
+
+        public DetailDefectView()
         {
             InitializeComponent();
             AssociateAndRaiseViewEvents();
@@ -24,29 +30,51 @@ namespace Product_DefectRecord.Views
             get { return textSerial.Text; }
             set { textSerial.Text = value; }
         }
+        public string ModelCode
+        {
+            get { return modelCode; }
+            set { modelCode = value; }
+        }
         public string ModelNumber
         {
             get { return textModel.Text; }
             set { textModel.Text = value; }
+        }
+        public int DefectId
+        {
+            get { return defectId; }
+            set { defectId = value; }
         }
         public string DefectName
         {
             get { return textDefect.Text; }
             set { textDefect.Text = value; }
         }
-        public string Inspector
+        public string InspectorId
+        {
+            get { return inspectorId; }
+            set { inspectorId = value; }
+        }
+        public string InspectorName
         {
             get { return textInspec.Text; }
             set { textInspec.Text = value; }
         }
-        public string currentDate = DateTime.Now.ToString("dd/MM/yyyy");
+        public string Message
+        {
+            get { return message; }
+            set { message = value; }
+        }
 
-        public event EventHandler SaveDefect;
+        public event EventHandler SaveEvent;
 
         private void AssociateAndRaiseViewEvents()
         {
             btnOk.Click += delegate
             {
+
+                SaveEvent?.Invoke(this, EventArgs.Empty);
+
                 //btnOk.Visible = false;
 
                 PrintDocument pd = new PrintDocument();
@@ -58,8 +86,6 @@ namespace Product_DefectRecord.Views
                 PrintPreviewDialog printPreviewDialog = new PrintPreviewDialog();
                 printPreviewDialog.Document = pd;
                 printPreviewDialog.ShowDialog();
-
-                SaveDefect?.Invoke(this, EventArgs.Empty);
 
                 btnOk.Visible = true;
 
@@ -164,7 +190,7 @@ namespace Product_DefectRecord.Views
 
             // Gambar informasi inspeksi
             e.Graphics.DrawString("Inspection         ", fs1, Brushes.Black, new PointF(xPos, yPos + 56));
-            e.Graphics.DrawString(":" + Inspector, fs1, Brushes.Black, new PointF(xPos + 75, yPos + 55));
+            //e.Graphics.DrawString(":" + Inspector, fs1, Brushes.Black, new PointF(xPos + 75, yPos + 55));
 
             // Data dalam tabel
             string[,] tableData = new string[3, 2] {

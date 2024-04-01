@@ -6,13 +6,19 @@ using System.Threading.Tasks;
 
 namespace Product_DefectRecord.Views
 {
-    public interface IPopUp
+    public interface IDetailDefectView
     {
         string SerialNumber { get; set; }
+        string ModelCode { get; set; }
         string ModelNumber { get; set; }
+        int DefectId { get; set; }
         string DefectName { get; set; }
-        string Inspector { get; set; }
+        string InspectorId { get; set; }
+        string InspectorName { get; set; }
+        string Message { get; set; }
 
-        event EventHandler SaveDefect;
+        event EventHandler SaveEvent;
+
+        void Show();
     }
 }

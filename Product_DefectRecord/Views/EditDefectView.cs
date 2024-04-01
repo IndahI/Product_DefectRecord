@@ -12,13 +12,11 @@ using System.Windows.Forms;
 
 namespace Product_DefectRecord.Views
 {
-    public partial class EditDefectName : Form, IEditDefect
+    public partial class EditDefectView : Form, IEditDefectView
     {
         private string message;
-        private bool isSuccessful;
-        private bool isEdit;
 
-        public EditDefectName()
+        public EditDefectView()
         {
             InitializeComponent();
             AssociateAndRaiseViewEvents();
@@ -29,12 +27,7 @@ namespace Product_DefectRecord.Views
             //SaveDefect
             btnSave.Click += delegate
             {
-                SaveDefectEvent?.Invoke(this, EventArgs.Empty);
-                if (isSuccessful)
-                {
-                    MessageBox.Show("Berhasil");
-                }
-                MessageBox.Show("Gagal diEdit");
+                EditEvent?.Invoke(this, EventArgs.Empty);
             };
 
             //cancle
@@ -44,16 +37,6 @@ namespace Product_DefectRecord.Views
             };
         }
 
-        public bool IsEdit
-        {
-            get { return isEdit; }
-            set { isEdit = value; }
-        }
-        public bool IsSuccessful
-        {
-            get { return isSuccessful; }
-            set { isSuccessful = value; }
-        }
         public string Message
         {
             get { return message; }
@@ -68,8 +51,8 @@ namespace Product_DefectRecord.Views
 
         public string PartId
         {
-            get { return textPartId.Text; }
-            set { textPartId.Text = value; }
+            get { return textPartName.Text; }
+            set { textPartName.Text = value; }
         }
 
         public string DefectName
@@ -78,11 +61,12 @@ namespace Product_DefectRecord.Views
             set { textDefectName.Text = value; }
         }
 
-        public event EventHandler AddEvent;
+        public string PartName 
+        { 
+            get { return textPartName.Text; }
+            set { textPartName.Text = value; }
+        }
+
         public event EventHandler EditEvent;
-        public event EventHandler SaveDefectEvent;
-        public event EventHandler DeleteEvent;
-        public event EventHandler CancleEvent;
-        public event EventHandler EditButtonClicked;
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Product_DefectRecord.Views
 {
-    partial class EditDefectName
+    partial class EditDefectView
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textPartId = new System.Windows.Forms.TextBox();
+            this.textPartName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textDefectId = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -43,16 +43,16 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(33, 109);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 20);
+            this.label1.Size = new System.Drawing.Size(84, 20);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Part Id";
+            this.label1.Text = "Part Name";
             // 
-            // textPartId
+            // textPartName
             // 
-            this.textPartId.Location = new System.Drawing.Point(37, 142);
-            this.textPartId.Name = "textPartId";
-            this.textPartId.Size = new System.Drawing.Size(100, 26);
-            this.textPartId.TabIndex = 1;
+            this.textPartName.Location = new System.Drawing.Point(37, 142);
+            this.textPartName.Name = "textPartName";
+            this.textPartName.Size = new System.Drawing.Size(100, 26);
+            this.textPartName.TabIndex = 1;
             // 
             // label2
             // 
@@ -104,7 +104,7 @@
             this.btnCancle.Text = "Cancle";
             this.btnCancle.UseVisualStyleBackColor = true;
             // 
-            // EditDefectName
+            // EditDefectView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -115,9 +115,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textDefectName);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textPartId);
+            this.Controls.Add(this.textPartName);
             this.Controls.Add(this.label1);
-            this.Name = "EditDefectName";
+            this.Name = "EditDefectView";
             this.Text = "EditDefectName";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -127,7 +127,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textPartId;
+        private System.Windows.Forms.TextBox textPartName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textDefectId;
         private System.Windows.Forms.Label label3;
