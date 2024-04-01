@@ -1,6 +1,6 @@
 ﻿namespace Product_DefectRecord.Views
 {
-    partial class Setting
+    partial class SettingView
     {
         /// <summary>
         /// Required designer variable.

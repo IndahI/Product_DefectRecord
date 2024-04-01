@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Product_DefectRecord.Views
 {
-    public partial class Setting : Form
+    public partial class SettingView : Form
     {
-        public Setting()
+        public SettingView()
         {
             InitializeComponent();
         }
