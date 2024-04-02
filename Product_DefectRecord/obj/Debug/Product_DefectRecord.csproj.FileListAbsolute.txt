@@ -12,7 +12,6 @@ D:\Perkuliahan\Semester6\Panasonic\Product_DefectRecord\Product_DefectRecord\bin
 D:\Perkuliahan\Semester6\Panasonic\Product_DefectRecord\Product_DefectRecord\bin\Debug\Product_DefectRecord.exe
 D:\Perkuliahan\Semester6\Panasonic\Product_DefectRecord\Product_DefectRecord\bin\Debug\Product_DefectRecord.pdb
 D:\Perkuliahan\Semester6\Panasonic\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.csproj.AssemblyReference.cache
-D:\Perkuliahan\Semester6\Panasonic\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.Views.DefectView.resources
 D:\Perkuliahan\Semester6\Panasonic\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.Properties.Resources.resources
 D:\Perkuliahan\Semester6\Panasonic\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.csproj.GenerateResource.cache
 D:\Perkuliahan\Semester6\Panasonic\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.csproj.CoreCompileInputs.cache
@@ -28,11 +27,8 @@ D:\Product_DefectRecord\yg baru\Product_DefectRecord\Product_DefectRecord\obj\De
 D:\Product_DefectRecord\yg baru\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.csproj.CoreCompileInputs.cache
 D:\Product_DefectRecord\yg baru\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.exe
 D:\Product_DefectRecord\yg baru\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.pdb
-D:\Perkuliahan\Semester6\Panasonic\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.Views.PopUp.resources
 D:\Product_DefectRecord\yg baru\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.Views.PopUp.resources
 D:\Product_DefectRecord\yg baru\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.Views.Setting.resources
-D:\Perkuliahan\Semester6\Panasonic\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.Views.Setting.resources
-D:\Perkuliahan\Semester6\Panasonic\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.Views.EditDefectName.resources
 D:\Product_DefectRecord\yg baru\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.Views.EditDefectName.resources
 D:\Perkuliahan\Semester6\Panasonic\ProjectBackup\projectCollabTerbaru\Product_DefectRecord\Product_DefectRecord\bin\Debug\Product_DefectRecord.exe.config
 D:\Perkuliahan\Semester6\Panasonic\ProjectBackup\projectCollabTerbaru\Product_DefectRecord\Product_DefectRecord\bin\Debug\Product_DefectRecord.exe
@@ -73,3 +69,8 @@ D:\Product_DefectRecord\Trial\Product_DefectRecord\Product_DefectRecord\obj\Debu
 D:\Product_DefectRecord\Trial\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.csproj.CoreCompileInputs.cache
 D:\Product_DefectRecord\Trial\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.exe
 D:\Product_DefectRecord\Trial\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.pdb
+D:\Perkuliahan\Semester6\Panasonic\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.Views.DefectListView.resources
+D:\Perkuliahan\Semester6\Panasonic\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.Views.EditDefectView.resources
+D:\Perkuliahan\Semester6\Panasonic\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.Views.DetailDefectView.resources
+D:\Perkuliahan\Semester6\Panasonic\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.Views.SettingView.resources
+D:\Perkuliahan\Semester6\Panasonic\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.Views.LoginView.resources

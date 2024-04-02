@@ -44,7 +44,7 @@ namespace Product_DefectRecord.Views
         private void SettingView_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'lSBUDBDataSet.Locations' table. You can move, or remove it, as needed.
-            this.locationsTableAdapter.Fill(this.lSBUDBDataSet.Locations);
+            //this.locationsTableAdapter.Fill(this.lSBUDBDataSet.Locations);
             LoadSettings?.Invoke(this, EventArgs.Empty);
 
         }

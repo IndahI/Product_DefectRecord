@@ -59,12 +59,15 @@
     <Compile Include="Models\DefectModel.cs" />
     <Compile Include="Models\IDefectRepository.cs" />
     <Compile Include="Models\IModelNumberRepository.cs" />
+    <Compile Include="Models\ILoginRepository.cs" />
     <Compile Include="Models\ModelCode.cs" />
     <Compile Include="Models\SaveModel.cs" />
+    <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Presenters\Common\ModelDataValidation.cs" />
     <Compile Include="Presenters\DefectListPresenter.cs" />
     <Compile Include="Presenters\DetailDefectPresenter.cs" />
     <Compile Include="Presenters\EditDefectPresenter.cs" />
+    <Compile Include="Presenters\LoginPresenter.cs" />
     <Compile Include="Presenters\SettingPresenter.cs" />
     <Compile Include="Views\DefectListView.cs">
       <SubType>Form</SubType>
@@ -86,7 +89,14 @@
     <Compile Include="Views\DetailDefectView.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Views\ILoginView.cs" />
     <Compile Include="Views\ISettingView.cs" />
+    <Compile Include="Views\LoginView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\LoginView.Designer.cs">
+      <DependentUpon>LoginView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\PopUp.Designer.cs">
       <DependentUpon>DetailDefectView.cs</DependentUpon>
     </Compile>
@@ -99,6 +109,7 @@
     <Compile Include="Views\TcpServerWrapper.cs" />
     <Compile Include="_Repositories\BaseRepository.cs" />
     <Compile Include="_Repositories\DefectRepository.cs" />
+    <Compile Include="_Repositories\LoginRepository.cs" />
     <Compile Include="_Repositories\ModelNumberRepository.cs" />
     <EmbeddedResource Include="Views\DefectListView.resx">
       <DependentUpon>DefectListView.cs</DependentUpon>
@@ -115,6 +126,9 @@
     </Compile>
     <EmbeddedResource Include="Views\EditDefectView.resx">
       <DependentUpon>EditDefectView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\LoginView.resx">
+      <DependentUpon>LoginView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\PopUp.resx">
       <DependentUpon>DetailDefectView.cs</DependentUpon>
