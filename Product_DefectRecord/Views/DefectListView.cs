@@ -1,4 +1,5 @@
 ﻿using Product_DefectRecord.Models;
+using Product_DefectRecord.Presenters;
 using Product_DefectRecord.Views;
 using System;
 using System.Windows.Forms;
@@ -155,8 +156,9 @@ namespace Product_DefectRecord.Views
 
             btnSetting.Click += delegate
             {
-                Setting setting = new Setting();
-                setting.Show();
+                ISettingView settingView = new SettingView();
+                SettingPresenter settingPresenter = new SettingPresenter(settingView as SettingView);
+                (settingView as SettingView).Show();
             };
         }
 
