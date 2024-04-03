@@ -1,7 +1,9 @@
-﻿using Product_DefectRecord.Models;
+﻿using Product_DefectRecord._Repositories;
+using Product_DefectRecord.Models;
 using Product_DefectRecord.Presenters;
 using Product_DefectRecord.Views;
 using System;
+using System.Configuration;
 using System.Windows.Forms;
 using static Product_DefectRecord.Presenters.DefectListPresenter;
 
@@ -166,9 +168,10 @@ namespace Product_DefectRecord.Views
 
             btnSetting.Click += delegate
             {
+                string sqlConnectionString = ConfigurationManager.ConnectionStrings["LSBUDBConnection"].ConnectionString;
                 ISettingView settingView = new SettingView();
-                SettingPresenter settingPresenter = new SettingPresenter(settingView as SettingView);
-                (settingView as SettingView).Show();
+                SettingPresenter settingPresenter = new SettingPresenter(settingView, new SettingModel(new SettingRepository(sqlConnectionString)));
+                (settingView as Form)?.Show();
             };
         }
 

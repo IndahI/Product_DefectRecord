@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Product_DefectRecord._Repositories;
+using Product_DefectRecord.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,19 +15,16 @@ namespace Product_DefectRecord.Views
 {
     public partial class SettingView : Form, ISettingView
     {
+        private bool isDataLoaded = false;
         public SettingView()
         {
             InitializeComponent();
-            locationBox.SelectedIndexChanged += (sender, e) => SelectedIndexChanged?.Invoke(sender, e);
-            Load += SettingView_Load;
-            Console.WriteLine("View");
         }
 
-        public int Id { get; set; }
-        public string LocationName 
+        public List<string> LocationNames
         {
-            get { return locationBox.Text; }
-            set { locationBox.Text = value; } 
+            get => locationBox.DataSource as List<string>;
+            set => locationBox.DataSource = value;
         }
 
         public event EventHandler SelectedIndexChanged;
@@ -38,15 +37,27 @@ namespace Product_DefectRecord.Views
 
         public void ShowSelectedItem(string item)
         {
-
         }
 
         private void SettingView_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'lSBUDBDataSet.Locations' table. You can move, or remove it, as needed.
-            //this.locationsTableAdapter.Fill(this.lSBUDBDataSet.Locations);
             LoadSettings?.Invoke(this, EventArgs.Empty);
-
         }
+
+        public void InitializeComboBoxEventHandler()
+        {
+            if (!isDataLoaded)
+            {
+                locationBox.SelectedIndexChanged += (sender, e) => SelectedIndexChanged?.Invoke(sender, e);
+                isDataLoaded = true;
+            }
+        }
+
+        // Panggil method ini setelah data dimuat
+        public void DataLoaded()
+        {
+            InitializeComboBoxEventHandler();
+        }
+
     }
 }

@@ -74,3 +74,4 @@ D:\Perkuliahan\Semester6\Panasonic\Product_DefectRecord\Product_DefectRecord\obj
 D:\Perkuliahan\Semester6\Panasonic\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.Views.DetailDefectView.resources
 D:\Perkuliahan\Semester6\Panasonic\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.Views.SettingView.resources
 D:\Perkuliahan\Semester6\Panasonic\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.Views.LoginView.resources
+D:\Product_DefectRecord\versi april\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.Views.LoginView.resources

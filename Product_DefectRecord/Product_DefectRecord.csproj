@@ -60,9 +60,11 @@
     <Compile Include="Models\IDefectRepository.cs" />
     <Compile Include="Models\IModelNumberRepository.cs" />
     <Compile Include="Models\ILoginRepository.cs" />
+    <Compile Include="Models\ISettingRepository.cs" />
     <Compile Include="Models\ModelCode.cs" />
     <Compile Include="Models\SaveModel.cs" />
     <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="Models\SettingModel.cs" />
     <Compile Include="Presenters\Common\ModelDataValidation.cs" />
     <Compile Include="Presenters\DefectListPresenter.cs" />
     <Compile Include="Presenters\DetailDefectPresenter.cs" />
@@ -111,6 +113,7 @@
     <Compile Include="_Repositories\DefectRepository.cs" />
     <Compile Include="_Repositories\LoginRepository.cs" />
     <Compile Include="_Repositories\ModelNumberRepository.cs" />
+    <Compile Include="_Repositories\SettingRepository.cs" />
     <EmbeddedResource Include="Views\DefectListView.resx">
       <DependentUpon>DefectListView.cs</DependentUpon>
     </EmbeddedResource>

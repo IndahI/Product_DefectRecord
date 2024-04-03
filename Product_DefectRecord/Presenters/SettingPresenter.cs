@@ -1,4 +1,5 @@
-﻿using Product_DefectRecord.Models;
+﻿using Product_DefectRecord._Repositories;
+using Product_DefectRecord.Models;
 using Product_DefectRecord.Views;
 using System;
 using System.Collections.Generic;
@@ -14,44 +15,47 @@ namespace Product_DefectRecord.Presenters
 {
     public class SettingPresenter
     {
-        private ISettingView _settingView;
-        private SaveModel _model;
-        private string _selectedLocationName; // Menyimpan selectedLocationName di properti kelas
-
-        public SettingPresenter(ISettingView settingView)
+        private ISettingView _view;
+        private SettingModel _model;
+        private SaveModel _smodel;
+        public SettingPresenter(ISettingView view, SettingModel model)
         {
-            _settingView = settingView;
-            _model = new SaveModel();
-            _settingView.LoadSettings += OnLoadSettings;
-            _settingView.SelectedIndexChanged += View_SelectedIndexChanged;
-            Console.WriteLine("Presenter");
+            _view = view;
+            _model = model;
+            _smodel = new SaveModel();
+
+            // Subscribe to the view's events
+            _view.SelectedIndexChanged += View_SelectedIndexChanged;
+            _view.LoadSettings += View_LoadSettings;
+        }
+
+        private void View_LoadSettings(object sender, EventArgs e)
+        {
+            LoadLocationNames();
+        }
+
+        private void LoadLocationNames()
+        {
+            List<string> locationNames = _model.GetLocationNames();
+            _view.LocationNames = locationNames;
+            string loadedSetting = _smodel.LoadSetting();
+            _view.DisplaySetting(loadedSetting);
+
+            // After loading settings, notify the view that data is loaded
+            _view.DataLoaded();
         }
 
         private void View_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ComboBox comboBox = (ComboBox)sender;
+            ComboBox comboBox = sender as ComboBox;
 
-            // Check if any item is selected
             if (comboBox.SelectedItem != null)
             {
-                // Get the selected item (assuming the data source is a DataRowView)
-                DataRowView selectedItem = (DataRowView)comboBox.SelectedItem;
-
-                // Access column values by DisplayMember and ValueMember
-                //int selectedId = (int)selectedItem["id"]; // Use ValueMember
-                _selectedLocationName = (string)selectedItem["LocationName"]; // Simpan selectedLocationName ke properti kelas
-                _settingView.ShowSelectedItem(_selectedLocationName);
-                _model.SaveSetting(_selectedLocationName); // Menggunakan nilai selectedLocationName dari properti kelas
+                string selectedLocationName = comboBox.SelectedItem.ToString();
+                _view.ShowSelectedItem(selectedLocationName);
+                _smodel.SaveSetting(selectedLocationName);
+                // You may need to add saving logic here if it's not handled by the model
             }
-            else{}
         }
-
-
-        private void OnLoadSettings(object sender, EventArgs e)
-        {
-            string loadedSetting = _model.LoadSetting();
-            _settingView.DisplaySetting(loadedSetting);
-        }
-
     }
 }
