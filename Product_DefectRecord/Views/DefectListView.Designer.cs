@@ -38,7 +38,7 @@
             this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxInspector = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.btnStatus = new Product_DefectRecord.Component.RdButton();
@@ -171,7 +171,7 @@
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 66.66666F));
-            this.tableLayoutPanel2.Controls.Add(this.textBox1, 1, 3);
+            this.tableLayoutPanel2.Controls.Add(this.textBoxInspector, 1, 3);
             this.tableLayoutPanel2.Controls.Add(this.label2, 0, 3);
             this.tableLayoutPanel2.Controls.Add(this.textBoxSerial, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.textBoxModel, 1, 1);
@@ -191,14 +191,14 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(534, 138);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
-            // textBox1
+            // textBoxInspector
             // 
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.Location = new System.Drawing.Point(181, 105);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(350, 26);
-            this.textBox1.TabIndex = 3;
+            this.textBoxInspector.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxInspector.Location = new System.Drawing.Point(181, 105);
+            this.textBoxInspector.Name = "textBoxInspector";
+            this.textBoxInspector.ReadOnly = true;
+            this.textBoxInspector.Size = new System.Drawing.Size(350, 26);
+            this.textBoxInspector.TabIndex = 3;
             // 
             // label2
             // 
@@ -663,7 +663,7 @@
         private System.Windows.Forms.TextBox textBoxSerial;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxInspector;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;

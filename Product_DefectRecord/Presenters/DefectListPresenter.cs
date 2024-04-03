@@ -15,11 +15,13 @@ namespace Product_DefectRecord.Presenters
         private BindingSource defectsBindingSource;
         private IEnumerable<DefectModel> defectList;
 
-        public DefectListPresenter(IDefectListView view, IDefectRepository defectRepository, IModelNumberRepository modelNumberRepository)
+        public DefectListPresenter(IDefectListView view, IDefectRepository defectRepository, IModelNumberRepository modelNumberRepository, LoginModel user)
         {
             this.view = view;
             this.defectRepository = defectRepository;
             this.modelNumberRepository = modelNumberRepository;
+            this.view.InspectorId = user.Nik;
+            this.view.Inspector = user.Name;
             this.view.SearchModelNumber += SearchModelNumber;
             this.view.ClearEvent += ClearAction;
             this.view.DefectFilterEvent += LoadFilterDefect;
@@ -37,15 +39,15 @@ namespace Product_DefectRecord.Presenters
             var defect = (DefectModel)defectsBindingSource.Current;
             var detailDefect = new
             {
-                //SerialNumber = view.SerialNumber,
-                //ModelNumber = view.ModelNumber,
-                SerialNumber = "4DW145CV1",
-                ModelCode = "4D",
-                ModelNumber = "NA-W145FCV1",
+                SerialNumber = view.SerialNumber,
+                ModelNumber = view.ModelNumber,
+                //SerialNumber = "4DW145CV1",
+                ModelCode = "4c",
+                //ModelNumber = "NA-W145FCV1",
                 DefectId = defect.Id1,
                 DefectName = defect.DefectName1,
-                InspectorId = "6875",
-                Inspector = "",
+                InspectorId = view.InspectorId,
+                Inspector = view.Inspector,
             };
             new DetailDefectPresenter(new DetailDefectView(), defectRepository, detailDefect);
         }

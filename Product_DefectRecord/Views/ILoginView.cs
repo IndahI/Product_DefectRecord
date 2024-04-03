@@ -11,7 +11,6 @@ namespace Product_DefectRecord.Views
         string Nik { get; }
         string Name { get; }
         string Password { get; }
-
         bool IsLoginSuccessful { get; }
         void ShowMessage(string message);
         event EventHandler Login;

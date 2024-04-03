@@ -11,6 +11,8 @@ namespace Product_DefectRecord.Views
         string SerialNumber { get; set; }
         string ModelCode { get; set; }
         string ModelNumber { get; set; }
+        string InspectorId { get; set; }
+        string Inspector { get; set; }
         string StatusText { get; set; }
 
         //event

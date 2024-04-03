@@ -1,10 +1,8 @@
-﻿using Product_DefectRecord.Models;
+﻿using Product_DefectRecord._Repositories;
+using Product_DefectRecord.Models;
 using Product_DefectRecord.Views;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Configuration;
 
 namespace Product_DefectRecord.Presenters
 {
@@ -17,19 +15,23 @@ namespace Product_DefectRecord.Presenters
         {
             _view = view;
             _userRepository = userRepository;
-            _view.Login += PerformLogin;
+            _view.Login += Login;
         }
 
-        private void PerformLogin(object sender, EventArgs e)
+        private void Login(object sender, EventArgs e)
         {
             string nik = _view.Nik;
             string password = _view.Password;
 
             LoginModel user = _userRepository.GetUserByUsername(nik);
 
-            if (user.Nik != null && user.Password == password)
+            if (user?.Nik != null && user?.Password == password)
             {
-                _view.ShowMessage("Login successful");
+                string sqlConnectionString = ConfigurationManager.ConnectionStrings["LSBUDBConnection"].ConnectionString;
+                IDefectListView defectListView = new DefectListView();
+                IDefectRepository defectRepository = new DefectRepository(sqlConnectionString);
+                IModelNumberRepository modelNumberRepository = new ModelNumberRepository(sqlConnectionString);
+                new DefectListPresenter(defectListView, defectRepository, modelNumberRepository, user);
             }
             else
             {

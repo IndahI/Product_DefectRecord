@@ -10,7 +10,7 @@ namespace Product_DefectRecord.Views
     public partial class DefectListView : Form, IDefectListView
     {
         private TcpServerWrapper serverWrapper;
-
+        private string inspectorId;
         public DefectListView()
         {
             InitializeComponent();
@@ -41,7 +41,17 @@ namespace Product_DefectRecord.Views
             get { return textBoxCode.Text; }
             set { textBoxCode.Text = value; }
         }
-        
+        public string InspectorId
+        {
+            get { return inspectorId; }
+            set { inspectorId = value; }
+        }
+        public string Inspector
+        {
+            get { return textBoxInspector.Text; }
+            set { textBoxInspector.Text = value; }
+        }
+
         public string StatusText
         {
             get { return btnStatus.Text; }
