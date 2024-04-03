@@ -21,6 +21,11 @@ namespace Product_DefectRecord._Repositories
             {
                 connection.Open();
                 command.Connection = connection;
+
+                //command.CommandText = "SELECT Nik FROM Users WHERE Name = @InspectorName";
+                //command.Parameters.Add("@InspectorName", SqlDbType.VarChar).Value = model.InspectorName;
+                //int inspectorId = (int)command.ExecuteScalar();
+
                 command.CommandText = "INSERT INTO Defect_Results (DateTime, SerialNumber, ModelCode, DefectId, InspectorId) values (@DateTime, @SerialNumber, @ModelCode, @DefectId, @InspectorId)";
                 command.Parameters.Add("@DateTime", SqlDbType.SmallDateTime).Value = DateTime.Now;
                 command.Parameters.Add("@SerialNumber", SqlDbType.VarChar).Value = model.SerialNumber;

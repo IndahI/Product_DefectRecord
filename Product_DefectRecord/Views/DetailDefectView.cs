@@ -190,7 +190,7 @@ namespace Product_DefectRecord.Views
 
             // Gambar informasi inspeksi
             e.Graphics.DrawString("Inspection         ", fs1, Brushes.Black, new PointF(xPos, yPos + 56));
-            //e.Graphics.DrawString(":" + Inspector, fs1, Brushes.Black, new PointF(xPos + 75, yPos + 55));
+            e.Graphics.DrawString(":" + InspectorName, fs1, Brushes.Black, new PointF(xPos + 75, yPos + 55));
 
             // Data dalam tabel
             string[,] tableData = new string[3, 2] {

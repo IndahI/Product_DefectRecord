@@ -42,7 +42,7 @@ namespace Product_DefectRecord.Presenters
                 SerialNumber = view.SerialNumber,
                 ModelNumber = view.ModelNumber,
                 //SerialNumber = "4DW145CV1",
-                ModelCode = "4c",
+                ModelCode = view.ModelCode,
                 //ModelNumber = "NA-W145FCV1",
                 DefectId = defect.Id1,
                 DefectName = defect.DefectName1,
