@@ -40,13 +40,8 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.locationBox = new System.Windows.Forms.ComboBox();
-            this.locationsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.lSBUDBDataSet = new Product_DefectRecord.LSBUDBDataSet();
-            this.locationsTableAdapter = new Product_DefectRecord.LSBUDBDataSetTableAdapters.LocationsTableAdapter();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.locationsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lSBUDBDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // radioButton1
@@ -179,7 +174,6 @@
             // 
             // locationBox
             // 
-            this.locationBox.DataSource = this.locationsBindingSource;
             this.locationBox.DisplayMember = "LocationName";
             this.locationBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.locationBox.FormattingEnabled = true;
@@ -189,19 +183,6 @@
             this.locationBox.TabIndex = 9;
             this.locationBox.ValueMember = "Id";
             // 
-            // locationsBindingSource
-            // 
-            this.locationsBindingSource.DataMember = "Locations";
-            this.locationsBindingSource.DataSource = this.lSBUDBDataSet;
-            // 
-            // lSBUDBDataSet
-            // 
-            this.lSBUDBDataSet.DataSetName = "LSBUDBDataSet";
-            this.lSBUDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // locationsTableAdapter
-            // 
-            this.locationsTableAdapter.ClearBeforeFill = true;
             // 
             // SettingView
             // 
@@ -216,8 +197,6 @@
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.locationsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lSBUDBDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -235,8 +214,5 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.ComboBox locationBox;
-        private LSBUDBDataSet lSBUDBDataSet;
-        private System.Windows.Forms.BindingSource locationsBindingSource;
-        private LSBUDBDataSetTableAdapters.LocationsTableAdapter locationsTableAdapter;
     }
 }
