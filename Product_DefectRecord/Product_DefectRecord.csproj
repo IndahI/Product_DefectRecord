@@ -122,14 +122,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Views\DetailDefectView.resx">
+      <DependentUpon>DetailDefectView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\EditDefectView.resx">
       <DependentUpon>EditDefectView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\LoginView.resx">
       <DependentUpon>LoginView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\PopUp.resx">
-      <DependentUpon>DetailDefectView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\SettingView.resx">
       <DependentUpon>SettingView.cs</DependentUpon>
