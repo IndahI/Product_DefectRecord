@@ -21,8 +21,13 @@ namespace Product_DefectRecord.Views
             InitializeComponent();
         }
 
-        public List<string> LocationNames
+        public void DataLoaded()
         {
+            InitializeComboBoxEventHandler();
+        }
+
+        public List<string> LocationNames
+        {   
             get => locationBox.DataSource as List<string>;
             set => locationBox.DataSource = value;
         }
@@ -37,6 +42,7 @@ namespace Product_DefectRecord.Views
 
         public void ShowSelectedItem(string item)
         {
+            MessageBox.Show(item);
         }
 
         private void SettingView_Load(object sender, EventArgs e)
@@ -53,11 +59,6 @@ namespace Product_DefectRecord.Views
             }
         }
 
-        // Panggil method ini setelah data dimuat
-        public void DataLoaded()
-        {
-            InitializeComboBoxEventHandler();
-        }
 
     }
 }

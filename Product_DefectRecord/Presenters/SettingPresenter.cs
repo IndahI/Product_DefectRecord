@@ -18,6 +18,7 @@ namespace Product_DefectRecord.Presenters
         private ISettingView _view;
         private SettingModel _model;
         private SaveModel _smodel;
+
         public SettingPresenter(ISettingView view, SettingModel model)
         {
             _view = view;
@@ -48,12 +49,14 @@ namespace Product_DefectRecord.Presenters
         private void View_SelectedIndexChanged(object sender, EventArgs e)
         {
             ComboBox comboBox = sender as ComboBox;
+            string location = comboBox.SelectedItem as string;
 
             if (comboBox.SelectedItem != null)
             {
                 string selectedLocationName = comboBox.SelectedItem.ToString();
                 _view.ShowSelectedItem(selectedLocationName);
                 _smodel.SaveSetting(selectedLocationName);
+                Console.WriteLine("isi dari yang dipilih " + location);
                 // You may need to add saving logic here if it's not handled by the model
             }
         }
