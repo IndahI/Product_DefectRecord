@@ -14,6 +14,7 @@ namespace Product_DefectRecord.Presenters
         private IModelNumberRepository modelNumberRepository;
         private BindingSource defectsBindingSource;
         private IEnumerable<DefectModel> defectList;
+        private SaveModel _smodel;
 
         public DefectListPresenter(IDefectListView view, IDefectRepository defectRepository, IModelNumberRepository modelNumberRepository, LoginModel user)
         {
@@ -28,6 +29,7 @@ namespace Product_DefectRecord.Presenters
             this.view.EditButtonClicked += EditButtonClicked;
             this.view.CellClicked += CellClicked;
 
+            _smodel = new SaveModel();
             defectsBindingSource = new BindingSource();
             this.view.SetDefectListBindingSource(defectsBindingSource);
             LoadAllDefectList();
@@ -36,19 +38,20 @@ namespace Product_DefectRecord.Presenters
 
         private void CellClicked(object sender, EventArgs e)
         {
+            int Location = _smodel.LoadId();
             var defect = (DefectModel)defectsBindingSource.Current;
             var detailDefect = new
             {
                 SerialNumber = view.SerialNumber,
                 ModelNumber = view.ModelNumber,
-                //SerialNumber = "4DW145CV1",
                 ModelCode = view.ModelCode,
-                //ModelNumber = "NA-W145FCV1",
                 DefectId = defect.Id1,
                 DefectName = defect.DefectName1,
                 InspectorId = view.InspectorId,
                 Inspector = view.Inspector,
+                Location = Location
             };
+
             new DetailDefectPresenter(new DetailDefectView(), defectRepository, detailDefect);
         }
 

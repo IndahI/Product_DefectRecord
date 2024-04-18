@@ -66,6 +66,11 @@ namespace Product_DefectRecord.Views
             set { message = value; }
         }
 
+        public int Location
+        {
+            get { return int.Parse(textLocation.Text); }
+            set { textLocation.Text = value.ToString(); }
+        }
         public event EventHandler SaveEvent;
 
         private void AssociateAndRaiseViewEvents()

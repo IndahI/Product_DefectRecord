@@ -12,9 +12,9 @@ namespace Product_DefectRecord._Repositories
 {
     public class SettingRepository : BaseRepository, ISettingRepository
     {
-        public SettingRepository(string connetionString)
+        public SettingRepository(string connectionString)
         {
-            this.connectionString = connetionString;
+            this.connectionString = connectionString;
         }
 
         public List<string> GetData()
@@ -39,6 +39,31 @@ namespace Product_DefectRecord._Repositories
             }
 
             return dataList;
+        }
+
+        private int locationId;
+        public int GetID(string locationName)
+        {
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = connection.CreateCommand())
+                {
+                    command.CommandText = "SELECT Id FROM Locations WHERE LocationName = @LocationName";
+                    command.Parameters.AddWithValue("@LocationName", locationName);
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        locationId = Convert.ToInt32(reader["Id"]);
+                    }
+
+                    reader.Close();
+                }
+            }
+
+            return locationId;
         }
     }
 }

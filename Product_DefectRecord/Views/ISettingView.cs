@@ -8,12 +8,18 @@ namespace Product_DefectRecord.Views
 {
     public interface ISettingView
     {
+        // Properties
+        string mode { get; set; }
         List<string> LocationNames { get; set; }
+
+        // Events
         event EventHandler LoadSettings;
         event EventHandler SelectedIndexChanged;
-        void InitializeComboBoxEventHandler();
-        void ShowSelectedItem(string item);
+        event EventHandler HandleRadioButton;
+
+        // Methods
         void DisplaySetting(string myData);
+        void ShowSelectedItem(string item);
         void DataLoaded();
     }
 }

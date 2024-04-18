@@ -3,21 +3,15 @@ using Product_DefectRecord.Models;
 using Product_DefectRecord.Views;
 using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml.Linq;
 
 namespace Product_DefectRecord.Presenters
 {
     public class SettingPresenter
     {
-        private ISettingView _view;
-        private SettingModel _model;
-        private SaveModel _smodel;
+        private readonly ISettingView _view;
+        private readonly SettingModel _model;
+        private readonly SaveModel _smodel;
 
         public SettingPresenter(ISettingView view, SettingModel model)
         {
@@ -28,11 +22,30 @@ namespace Product_DefectRecord.Presenters
             // Subscribe to the view's events
             _view.SelectedIndexChanged += View_SelectedIndexChanged;
             _view.LoadSettings += View_LoadSettings;
+            _view.HandleRadioButton += HandleRadioButton;
         }
 
         private void View_LoadSettings(object sender, EventArgs e)
         {
             LoadLocationNames();
+        }
+
+        private void HandleRadioButton(object sender, EventArgs e)
+        {
+            if (_view.mode == "on")
+                onRadio_Checked();
+            else if (_view.mode == "off")
+                offRadio_Checked();
+        }
+
+        private void onRadio_Checked()
+        {
+            _smodel.SaveData(_view.mode);
+        }
+
+        private void offRadio_Checked()
+        {
+            _smodel.SaveData(_view.mode);
         }
 
         private void LoadLocationNames()
@@ -41,23 +54,30 @@ namespace Product_DefectRecord.Presenters
             _view.LocationNames = locationNames;
             string loadedSetting = _smodel.LoadSetting();
             _view.DisplaySetting(loadedSetting);
+            int loadId = _smodel.LoadId();
 
-            // After loading settings, notify the view that data is loaded
+            // Setelah memuat pengaturan, memberi tahu view bahwa data telah dimuat
             _view.DataLoaded();
         }
 
         private void View_SelectedIndexChanged(object sender, EventArgs e)
         {
             ComboBox comboBox = sender as ComboBox;
-            string location = comboBox.SelectedItem as string;
+            string location = comboBox?.SelectedItem as string;
 
-            if (comboBox.SelectedItem != null)
+            if (comboBox?.SelectedItem != null)
             {
                 string selectedLocationName = comboBox.SelectedItem.ToString();
                 _view.ShowSelectedItem(selectedLocationName);
                 _smodel.SaveSetting(selectedLocationName);
-                Console.WriteLine("isi dari yang dipilih " + location);
-                // You may need to add saving logic here if it's not handled by the model
+
+                // Memeriksa apakah selectedLocationName memiliki nilai sebelum memanggil repo
+                if (!string.IsNullOrEmpty(selectedLocationName))
+                {
+                    // Panggil metode repo di sini dengan selectedLocationName sebagai parameter
+                    int locationId = _model.GetLocationId(selectedLocationName);
+                    _smodel.SaveId(locationId);
+                }
             }
         }
     }

@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
-            this.btnCancle = new Product_DefectRecord.Component.RdButton();
-            this.btnOk = new Product_DefectRecord.Component.RdButton();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -46,50 +44,15 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.textLocation = new System.Windows.Forms.Label();
+            this.btnCancle = new Product_DefectRecord.Component.RdButton();
+            this.btnOk = new Product_DefectRecord.Component.RdButton();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // printDocument1
             // 
             this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage_1);
-            // 
-            // btnCancle
-            // 
-            this.btnCancle.BackColor = System.Drawing.SystemColors.Control;
-            this.btnCancle.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.btnCancle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
-            this.btnCancle.BorderRadius = 10;
-            this.btnCancle.BorderSize = 1;
-            this.btnCancle.FlatAppearance.BorderSize = 0;
-            this.btnCancle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
-            this.btnCancle.Location = new System.Drawing.Point(315, 334);
-            this.btnCancle.Name = "btnCancle";
-            this.btnCancle.Size = new System.Drawing.Size(111, 40);
-            this.btnCancle.TabIndex = 26;
-            this.btnCancle.Text = "BATAL";
-            this.btnCancle.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
-            this.btnCancle.UseVisualStyleBackColor = false;
-            // 
-            // btnOk
-            // 
-            this.btnOk.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(109)))), ((int)(((byte)(117)))));
-            this.btnOk.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(109)))), ((int)(((byte)(117)))));
-            this.btnOk.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
-            this.btnOk.BorderRadius = 10;
-            this.btnOk.BorderSize = 0;
-            this.btnOk.FlatAppearance.BorderSize = 0;
-            this.btnOk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOk.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOk.ForeColor = System.Drawing.Color.White;
-            this.btnOk.Location = new System.Drawing.Point(144, 334);
-            this.btnOk.Name = "btnOk";
-            this.btnOk.Size = new System.Drawing.Size(107, 40);
-            this.btnOk.TabIndex = 25;
-            this.btnOk.Text = "OK";
-            this.btnOk.TextColor = System.Drawing.Color.White;
-            this.btnOk.UseVisualStyleBackColor = false;
             // 
             // tableLayoutPanel1
             // 
@@ -251,11 +214,60 @@
             this.label1.TabIndex = 22;
             this.label1.Text = "Detail Defect";
             // 
+            // textLocation
+            // 
+            this.textLocation.AutoSize = true;
+            this.textLocation.Location = new System.Drawing.Point(299, 270);
+            this.textLocation.Name = "textLocation";
+            this.textLocation.Size = new System.Drawing.Size(13, 13);
+            this.textLocation.TabIndex = 28;
+            this.textLocation.Text = "0";
+            this.textLocation.Visible = false;
+            // 
+            // btnCancle
+            // 
+            this.btnCancle.BackColor = System.Drawing.SystemColors.Control;
+            this.btnCancle.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.btnCancle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.btnCancle.BorderRadius = 10;
+            this.btnCancle.BorderSize = 1;
+            this.btnCancle.FlatAppearance.BorderSize = 0;
+            this.btnCancle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.btnCancle.Location = new System.Drawing.Point(315, 334);
+            this.btnCancle.Name = "btnCancle";
+            this.btnCancle.Size = new System.Drawing.Size(111, 40);
+            this.btnCancle.TabIndex = 26;
+            this.btnCancle.Text = "BATAL";
+            this.btnCancle.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.btnCancle.UseVisualStyleBackColor = false;
+            // 
+            // btnOk
+            // 
+            this.btnOk.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(109)))), ((int)(((byte)(117)))));
+            this.btnOk.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(109)))), ((int)(((byte)(117)))));
+            this.btnOk.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.btnOk.BorderRadius = 10;
+            this.btnOk.BorderSize = 0;
+            this.btnOk.FlatAppearance.BorderSize = 0;
+            this.btnOk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOk.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOk.ForeColor = System.Drawing.Color.White;
+            this.btnOk.Location = new System.Drawing.Point(144, 334);
+            this.btnOk.Name = "btnOk";
+            this.btnOk.Size = new System.Drawing.Size(107, 40);
+            this.btnOk.TabIndex = 25;
+            this.btnOk.Text = "OK";
+            this.btnOk.TextColor = System.Drawing.Color.White;
+            this.btnOk.UseVisualStyleBackColor = false;
+            // 
             // DetailDefectView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(598, 450);
+            this.Controls.Add(this.textLocation);
             this.Controls.Add(this.btnCancle);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.tableLayoutPanel1);
@@ -289,5 +301,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label textLocation;
     }
 }

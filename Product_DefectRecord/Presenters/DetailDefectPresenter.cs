@@ -13,11 +13,13 @@ namespace Product_DefectRecord.Presenters
     {
         private readonly IDetailDefectView view;
         private readonly IDefectRepository repository;
+        private SaveModel _smodel;
 
         public DetailDefectPresenter(IDetailDefectView view, IDefectRepository repository, dynamic detailDefect)
         {
             this.view = view;
             this.repository = repository;
+            _smodel = new SaveModel();
             this.view.SaveEvent += SaveEvent;
             SetData(detailDefect);
             this.view.Show();
@@ -32,6 +34,7 @@ namespace Product_DefectRecord.Presenters
             view.DefectName = detailDefect.DefectName;
             view.InspectorId = detailDefect.InspectorId;
             view.InspectorName = detailDefect.Inspector;
+            view.Location = detailDefect.Location;
         }
 
         private void SaveEvent(object sender, EventArgs e)
@@ -45,6 +48,7 @@ namespace Product_DefectRecord.Presenters
                 view.DefectName,
                 view.InspectorId,
                 view.InspectorName,
+                view.Location,
             };
 
             try

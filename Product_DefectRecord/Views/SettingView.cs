@@ -42,7 +42,7 @@ namespace Product_DefectRecord.Views
 
         public void ShowSelectedItem(string item)
         {
-            MessageBox.Show(item);
+
         }
 
         private void SettingView_Load(object sender, EventArgs e)

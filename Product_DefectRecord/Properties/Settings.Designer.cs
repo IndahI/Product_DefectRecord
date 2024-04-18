@@ -56,5 +56,29 @@ namespace Product_DefectRecord.Properties {
                 this["MySetting"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int MyId {
+            get {
+                return ((int)(this["MyId"]));
+            }
+            set {
+                this["MyId"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Mode {
+            get {
+                return ((string)(this["Mode"]));
+            }
+            set {
+                this["Mode"] = value;
+            }
+        }
     }
 }

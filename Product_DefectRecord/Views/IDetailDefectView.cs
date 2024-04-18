@@ -15,10 +15,10 @@ namespace Product_DefectRecord.Views
         string DefectName { get; set; }
         string InspectorId { get; set; }
         string InspectorName { get; set; }
+        int Location { get; set; }
         string Message { get; set; }
 
         event EventHandler SaveEvent;
-
         void Show();
     }
 }

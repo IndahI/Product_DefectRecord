@@ -20,5 +20,11 @@ namespace Product_DefectRecord.Models
         {
             return _repository.GetData();
         }
+
+        public int GetLocationId(string selectedLocationName)
+        {
+            return _repository.GetID(selectedLocationName);
+
+        }
     }
 }

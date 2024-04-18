@@ -9,5 +9,6 @@ namespace Product_DefectRecord.Models
     public interface ISettingRepository
     {
         List<string> GetData();
+        int GetID(string locationName);
     }
 }
