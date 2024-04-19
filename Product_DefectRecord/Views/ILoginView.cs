@@ -13,6 +13,7 @@ namespace Product_DefectRecord.Views
         string Password { get; }
         bool IsLoginSuccessful { get; }
         void ShowMessage(string message);
+        void HideView();
         event EventHandler Login;
     }
 }

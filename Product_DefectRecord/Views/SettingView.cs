@@ -31,9 +31,29 @@ namespace Product_DefectRecord.Views
             get => locationBox.DataSource as List<string>;
             set => locationBox.DataSource = value;
         }
+        public string mode 
+        {
+            get {
+                if (radioButton1.Checked)
+                    return radioButton1.Text;
+                else if (radioButton2.Checked)
+                    return radioButton2.Text;
+                // Tambahkan kondisi untuk radio button lainnya jika perlu
+                else
+                    return string.Empty;
+            } 
+            set
+            {
+                if (value == radioButton1.Text)
+                    radioButton1.Checked = true;
+                else if (value == radioButton2.Text)
+                    radioButton2.Checked = true;
+            }
+        }
 
         public event EventHandler SelectedIndexChanged;
         public event EventHandler LoadSettings;
+        public event EventHandler HandleRadioButton;
 
         public void DisplaySetting(string myData)
         {
@@ -42,7 +62,8 @@ namespace Product_DefectRecord.Views
 
         public void ShowSelectedItem(string item)
         {
-
+            //pengecekan location yang dipilih
+            Console.WriteLine(item);
         }
 
         private void SettingView_Load(object sender, EventArgs e)
@@ -59,6 +80,19 @@ namespace Product_DefectRecord.Views
             }
         }
 
-
+        //Singeleton pattern (open a single  from instance)
+        private static SettingView instance;
+        public static SettingView GetInstance()
+        {
+            if (instance == null || instance.IsDisposed)
+                instance = new SettingView();
+            else
+            {
+                if (instance.WindowState == FormWindowState.Minimized)
+                    instance.WindowState = FormWindowState.Normal;
+                instance.BringToFront();
+            }
+            return instance;
+        }
     }
 }

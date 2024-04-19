@@ -32,6 +32,7 @@ namespace Product_DefectRecord.Presenters
                 IDefectRepository defectRepository = new DefectRepository(sqlConnectionString);
                 IModelNumberRepository modelNumberRepository = new ModelNumberRepository(sqlConnectionString);
                 new DefectListPresenter(defectListView, defectRepository, modelNumberRepository, user);
+                _view.HideView();
             }
             else
             {

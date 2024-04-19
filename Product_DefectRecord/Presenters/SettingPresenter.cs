@@ -41,11 +41,13 @@ namespace Product_DefectRecord.Presenters
         private void onRadio_Checked()
         {
             _smodel.SaveData(_view.mode);
+            Console.WriteLine(_view.mode);
         }
 
         private void offRadio_Checked()
         {
             _smodel.SaveData(_view.mode);
+            Console.WriteLine(_view.mode);
         }
 
         private void LoadLocationNames()
@@ -77,6 +79,7 @@ namespace Product_DefectRecord.Presenters
                     // Panggil metode repo di sini dengan selectedLocationName sebagai parameter
                     int locationId = _model.GetLocationId(selectedLocationName);
                     _smodel.SaveId(locationId);
+                    Console.WriteLine(locationId);
                 }
             }
         }

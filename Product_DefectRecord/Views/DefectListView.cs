@@ -169,7 +169,7 @@ namespace Product_DefectRecord.Views
             btnSetting.Click += delegate
             {
                 string sqlConnectionString = ConfigurationManager.ConnectionStrings["LSBUDBConnection"].ConnectionString;
-                ISettingView settingView = new SettingView();
+                ISettingView settingView = SettingView.GetInstance();
                 SettingPresenter settingPresenter = new SettingPresenter(settingView, new SettingModel(new SettingRepository(sqlConnectionString)));
                 (settingView as Form)?.Show();
             };

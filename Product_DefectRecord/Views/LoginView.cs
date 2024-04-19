@@ -20,6 +20,8 @@ namespace Product_DefectRecord.Views
         {
             InitializeComponent();
             AssociateAndRaiseViewEvents();
+
+            this.ActiveControl = textBoxNik;
         }
 
         private void AssociateAndRaiseViewEvents()
@@ -50,6 +52,11 @@ namespace Product_DefectRecord.Views
         public void ShowMessage(string message)
         {
             MessageBox.Show(message);
+        }
+
+        public void HideView()
+        {
+            this.Hide();
         }
     }
 }

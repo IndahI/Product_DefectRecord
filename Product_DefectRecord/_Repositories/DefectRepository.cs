@@ -26,12 +26,13 @@ namespace Product_DefectRecord._Repositories
                 //command.Parameters.Add("@InspectorName", SqlDbType.VarChar).Value = model.InspectorName;
                 //int inspectorId = (int)command.ExecuteScalar();
 
-                command.CommandText = "INSERT INTO Defect_Results (DateTime, SerialNumber, ModelCode, DefectId, InspectorId, LocationId) values (@DateTime, @SerialNumber, @ModelCode, @DefectId, @InspectorId, @LocationId)";
+                command.CommandText = "INSERT INTO Defect_Results (DateTime, SerialNumber, ModelCode, DefectId, InspectorId, ModelNumber, LocationId) values (@DateTime, @SerialNumber, @ModelCode, @DefectId, @InspectorId, @ModelNumber, @LocationId)";
                 command.Parameters.Add("@DateTime", SqlDbType.SmallDateTime).Value = DateTime.Now;
                 command.Parameters.Add("@SerialNumber", SqlDbType.VarChar).Value = model.SerialNumber;
                 command.Parameters.Add("@ModelCode", SqlDbType.VarChar).Value = model.ModelCode;
                 command.Parameters.Add("@DefectId", SqlDbType.Int).Value = model.DefectId;
                 command.Parameters.Add("@InspectorId", SqlDbType.VarChar).Value = model.InspectorId;
+                command.Parameters.Add("@ModelNumber", SqlDbType.VarChar).Value = model.ModelNumber;
                 command.Parameters.Add("@LocationId", SqlDbType.Int).Value = model.Location;
                 command.ExecuteNonQuery();
             }

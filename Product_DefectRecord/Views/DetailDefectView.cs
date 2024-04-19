@@ -252,5 +252,20 @@ namespace Product_DefectRecord.Views
 
             e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
         }
+
+        //Singeleton pattern (open a single  from instance)
+        private static DetailDefectView instance;
+        public static DetailDefectView GetInstance()
+        {
+            if (instance == null || instance.IsDisposed)
+                instance = new DetailDefectView();
+            else
+            {
+                if (instance.WindowState == FormWindowState.Minimized)
+                    instance.WindowState = FormWindowState.Normal;
+                instance.BringToFront();
+            }
+            return instance;
+        }
     }
 }
