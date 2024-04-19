@@ -16,6 +16,7 @@ namespace Product_DefectRecord.Views
     public partial class SettingView : Form, ISettingView
     {
         private bool isDataLoaded = false;
+        private string lastMode = "";
         public SettingView()
         {
             InitializeComponent();
@@ -31,25 +32,7 @@ namespace Product_DefectRecord.Views
             get => locationBox.DataSource as List<string>;
             set => locationBox.DataSource = value;
         }
-        public string mode 
-        {
-            get {
-                if (radioButton1.Checked)
-                    return radioButton1.Text;
-                else if (radioButton2.Checked)
-                    return radioButton2.Text;
-                // Tambahkan kondisi untuk radio button lainnya jika perlu
-                else
-                    return string.Empty;
-            } 
-            set
-            {
-                if (value == radioButton1.Text)
-                    radioButton1.Checked = true;
-                else if (value == radioButton2.Text)
-                    radioButton2.Checked = true;
-            }
-        }
+        public string mode { get; set; }
 
         public event EventHandler SelectedIndexChanged;
         public event EventHandler LoadSettings;
@@ -78,6 +61,26 @@ namespace Product_DefectRecord.Views
                 locationBox.SelectedIndexChanged += (sender, e) => SelectedIndexChanged?.Invoke(sender, e);
                 isDataLoaded = true;
             }
+
+            onRadio.CheckedChanged += (sender, e) =>
+            {
+                if (onRadio.Checked && lastMode != "on")
+                {
+                    mode = "on";
+                    lastMode = "on";
+                    HandleRadioButton?.Invoke(sender, e);
+                }
+            };
+
+            offRadio.CheckedChanged += (sender, e) =>
+            {
+                if (offRadio.Checked && lastMode != "off")
+                {
+                    mode = "off";
+                    lastMode = "off";
+                    HandleRadioButton?.Invoke(sender, e);
+                }
+            };
         }
 
         //Singeleton pattern (open a single  from instance)
