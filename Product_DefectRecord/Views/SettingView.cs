@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.AxHost;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Product_DefectRecord.Views
@@ -20,6 +21,14 @@ namespace Product_DefectRecord.Views
         public SettingView()
         {
             InitializeComponent();
+            LoadRadioSettings();
+        }
+
+        private void LoadRadioSettings()
+        {
+            // Set radio button states based on settings
+            onRadio.Checked = Properties.Settings.Default.Mode == "on";
+            offRadio.Checked = Properties.Settings.Default.Mode == "off";
         }
 
         public void DataLoaded()
