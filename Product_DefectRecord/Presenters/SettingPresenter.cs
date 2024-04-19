@@ -41,7 +41,7 @@ namespace Product_DefectRecord.Presenters
         private void onRadio_Checked()
         {
             _smodel.SaveData(_view.mode);
-            Console.WriteLine(_view.mode);
+            //Console.WriteLine(_view.mode);
         }
 
         private void offRadio_Checked()

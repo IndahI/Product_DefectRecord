@@ -51,6 +51,11 @@ namespace Product_DefectRecord.Models
             Console.WriteLine(data);
         }
 
+        public string GetMode()
+        {
+            return Properties.Settings.Default.Mode;
+        }
+
         protected virtual void OnSettingsSaved(string myData)
         {
             SettingsSaved?.Invoke(this, myData);

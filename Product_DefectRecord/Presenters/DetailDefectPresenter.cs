@@ -13,7 +13,7 @@ namespace Product_DefectRecord.Presenters
     {
         private readonly IDetailDefectView view;
         private readonly IDefectRepository repository;
-        private SaveModel _smodel;
+        private readonly SaveModel _smodel;
 
         public DetailDefectPresenter(IDetailDefectView view, IDefectRepository repository, dynamic detailDefect)
         {
@@ -39,30 +39,43 @@ namespace Product_DefectRecord.Presenters
 
         private void SaveEvent(object sender, EventArgs e)
         {
-            var model = new
-            {
-                view.SerialNumber,
-                view.ModelNumber,
-                view.ModelCode,
-                view.DefectId,
-                view.DefectName,
-                view.InspectorId,
-                view.InspectorName,
-                view.Location,
-            };
+            string mode = _smodel.GetMode();
 
-            try
+            if (mode == "off")
             {
-                new Common.ModelDataValidation().Validate(model);
-                repository.Add(model);
-                view.Message = "Defect telah disimpan";
+                // Jika mode off, tampilkan pesan bahwa save tidak diperlukan
+                view.Message = "Mode is off. No save action needed.";
+                MessageBox.Show(view.Message);
             }
-            catch (Exception ex)
+            else
             {
-                view.Message = ex.Message;
-            }
+                // Lakukan operasi save jika mode tidak off
+                var model = new
+                {
+                    view.SerialNumber,
+                    view.ModelNumber,
+                    view.ModelCode,
+                    view.DefectId,
+                    view.DefectName,
+                    view.InspectorId,
+                    view.InspectorName,
+                    view.Location,
+                };
 
-            MessageBox.Show(view.Message);
+                try
+                {
+                    new Common.ModelDataValidation().Validate(model);
+                    repository.Add(model);
+                    view.Message = "Defect telah disimpan";
+                }
+                catch (Exception ex)
+                {
+                    view.Message = ex.Message;
+                }
+
+                MessageBox.Show(view.Message);
+
+            }
         }
     }
 }
