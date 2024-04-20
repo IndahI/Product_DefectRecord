@@ -4,6 +4,7 @@ using Product_DefectRecord.Presenters;
 using Product_DefectRecord.Views;
 using System;
 using System.Configuration;
+using System.Drawing;
 using System.Windows.Forms;
 using static Product_DefectRecord.Presenters.DefectListPresenter;
 
@@ -114,25 +115,30 @@ namespace Product_DefectRecord.Views
 
             btnTop.Click += delegate
             {
+                ChangeColorButton(btnTop, null);
                 DefectFilterEvent?.Invoke(this, EventArgs.Empty, int.Parse(btnTop.Tag.ToString()));
             };
 
             btnPulsator.Click += delegate
             {
+                ChangeColorButton(btnPulsator, null);
                 DefectFilterEvent?.Invoke(this, EventArgs.Empty, int.Parse(btnPulsator.Tag.ToString()));
             };
             btnDll.Click += delegate
             {
+                ChangeColorButton(btnDll, null);
                 DefectFilterEvent?.Invoke(this, EventArgs.Empty, int.Parse(btnDll.Tag.ToString()));
             };
 
             btnMotorSpin.Click += delegate
             {
+                ChangeColorButton(btnMotorSpin, null);
                 DefectFilterEvent?.Invoke(this, EventArgs.Empty, int.Parse(btnMotorSpin.Tag.ToString()));
             };
 
             btnTubA.Click += delegate
             {
+                ChangeColorButton(btnTubA, null);
                 DefectFilterEvent?.Invoke(this, EventArgs.Empty, int.Parse(btnTubA.Tag.ToString()));
             };
 
@@ -189,6 +195,15 @@ namespace Product_DefectRecord.Views
         {
             DetailDefectView popupForm = new DetailDefectView();
             popupForm.ShowDialog();
+        }
+        private void ChangeColorButton(object sender, EventArgs e)
+        {
+            foreach (Control c in Panel3.Controls)
+            {
+                c.BackColor = Color.FromArgb(0, 173, 181);
+            }
+            Control click = (Control)sender;
+            click.BackColor = Color.FromArgb(0, 133, 181);
         }
     }
 }

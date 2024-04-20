@@ -31,7 +31,7 @@
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.Panel3 = new System.Windows.Forms.TableLayoutPanel();
             this.btnMotorWash = new Product_DefectRecord.Component.RdButton();
             this.btnPanel = new Product_DefectRecord.Component.RdButton();
             this.btnMotorSpin = new Product_DefectRecord.Component.RdButton();
@@ -63,7 +63,7 @@
             this.btnSetting = new Product_DefectRecord.Component.RdButton();
             this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.tableLayoutPanel3.SuspendLayout();
+            this.Panel3.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
@@ -106,37 +106,37 @@
             this.Edit.Text = "Edit";
             this.Edit.UseColumnTextForButtonValue = true;
             // 
-            // tableLayoutPanel3
+            // Panel3
             // 
-            this.tableLayoutPanel3.ColumnCount = 6;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66666F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66666F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66666F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66666F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66666F));
-            this.tableLayoutPanel3.Controls.Add(this.btnMotorWash, 0, 2);
-            this.tableLayoutPanel3.Controls.Add(this.btnPanel, 0, 2);
-            this.tableLayoutPanel3.Controls.Add(this.btnMotorSpin, 0, 2);
-            this.tableLayoutPanel3.Controls.Add(this.btnBodyB, 0, 2);
-            this.tableLayoutPanel3.Controls.Add(this.btnDll, 1, 2);
-            this.tableLayoutPanel3.Controls.Add(this.btnLib, 0, 2);
-            this.tableLayoutPanel3.Controls.Add(this.rdButton6, 5, 1);
-            this.tableLayoutPanel3.Controls.Add(this.btnPulsator, 4, 1);
-            this.tableLayoutPanel3.Controls.Add(this.btnSf, 3, 1);
-            this.tableLayoutPanel3.Controls.Add(this.btnBaseA, 2, 1);
-            this.tableLayoutPanel3.Controls.Add(this.btnTubA, 1, 1);
-            this.tableLayoutPanel3.Controls.Add(this.btnTop, 0, 1);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 151);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 3;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 15F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1088, 171);
-            this.tableLayoutPanel3.TabIndex = 11;
+            this.Panel3.ColumnCount = 6;
+            this.Panel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.Panel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66666F));
+            this.Panel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66666F));
+            this.Panel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66666F));
+            this.Panel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66666F));
+            this.Panel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66666F));
+            this.Panel3.Controls.Add(this.btnMotorWash, 0, 2);
+            this.Panel3.Controls.Add(this.btnPanel, 0, 2);
+            this.Panel3.Controls.Add(this.btnMotorSpin, 0, 2);
+            this.Panel3.Controls.Add(this.btnBodyB, 0, 2);
+            this.Panel3.Controls.Add(this.btnDll, 1, 2);
+            this.Panel3.Controls.Add(this.btnLib, 0, 2);
+            this.Panel3.Controls.Add(this.rdButton6, 5, 1);
+            this.Panel3.Controls.Add(this.btnPulsator, 4, 1);
+            this.Panel3.Controls.Add(this.btnSf, 3, 1);
+            this.Panel3.Controls.Add(this.btnBaseA, 2, 1);
+            this.Panel3.Controls.Add(this.btnTubA, 1, 1);
+            this.Panel3.Controls.Add(this.btnTop, 0, 1);
+            this.Panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Panel3.Location = new System.Drawing.Point(0, 151);
+            this.Panel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Panel3.Name = "Panel3";
+            this.Panel3.RowCount = 3;
+            this.Panel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 15F));
+            this.Panel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.Panel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.Panel3.Size = new System.Drawing.Size(1088, 171);
+            this.Panel3.TabIndex = 11;
             // 
             // btnMotorWash
             // 
@@ -417,7 +417,7 @@
             this.tableLayoutPanel2.Location = new System.Drawing.Point(7, 8);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tableLayoutPanel2.Padding = new System.Windows.Forms.Padding(3);
             this.tableLayoutPanel2.RowCount = 4;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
@@ -514,7 +514,7 @@
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(548, 6);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tableLayoutPanel5.Padding = new System.Windows.Forms.Padding(3);
             this.tableLayoutPanel5.RowCount = 2;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 39.02439F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60.97561F));
@@ -536,7 +536,7 @@
             this.btnStatus.Location = new System.Drawing.Point(6, 59);
             this.btnStatus.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.btnStatus.Name = "btnStatus";
-            this.btnStatus.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnStatus.Padding = new System.Windows.Forms.Padding(2);
             this.btnStatus.Size = new System.Drawing.Size(259, 80);
             this.btnStatus.TabIndex = 5;
             this.btnStatus.Text = "No data";
@@ -558,7 +558,7 @@
             this.btnClear.Location = new System.Drawing.Point(271, 59);
             this.btnClear.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnClear.Padding = new System.Windows.Forms.Padding(2);
             this.btnClear.Size = new System.Drawing.Size(260, 80);
             this.btnClear.TabIndex = 4;
             this.btnClear.Text = "Clear Data";
@@ -607,7 +607,7 @@
             this.btnLogout.Location = new System.Drawing.Point(132, 2);
             this.btnLogout.Margin = new System.Windows.Forms.Padding(3, 2, 2, 2);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.btnLogout.Padding = new System.Windows.Forms.Padding(3);
             this.btnLogout.Size = new System.Drawing.Size(124, 39);
             this.btnLogout.TabIndex = 7;
             this.btnLogout.Text = "Log Out";
@@ -629,7 +629,7 @@
             this.btnSetting.Location = new System.Drawing.Point(2, 2);
             this.btnSetting.Margin = new System.Windows.Forms.Padding(2, 2, 3, 2);
             this.btnSetting.Name = "btnSetting";
-            this.btnSetting.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.btnSetting.Padding = new System.Windows.Forms.Padding(3);
             this.btnSetting.Size = new System.Drawing.Size(124, 39);
             this.btnSetting.TabIndex = 6;
             this.btnSetting.Text = "Setting";
@@ -642,7 +642,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1088, 591);
             this.Controls.Add(this.tableLayoutPanel4);
-            this.Controls.Add(this.tableLayoutPanel3);
+            this.Controls.Add(this.Panel3);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "DefectListView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -650,7 +650,7 @@
             this.Load += new System.EventHandler(this.DefectView_Load);
             this.tableLayoutPanel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.tableLayoutPanel3.ResumeLayout(false);
+            this.Panel3.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
@@ -665,7 +665,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewButtonColumn Edit;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.TableLayoutPanel Panel3;
         private Component.RdButton btnMotorWash;
         private Component.RdButton btnPanel;
         private Component.RdButton btnMotorSpin;
