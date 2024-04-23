@@ -63,19 +63,9 @@ namespace Product_DefectRecord.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap checkmark {
+        internal static System.Drawing.Bitmap panasonic {
             get {
-                object obj = ResourceManager.GetObject("checkmark", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap checkmark1 {
-            get {
-                object obj = ResourceManager.GetObject("checkmark1", resourceCulture);
+                object obj = ResourceManager.GetObject("panasonic", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

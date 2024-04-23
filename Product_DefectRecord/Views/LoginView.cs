@@ -2,14 +2,8 @@
 using Product_DefectRecord.Models;
 using Product_DefectRecord.Presenters;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Configuration;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
 namespace Product_DefectRecord.Views
@@ -20,19 +14,30 @@ namespace Product_DefectRecord.Views
         {
             InitializeComponent();
             AssociateAndRaiseViewEvents();
-
             this.ActiveControl = textBoxNik;
+            this.SetStyle(ControlStyles.ResizeRedraw, true);
         }
 
         private void AssociateAndRaiseViewEvents()
         {
-            btnLogin.Click += delegate
+            btnLogin.Click += BtnLogin_Click;
+        }
+
+        private void BtnLogin_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(Nik))
             {
-                if (!string.IsNullOrWhiteSpace(Nik))
-                {
-                    Login?.Invoke(this, EventArgs.Empty);
-                }
-            };
+                Login?.Invoke(this, EventArgs.Empty);
+            }
+        }
+
+        protected override void OnPaintBackground(PaintEventArgs e)
+        {
+            base.OnPaintBackground(e);
+            using (LinearGradientBrush brush = new LinearGradientBrush(this.ClientRectangle, Color.FromArgb(0, 173, 181), Color.FromArgb(238, 238, 238), 90F))
+            {
+                e.Graphics.FillRectangle(brush, this.ClientRectangle);
+            }
         }
 
         public string Nik
@@ -40,11 +45,13 @@ namespace Product_DefectRecord.Views
             get { return textBoxNik.Text; }
             set { textBoxNik.Text = value; }
         }
+
         public string Password
         {
             get { return textBoxPassword.Text; }
             set { textBoxPassword.Text = value; }
         }
+
         public bool IsLoginSuccessful { get; private set; }
 
         public event EventHandler Login;

@@ -45,10 +45,9 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(40, 22);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(27, 14);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(168, 33);
+            this.label4.Size = new System.Drawing.Size(111, 24);
             this.label4.TabIndex = 8;
             this.label4.Text = "Edit Defect";
             // 
@@ -62,10 +61,9 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.textDefectName);
-            this.panel1.Location = new System.Drawing.Point(18, 77);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel1.Location = new System.Drawing.Point(12, 50);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(382, 374);
+            this.panel1.Size = new System.Drawing.Size(255, 243);
             this.panel1.TabIndex = 7;
             // 
             // btnSave
@@ -78,10 +76,9 @@
             this.btnSave.FlatAppearance.BorderSize = 0;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(30, 280);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSave.Location = new System.Drawing.Point(16, 182);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(128, 54);
+            this.btnSave.Size = new System.Drawing.Size(85, 35);
             this.btnSave.TabIndex = 4;
             this.btnSave.Text = "Save";
             this.btnSave.TextColor = System.Drawing.Color.White;
@@ -89,78 +86,85 @@
             // 
             // textDefectId
             // 
-            this.textDefectId.Location = new System.Drawing.Point(30, 31);
+            this.textDefectId.Location = new System.Drawing.Point(19, 28);
+            this.textDefectId.Margin = new System.Windows.Forms.Padding(2);
             this.textDefectId.Name = "textDefectId";
-            this.textDefectId.Size = new System.Drawing.Size(200, 26);
+            this.textDefectId.Size = new System.Drawing.Size(164, 20);
             this.textDefectId.TabIndex = 1;
             // 
             // btnCancle
             // 
             this.btnCancle.BackColor = System.Drawing.SystemColors.Control;
             this.btnCancle.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.btnCancle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(109)))), ((int)(((byte)(117)))));
+            this.btnCancle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
             this.btnCancle.BorderRadius = 10;
             this.btnCancle.BorderSize = 1;
             this.btnCancle.FlatAppearance.BorderSize = 0;
             this.btnCancle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(109)))), ((int)(((byte)(117)))));
-            this.btnCancle.Location = new System.Drawing.Point(198, 280);
-            this.btnCancle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnCancle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.btnCancle.Location = new System.Drawing.Point(129, 182);
             this.btnCancle.Name = "btnCancle";
-            this.btnCancle.Size = new System.Drawing.Size(128, 54);
+            this.btnCancle.Size = new System.Drawing.Size(85, 35);
             this.btnCancle.TabIndex = 5;
             this.btnCancle.Text = "Cancel";
-            this.btnCancle.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(109)))), ((int)(((byte)(117)))));
+            this.btnCancle.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
             this.btnCancle.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(24, 88);
+            this.label1.Location = new System.Drawing.Point(15, 65);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 20);
+            this.label1.Size = new System.Drawing.Size(57, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Part Name";
             // 
             // textPartName
             // 
-            this.textPartName.Location = new System.Drawing.Point(28, 111);
+            this.textPartName.Location = new System.Drawing.Point(18, 80);
+            this.textPartName.Margin = new System.Windows.Forms.Padding(2);
             this.textPartName.Name = "textPartName";
-            this.textPartName.Size = new System.Drawing.Size(200, 26);
+            this.textPartName.Size = new System.Drawing.Size(165, 20);
             this.textPartName.TabIndex = 1;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(26, 169);
+            this.label3.Location = new System.Drawing.Point(16, 118);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(103, 20);
+            this.label3.Size = new System.Drawing.Size(70, 13);
             this.label3.TabIndex = 0;
             this.label3.Text = "Defect Name";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(26, 8);
+            this.label2.Location = new System.Drawing.Point(16, 13);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 20);
+            this.label2.Size = new System.Drawing.Size(51, 13);
             this.label2.TabIndex = 0;
             this.label2.Text = "Defect Id";
             // 
             // textDefectName
             // 
-            this.textDefectName.Location = new System.Drawing.Point(28, 192);
+            this.textDefectName.Location = new System.Drawing.Point(18, 133);
+            this.textDefectName.Margin = new System.Windows.Forms.Padding(2);
             this.textDefectName.Name = "textDefectName";
-            this.textDefectName.Size = new System.Drawing.Size(200, 26);
+            this.textDefectName.Size = new System.Drawing.Size(165, 20);
             this.textDefectName.TabIndex = 1;
             // 
             // EditDefectView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 449);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(335, 309);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "EditDefectView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditDefectName";
