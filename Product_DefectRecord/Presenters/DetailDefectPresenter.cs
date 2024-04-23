@@ -62,19 +62,8 @@ namespace Product_DefectRecord.Presenters
                     view.Location,
                 };
 
-                try
-                {
                     new Common.ModelDataValidation().Validate(model);
                     repository.Add(model);
-                    view.Message = "Defect telah disimpan";
-                }
-                catch (Exception ex)
-                {
-                    view.Message = ex.Message;
-                }
-
-                MessageBox.Show(view.Message);
-
             }
         }
     }

@@ -88,12 +88,13 @@ namespace Product_DefectRecord.Views
 
                 pd.PrintPage += (s, ev) => PrintInformation(ev);
 
-                PrintPreviewDialog printPreviewDialog = new PrintPreviewDialog();
-                printPreviewDialog.Document = pd;
-                printPreviewDialog.ShowDialog();
+                pd.Print();
+                //PrintPreviewDialog printPreviewDialog = new PrintPreviewDialog();
+                //printPreviewDialog.Document = pd;
+                //printPreviewDialog.ShowDialog();
 
                 btnOk.Visible = true;
-
+                this.Hide();
             };
 
             btnCancle.Click += delegate

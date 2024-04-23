@@ -78,3 +78,4 @@ D:\Product_DefectRecord\yg baru\Product_DefectRecord\Product_DefectRecord\obj\De
 D:\Product_DefectRecord\yg baru\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.Views.LoginView.resources
 D:\Product_DefectRecord\yg baru\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.Views.SettingView.resources
 D:\Product_DefectRecord\yg baru\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.Component.Gradient.resources
+D:\Perkuliahan\Semester6\Panasonic\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.Component.Gradient.resources
