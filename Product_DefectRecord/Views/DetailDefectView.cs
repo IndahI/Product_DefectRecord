@@ -80,8 +80,6 @@ namespace Product_DefectRecord.Views
 
                 SaveEvent?.Invoke(this, EventArgs.Empty);
 
-                //btnOk.Visible = false;
-
                 PrintDocument pd = new PrintDocument();
 
                 pd.PrintPage += printDocument1_PrintPage_1;
