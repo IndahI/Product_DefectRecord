@@ -17,6 +17,7 @@ namespace Product_DefectRecord.Models
 
         //properties
         [DisplayName("No")]
+        [Browsable(false)] // Tambahkan atribut ini
         public int Id1
         {
             get => Id;

@@ -186,5 +186,29 @@
   <ItemGroup>
     <None Include="Resources\Login2.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\barcode-scan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\text.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\code.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\people.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\padlock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
