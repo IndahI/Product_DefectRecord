@@ -138,7 +138,7 @@ namespace Product_DefectRecord._Repositories
                 command.CommandText = "SELECT Defect_Names.Id, Parts.PartName, Defect_Names.DefectName " +
                               "FROM Defect_Names " +
                               "INNER JOIN Parts ON Defect_Names.PartId = Parts.Id " +
-                              "WHERE Defect_Names.PartId = @selectedId";
+                               "WHERE Parts.ChartId = @selectedId " + "ORDER BY Parts.PartName ASC";
 
                 command.Parameters.AddWithValue("@selectedId", id);
                 using (var reader = command.ExecuteReader())

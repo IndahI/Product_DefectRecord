@@ -14,10 +14,12 @@ namespace Product_DefectRecord.Views
     {
         private TcpServerWrapper serverWrapper;
         private string inspectorId;
+        private PrintManualPresenter printManualPresenter;
         public DefectListView()
         {
             InitializeComponent();
             AssociateAndRaiseViewEvents();
+            printManualPresenter = new PrintManualPresenter(this);
 
         }
 
@@ -27,6 +29,7 @@ namespace Product_DefectRecord.Views
         public event TopDefectEventHandler DefectFilterEvent;
         public event EventHandler EditButtonClicked;
         public event EventHandler CellClicked;
+        public event KeyEventHandler KeyDownEvent;
 
         //properties
         public string SerialNumber
@@ -61,6 +64,12 @@ namespace Product_DefectRecord.Views
             set { btnStatus.Text = value; }
         }
 
+        public bool IsKeyboardEnabled 
+        { 
+            get { return true; }
+            set {  }
+        }
+
         // Call this method when you need to perform a model search
         private void PerformModelSearch()
         {
@@ -68,13 +77,13 @@ namespace Product_DefectRecord.Views
             SearchModelNumber?.Invoke(this, new ModelEventArgs(SerialNumber));
         }
 
-
         private void UpdateSerialBox(string message)
         {
             // Invoke UI updates on the UI thread
             if (textBoxSerial.InvokeRequired)
             {
                 textBoxSerial.Invoke((MethodInvoker)(() => UpdateSerialBox(message)));
+                Console.WriteLine(textBoxSerial);
             }
             else
             {
@@ -104,6 +113,11 @@ namespace Product_DefectRecord.Views
             await serverWrapper.StartServerAsync();
         }
 
+        private void DefectListView_keyDown(object sender, KeyEventArgs e)
+        {
+            KeyDownEvent?.Invoke(sender, e);
+        }
+
         //Methods
         private void AssociateAndRaiseViewEvents()
         {
@@ -113,40 +127,167 @@ namespace Product_DefectRecord.Views
                 ClearEvent?.Invoke(this, EventArgs.Empty);
             };
 
-            btnTop.Click += delegate
+            btnA.Click += delegate
             {
-                ChangeColorButton(btnTop, null);
-                DefectFilterEvent?.Invoke(this, EventArgs.Empty, int.Parse(btnTop.Tag.ToString()));
+                ChangeColorButton(btnA, null);
+                DefectFilterEvent?.Invoke(this, EventArgs.Empty, int.Parse(btnA.Tag.ToString()));
             };
 
-            btnPulsator.Click += delegate
+            btnB.Click += delegate
             {
-                ChangeColorButton(btnPulsator, null);
-                DefectFilterEvent?.Invoke(this, EventArgs.Empty, int.Parse(btnPulsator.Tag.ToString()));
-            };
-            btnDll.Click += delegate
-            {
-                ChangeColorButton(btnDll, null);
-                DefectFilterEvent?.Invoke(this, EventArgs.Empty, int.Parse(btnDll.Tag.ToString()));
+                ChangeColorButton(btnB, null);
+                DefectFilterEvent?.Invoke(this, EventArgs.Empty, int.Parse(btnB.Tag.ToString()));
             };
 
-            btnMotorSpin.Click += delegate
+            btnC.Click += delegate
             {
-                ChangeColorButton(btnMotorSpin, null);
-                DefectFilterEvent?.Invoke(this, EventArgs.Empty, int.Parse(btnMotorSpin.Tag.ToString()));
+                ChangeColorButton(btnC, null);
+                DefectFilterEvent?.Invoke(this, EventArgs.Empty, int.Parse(btnC.Tag.ToString()));
             };
 
-            btnTubA.Click += delegate
+            btnD.Click += delegate
             {
-                ChangeColorButton(btnTubA, null);
-                DefectFilterEvent?.Invoke(this, EventArgs.Empty, int.Parse(btnTubA.Tag.ToString()));
+                ChangeColorButton(btnD, null);
+                DefectFilterEvent?.Invoke(this, EventArgs.Empty, int.Parse(btnD.Tag.ToString()));
+            };
+
+            btnE.Click += delegate
+            {
+                ChangeColorButton(btnE, null);
+                DefectFilterEvent?.Invoke(this, EventArgs.Empty, int.Parse(btnE.Tag.ToString()));
+            };
+
+            btnF.Click += delegate
+            {
+                ChangeColorButton(btnF, null);
+                DefectFilterEvent?.Invoke(this, EventArgs.Empty, int.Parse(btnF.Tag.ToString()));
+            };
+
+            btnG.Click += delegate
+            {
+                ChangeColorButton(btnG, null);
+                DefectFilterEvent?.Invoke(this, EventArgs.Empty, int.Parse(btnG.Tag.ToString()));
+            };
+
+            btnH.Click += delegate
+            {
+                ChangeColorButton(btnH, null);
+                DefectFilterEvent?.Invoke(this, EventArgs.Empty, int.Parse(btnH.Tag.ToString()));
+            };
+
+            btnI.Click += delegate
+            {
+                ChangeColorButton(btnI, null);
+                DefectFilterEvent?.Invoke(this, EventArgs.Empty, int.Parse(btnI.Tag.ToString()));
+            };
+
+            btnJ.Click += delegate
+            {
+                ChangeColorButton(btnJ, null);
+                DefectFilterEvent?.Invoke(this, EventArgs.Empty, int.Parse(btnJ.Tag.ToString()));
+            };
+
+            btnK.Click += delegate
+            {
+                ChangeColorButton(btnK, null);
+                DefectFilterEvent?.Invoke(this, EventArgs.Empty, int.Parse(btnK.Tag.ToString()));
+            };
+
+            btnL.Click += delegate
+            {
+                ChangeColorButton(btnL, null);
+                DefectFilterEvent?.Invoke(this, EventArgs.Empty, int.Parse(btnL.Tag.ToString()));
+            };
+
+            btnM.Click += delegate
+            {
+                ChangeColorButton(btnM, null);
+                DefectFilterEvent?.Invoke(this, EventArgs.Empty, int.Parse(btnM.Tag.ToString()));
+            };
+
+            btnN.Click += delegate
+            {
+                ChangeColorButton(btnN, null);
+                DefectFilterEvent?.Invoke(this, EventArgs.Empty, int.Parse(btnN.Tag.ToString()));
+            };
+
+            btnO.Click += delegate
+            {
+                ChangeColorButton(btnO, null);
+                DefectFilterEvent?.Invoke(this, EventArgs.Empty, int.Parse(btnO.Tag.ToString()));
+            };
+
+            btnP.Click += delegate
+            {
+                ChangeColorButton(btnP, null);
+                DefectFilterEvent?.Invoke(this, EventArgs.Empty, int.Parse(btnP.Tag.ToString()));
+            };
+
+            btnQ.Click += delegate
+            {
+                ChangeColorButton(btnQ, null);
+                DefectFilterEvent?.Invoke(this, EventArgs.Empty, int.Parse(btnQ.Tag.ToString()));
+            };
+
+            btnR.Click += delegate
+            {
+                ChangeColorButton(btnR, null);
+                DefectFilterEvent?.Invoke(this, EventArgs.Empty, int.Parse(btnR.Tag.ToString()));
+            };
+
+            btnS.Click += delegate
+            {
+                ChangeColorButton(btnS, null);
+                DefectFilterEvent?.Invoke(this, EventArgs.Empty, int.Parse(btnS.Tag.ToString()));
+            };
+
+            btnT.Click += delegate
+            {
+                ChangeColorButton(btnT, null);
+                DefectFilterEvent?.Invoke(this, EventArgs.Empty, int.Parse(btnT.Tag.ToString()));
+            };
+
+            btnU.Click += delegate
+            {
+                ChangeColorButton(btnU, null);
+                DefectFilterEvent?.Invoke(this, EventArgs.Empty, int.Parse(btnU.Tag.ToString()));
+            };
+
+            btnV.Click += delegate
+            {
+                ChangeColorButton(btnV, null);
+                DefectFilterEvent?.Invoke(this, EventArgs.Empty, int.Parse(btnV.Tag.ToString()));
+            };
+
+            btnW.Click += delegate
+            {
+                ChangeColorButton(btnW, null);
+                DefectFilterEvent?.Invoke(this, EventArgs.Empty, int.Parse(btnW.Tag.ToString()));
+            };
+
+            btnX.Click += delegate
+            {
+                ChangeColorButton(btnX, null);
+                DefectFilterEvent?.Invoke(this, EventArgs.Empty, int.Parse(btnX.Tag.ToString()));
+            };
+
+            btnY.Click += delegate
+            {
+                ChangeColorButton(btnY, null);
+                DefectFilterEvent?.Invoke(this, EventArgs.Empty, int.Parse(btnY.Tag.ToString()));
+            };
+
+            btnZ.Click += delegate
+            {
+                ChangeColorButton(btnZ, null);
+                DefectFilterEvent?.Invoke(this, EventArgs.Empty, int.Parse(btnZ.Tag.ToString()));
             };
 
             textBoxSerial.TextChanged += (sender, e) =>
             {
                 if (!string.IsNullOrWhiteSpace(textBoxSerial.Text))
                 {
-                    btnStatus.Text = "Save And Print";
+                    btnStatus.Text = "...";
                 }
             };
 
@@ -179,6 +320,11 @@ namespace Product_DefectRecord.Views
                 SettingPresenter settingPresenter = new SettingPresenter(settingView, new SettingModel(new SettingRepository(sqlConnectionString)));
                 (settingView as Form)?.Show();
             };
+
+            btnPrintManual.Click += delegate
+            {
+                textBoxSerial.ReadOnly = !textBoxSerial.ReadOnly;
+            };
         }
 
         public void SetDefectListBindingSource(BindingSource defectList)
@@ -204,6 +350,11 @@ namespace Product_DefectRecord.Views
             }
             Control click = (Control)sender;
             click.BackColor = Color.FromArgb(0, 133, 181);
+        }
+
+        public string ConvertKeyCodeToString(Keys keyCode)
+        {
+            throw new NotImplementedException();
         }
     }
 }

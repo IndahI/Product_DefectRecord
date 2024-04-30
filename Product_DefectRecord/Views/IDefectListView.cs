@@ -14,6 +14,7 @@ namespace Product_DefectRecord.Views
         string InspectorId { get; set; }
         string Inspector { get; set; }
         string StatusText { get; set; }
+        bool IsKeyboardEnabled { get; set; }
 
         //event
         event EventHandler<ModelEventArgs> SearchModelNumber;
@@ -21,6 +22,9 @@ namespace Product_DefectRecord.Views
         event TopDefectEventHandler DefectFilterEvent;
         event EventHandler EditButtonClicked;
         event EventHandler CellClicked;
+        event KeyEventHandler KeyDownEvent;
+
+        string ConvertKeyCodeToString(Keys keyCode);
 
         void SetDefectListBindingSource(BindingSource defectList);
         void FilterByPartId(int partId);

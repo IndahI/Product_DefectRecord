@@ -16,13 +16,13 @@ namespace Product_DefectRecord.Presenters
         private IEnumerable<DefectModel> defectList;
         private SaveModel _smodel;
 
-        public DefectListPresenter(IDefectListView view, IDefectRepository defectRepository, IModelNumberRepository modelNumberRepository, LoginModel user)
+        public DefectListPresenter(DefectListDataPresenter data)
         {
-            this.view = view;
-            this.defectRepository = defectRepository;
-            this.modelNumberRepository = modelNumberRepository;
-            this.view.InspectorId = user.Nik;
-            this.view.Inspector = user.Name;
+            this.view = data.View;
+            this.defectRepository = data.DefectRepository;
+            this.modelNumberRepository = data.ModelNumberRepository;
+            this.view.InspectorId = data.User.Nik;
+            this.view.Inspector = data.User.Name;
             this.view.SearchModelNumber += SearchModelNumber;
             this.view.ClearEvent += ClearAction;
             this.view.DefectFilterEvent += LoadFilterDefect;
@@ -79,6 +79,9 @@ namespace Product_DefectRecord.Presenters
         private void ClearAction(object sender, EventArgs e)
         {
             view.StatusText = "No Data";
+            view.SerialNumber = "";
+            view.ModelNumber = "";
+            view.ModelCode = "";
         }
 
         private void LoadAllDefectList()

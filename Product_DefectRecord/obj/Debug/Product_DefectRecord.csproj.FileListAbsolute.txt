@@ -80,3 +80,8 @@ D:\Product_DefectRecord\yg baru\Product_DefectRecord\Product_DefectRecord\obj\De
 D:\Product_DefectRecord\yg baru\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.Component.Gradient.resources
 D:\Perkuliahan\Semester6\Panasonic\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.Component.Gradient.resources
 D:\Product_DefectRecord\versi april\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.Component.Gradient.resources
+D:\Perkuliahan\Semester6\Panasonic\Product_DefectRecord\Product_DefectRecord\bin\Debug\zxing.dll
+D:\Perkuliahan\Semester6\Panasonic\Product_DefectRecord\Product_DefectRecord\bin\Debug\zxing.presentation.dll
+D:\Perkuliahan\Semester6\Panasonic\Product_DefectRecord\Product_DefectRecord\bin\Debug\zxing.xml
+D:\Perkuliahan\Semester6\Panasonic\Product_DefectRecord\Product_DefectRecord\bin\Debug\zxing.presentation.xml
+D:\Perkuliahan\Semester6\Panasonic\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.csproj.CopyComplete

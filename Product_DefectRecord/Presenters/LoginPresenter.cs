@@ -31,7 +31,11 @@ namespace Product_DefectRecord.Presenters
                 IDefectListView defectListView = new DefectListView();
                 IDefectRepository defectRepository = new DefectRepository(sqlConnectionString);
                 IModelNumberRepository modelNumberRepository = new ModelNumberRepository(sqlConnectionString);
-                new DefectListPresenter(defectListView, defectRepository, modelNumberRepository, user);
+                // Membuat instance dari DefectListPresenterData
+                DefectListDataPresenter presenterData = new DefectListDataPresenter(defectListView, defectRepository, modelNumberRepository, user);
+
+                // Membuat instance dari DefectListPresenter menggunakan DefectListPresenterData
+                DefectListPresenter presenter = new DefectListPresenter(presenterData);
                 _view.HideView();
             }
             else
