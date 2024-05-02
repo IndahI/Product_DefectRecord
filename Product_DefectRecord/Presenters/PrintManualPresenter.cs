@@ -1,10 +1,12 @@
-﻿using Product_DefectRecord.Views;
+﻿using Product_DefectRecord.Models;
+using Product_DefectRecord.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace Product_DefectRecord.Presenters
 {
@@ -18,7 +20,7 @@ namespace Product_DefectRecord.Presenters
             view.KeyDownEvent += KeyDownEvent;
         }
 
-        private void KeyDownEvent(object sender, KeyEventArgs e)
+        public void KeyDownEvent(object sender, KeyEventArgs e)
         {
             if(view.IsKeyboardEnabled)
             {
@@ -27,12 +29,11 @@ namespace Product_DefectRecord.Presenters
                     string latestReceivedData = view.SerialNumber;
                     Console.WriteLine(latestReceivedData);
                     view.IsKeyboardEnabled = false;
-                    string jgda = latestReceivedData.Substring(2).Trim();
-                }
-                else
-                {
-                    string character = view.ConvertKeyCodeToString(e.KeyCode);
-                    latestReceivedData += character;
+                    string trim = latestReceivedData.Substring(0, 2).Trim();
+                    string trim2 = latestReceivedData.Substring(2).Trim();
+                    Console.WriteLine(trim);
+                    view.SerialNumber = trim2;
+                    view.ModelCode = trim;
                 }
             }
             else

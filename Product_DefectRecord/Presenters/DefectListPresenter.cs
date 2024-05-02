@@ -42,12 +42,12 @@ namespace Product_DefectRecord.Presenters
             var defect = (DefectModel)defectsBindingSource.Current;
             var detailDefect = new
             {
-                SerialNumber = "12345678",
-                ModelNumber = "NA-W123JJI34",
-                ModelCode = "3C",
-                //SerialNumber = view.SerialNumber,
-                //ModelNumber = view.ModelNumber,
-                //ModelCode = view.ModelCode,
+                //SerialNumber = "12345678",
+                //ModelNumber = "NA-W123JJI34",
+                //ModelCode = "3C",
+                SerialNumber = view.SerialNumber,
+                ModelNumber = view.ModelNumber,
+                ModelCode = view.ModelCode,
                 DefectId = defect.Id1,
                 DefectName = defect.DefectName1,
                 InspectorId = view.InspectorId,

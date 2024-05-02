@@ -7,6 +7,7 @@ using System.Configuration;
 using System.Drawing;
 using System.Windows.Forms;
 using static Product_DefectRecord.Presenters.DefectListPresenter;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Product_DefectRecord.Views
 {
@@ -324,6 +325,8 @@ namespace Product_DefectRecord.Views
             btnPrintManual.Click += delegate
             {
                 textBoxSerial.ReadOnly = !textBoxSerial.ReadOnly;
+                Console.WriteLine(IsKeyboardEnabled);
+                textBoxSerial.Focus();
             };
         }
 
@@ -352,9 +355,28 @@ namespace Product_DefectRecord.Views
             click.BackColor = Color.FromArgb(0, 133, 181);
         }
 
-        public string ConvertKeyCodeToString(Keys keyCode)
+        private void textBoxSerial_KeyDown(object sender, KeyEventArgs e)
         {
-            throw new NotImplementedException();
+            // Jika tombol "Enter" ditekan
+            if (e.KeyCode == Keys.Enter)
+            {
+                // Jika enter ditekan, kirim Keys.Enter
+                KeyDownEvent?.Invoke(this, new KeyEventArgs(Keys.Enter));
+            }
+            else
+            {
+                // Jika bukan tombol "Enter", maka pasti karakter yang dimasukkan
+                // Jika yang dimasukkan adalah angka, kirim Keys.None
+                if (int.TryParse(textBoxSerial.Text, out int _))
+                {
+                    KeyDownEvent?.Invoke(this, new KeyEventArgs(Keys.None));
+                }
+            }
+        }
+
+        private void textBoxCode_TextChanged(object sender, EventArgs e)
+        {
+            PerformModelSearch();
         }
     }
 }

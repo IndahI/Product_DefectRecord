@@ -24,8 +24,6 @@ namespace Product_DefectRecord.Views
         event EventHandler CellClicked;
         event KeyEventHandler KeyDownEvent;
 
-        string ConvertKeyCodeToString(Keys keyCode);
-
         void SetDefectListBindingSource(BindingSource defectList);
         void FilterByPartId(int partId);
         void ShowPopupForm();

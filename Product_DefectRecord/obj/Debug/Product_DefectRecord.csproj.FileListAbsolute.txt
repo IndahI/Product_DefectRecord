@@ -85,3 +85,8 @@ D:\Perkuliahan\Semester6\Panasonic\Product_DefectRecord\Product_DefectRecord\bin
 D:\Perkuliahan\Semester6\Panasonic\Product_DefectRecord\Product_DefectRecord\bin\Debug\zxing.xml
 D:\Perkuliahan\Semester6\Panasonic\Product_DefectRecord\Product_DefectRecord\bin\Debug\zxing.presentation.xml
 D:\Perkuliahan\Semester6\Panasonic\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.csproj.CopyComplete
+D:\Product_DefectRecord\yg baru\Product_DefectRecord\Product_DefectRecord\bin\Debug\zxing.dll
+D:\Product_DefectRecord\yg baru\Product_DefectRecord\Product_DefectRecord\bin\Debug\zxing.presentation.dll
+D:\Product_DefectRecord\yg baru\Product_DefectRecord\Product_DefectRecord\bin\Debug\zxing.xml
+D:\Product_DefectRecord\yg baru\Product_DefectRecord\Product_DefectRecord\bin\Debug\zxing.presentation.xml
+D:\Product_DefectRecord\yg baru\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_.BBEB9712.Up2Date
