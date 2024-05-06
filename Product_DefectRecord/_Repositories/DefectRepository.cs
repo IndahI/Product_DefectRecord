@@ -75,9 +75,9 @@ namespace Product_DefectRecord._Repositories
                 connection.Open();
                 command.Connection = connection;
                 command.CommandText = "SELECT Defect_Names.Id, Parts.PartName, Defect_Names.DefectName " +
-                                        "FROM Defect_Names " +
-                                        "INNER JOIN Parts ON Defect_Names.PartId = Parts.Id " +
-                                        "ORDER BY Id desc";
+                              "FROM Defect_Names " +
+                              "INNER JOIN Parts ON Defect_Names.PartId = Parts.Id " +
+                                "ORDER BY Priority DESC ,DefectName ASC";
                 using (var reader = command.ExecuteReader())
                 {
                     while (reader.Read())
@@ -138,7 +138,7 @@ namespace Product_DefectRecord._Repositories
                 command.CommandText = "SELECT Defect_Names.Id, Parts.PartName, Defect_Names.DefectName " +
                               "FROM Defect_Names " +
                               "INNER JOIN Parts ON Defect_Names.PartId = Parts.Id " +
-                               "WHERE Parts.ChartId = @selectedId " + "ORDER BY Parts.PartName ASC";
+                               "WHERE Parts.ChartId = @selectedId " + "ORDER BY Parts.PartName ASC, Priority DESC";
 
                 command.Parameters.AddWithValue("@selectedId", id);
                 using (var reader = command.ExecuteReader())

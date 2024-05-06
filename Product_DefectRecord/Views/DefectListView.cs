@@ -299,20 +299,29 @@ namespace Product_DefectRecord.Views
 
             dataGridView1.CellContentClick += (sender, e) =>
             {
-                if (dataGridView1.Columns[e.ColumnIndex].Name == "Edit")
-                {
-                    EditButtonClicked?.Invoke(this, new EventArgs());
-                }
-                else
-                {
+                //if (dataGridView1.Columns[e.ColumnIndex].Name == "Edit")
+                //{
+                //    EditButtonClicked?.Invoke(this, new EventArgs());
+                //}
+                //else
+                //{
+                //}
                     DataGridViewRow selectedRow = dataGridView1.Rows[e.RowIndex];
                     var selectedPerson = selectedRow.DataBoundItem as DefectModel;
                     CellClicked?.Invoke(this, EventArgs.Empty);
                     btnStatus.Text = "Save And Print";
                     //textBoxDefectName.Text = selectedPerson.DefectName1;
-                }
             };
 
+            dataGridView1.RowPostPaint += (sender, e) =>
+            {
+                this.dataGridView1.Rows[e.RowIndex].Cells["No"].Value = (e.RowIndex + 1 ).ToString();
+            };
+            dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 16, FontStyle.Bold);
+            dataGridView1.ColumnHeadersHeight = 40;
+
+            dataGridView1.DefaultCellStyle.Font = new Font("Arial", 14);
+            dataGridView1.RowTemplate.Height = 50;
 
             btnSetting.Click += delegate
             {

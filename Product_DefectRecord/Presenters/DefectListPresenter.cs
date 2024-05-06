@@ -2,6 +2,7 @@
 using Product_DefectRecord.Views;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Product_DefectRecord.Presenters
@@ -68,6 +69,11 @@ namespace Product_DefectRecord.Presenters
             if (id != 0)
             {
                 defectList = defectRepository.GetFilter(id);
+                if (defectList.Count() == 0)
+                {
+                    MessageBox.Show("No data!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
             }
             else
             {

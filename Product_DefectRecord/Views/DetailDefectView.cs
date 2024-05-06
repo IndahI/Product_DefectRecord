@@ -128,21 +128,22 @@ namespace Product_DefectRecord.Views
             // Gambar informasi model
             e.Graphics.DrawString("Model", fs1, Brushes.Black, new PointF(xPos, yPos + 13));
             yPos += 13;
-            e.Graphics.DrawString(":" + ModelNumber, fs1, Brushes.Black, new PointF(xPos + 75, yPos));
+            e.Graphics.DrawString(":" + ModelNumber, fs1, Brushes.Black, new PointF(xPos + 60, yPos));
+            e.Graphics.DrawString("................................", fs1, Brushes.Black, new PointF(xPos + 64, yPos + 3));
 
             // Data dalam tabel
             string[,] tableChecked = new string[3, 2] {
                 {" Reconfrim", "Checked"},
                 {" ", " "},
-                {"Leader", " Repairman"}
+                {"", ""}
             };
 
-            int Width = 45;
+            int Width = 48;
             int Height = 30;
             int Height1 = 20; // Tinggi untuk baris pertama kolom 3
             int Height2 = 10; // Tinggi untuk baris kedua (lebih besar dari baris 1 dan 3) kolom 1
             int Height3 = 30; // Tinggi untuk baris ketiga kolom 2
-            int X = 190;
+            int X = 183;
             int Y = yPos;
             int y1 = 21;
 
@@ -167,7 +168,7 @@ namespace Product_DefectRecord.Views
                     float x = X + col * Width;
                     float y = y1 + row * Height; // Menggunakan tinggi yang sesuai untuk setiap baris
 
-                    float textX = x + 10;
+                    float textX = x + 8;
                     float textY = y;
 
                     // Geser ke tengah untuk kolom pertama pada setiap baris
@@ -177,47 +178,45 @@ namespace Product_DefectRecord.Views
                     // Geser ke kanan sedikit untuk kolom kedua
                     if (col == 1)
                     {
-                        e.Graphics.DrawString(tableChecked[row, col], fs2, Brushes.Black, new PointF(textX + 2, textY));
+                        e.Graphics.DrawString(tableChecked[row, col], fs3, Brushes.Black, new PointF(textX - 3, textY));
                     }
                     else
                     {
-                        e.Graphics.DrawString(tableChecked[row, col], fs2, Brushes.Black, new PointF(textX, textY));
+                        e.Graphics.DrawString(tableChecked[row, col], fs3, Brushes.Black, new PointF(textX - 3, textY));
                     }
                 }
             }
 
             e.Graphics.DrawString("SN             ", fs1, Brushes.Black, new PointF(xPos, yPos + 16));
-            e.Graphics.DrawString(":" + SerialNumber, fs1, Brushes.Black, new PointF(xPos + 75, yPos + 16));
+            e.Graphics.DrawString(":" + SerialNumber, fs1, Brushes.Black, new PointF(xPos + 60, yPos + 16));
+            e.Graphics.DrawString("................................", fs1, Brushes.Black, new PointF(xPos + 64, yPos + 20));
 
             e.Graphics.DrawString("Time             ", fs1, Brushes.Black, new PointF(xPos, yPos + 33));
-            e.Graphics.DrawString(":" + currentTime, fs1, Brushes.Black, new PointF(xPos + 75, yPos + 33));
+            e.Graphics.DrawString(":" + currentTime, fs1, Brushes.Black, new PointF(xPos + 60, yPos + 33));
+            e.Graphics.DrawString("................................", fs1, Brushes.Black, new PointF(xPos + 64, yPos + 37));
 
             // Gambar informasi serial number
             e.Graphics.DrawString("Date ", fs1, Brushes.Black, new PointF(xPos, yPos + 50));
-            e.Graphics.DrawString(":" + currentDate, fs1, Brushes.Black, new PointF(xPos + 75, yPos + 50));
+            e.Graphics.DrawString(":" + currentDate, fs1, Brushes.Black, new PointF(xPos + 60, yPos + 50));
+            e.Graphics.DrawString("................................", fs1, Brushes.Black, new PointF(xPos + 64, yPos + 54));
 
             // Gambar informasi inspeksi
             e.Graphics.DrawString("Inspection          ", fs1, Brushes.Black, new PointF(xPos, yPos + 68));
-            e.Graphics.DrawString(":" + InspectorName, fs1, Brushes.Black, new PointF(xPos + 75, yPos + 68));
+            e.Graphics.DrawString(":" + InspectorName, fs1, Brushes.Black, new PointF(xPos + 60, yPos + 68));
+            e.Graphics.DrawString("................................", fs1, Brushes.Black, new PointF(xPos + 64, yPos + 72));
 
             // Data dalam tabel
             string[,] tableData = new string[3, 2] {
                 {"Problem", DefectName },
-                {"analysis", ""},
+                {"Analysis", ""},
                 {"Action", "" },
             };
 
             int cellWidth = 134;
             int cellWidth0 = 0;
             int cellHeight = 30;
-            int startX = 10;
+            int startX = 7;
             int startY = yPos + 90;
-
-            // Gambar garis vertikal
-            for (int i = 0; i <= 2; i++)
-            {
-                e.Graphics.DrawLine(Pens.Black, startX + i * (i == 0 ? cellWidth0 : cellWidth), startY, startX + i * (i == 0 ? cellWidth0 : cellWidth), startY + cellHeight * 3);
-            }
 
             // Gambar garis horizontal
             for (int i = 0; i <= 3; i++)
@@ -242,30 +241,35 @@ namespace Product_DefectRecord.Views
                     Font currentFont = fs1;
                     if (e.Graphics.MeasureString(text, fs1).Width > cellWidth || text.Length > 30)
                     {
-                        currentFont = new Font("Arial", 7); // Ubah ukuran font menjadi lebih kecil
+                        currentFont = new Font("Arial", 8); // Ubah ukuran font menjadi lebih kecil
                     }
 
-                    // Jika teks lebih dari 20 karakter, bagi menjadi beberapa baris
-                    if (text.Length > 30)
+                    // Jika teks lebih dari karakter yang ditentukan, bagi menjadi beberapa baris
+                    if (text.Length > 38)
                     {
-                        string[] lines = SplitTextIntoLines(text, 30); // Fungsi untuk membagi teks menjadi beberapa baris
+                        string[] lines = SplitTextIntoLines(text, 38); // Fungsi untuk membagi teks menjadi beberapa baris
                         for (int i = 0; i < lines.Length; i++)
                         {
-                            e.Graphics.DrawString(lines[i], currentFont, Brushes.Black, new PointF(textX, textY));
+                            e.Graphics.DrawString(lines[i], currentFont, Brushes.Black, new PointF(textX - 75, textY));
+                            e.Graphics.DrawString("............................................................", fs1, Brushes.Black, new PointF(textX - 75, textY + 3));
                             textY += currentFont.GetHeight();
                         }
                     }
                     else
                     {
-                        //membuat tulisan center
-                        textX += (cellWidth - e.Graphics.MeasureString(text, currentFont).Width) / 2;
                         textY += (cellHeight - e.Graphics.MeasureString(text, currentFont).Height) / 2;
 
                         e.Graphics.DrawString(text, currentFont, Brushes.Black, new PointF(textX, textY));
                     }
+                    // Jika di kolom kedua, tambahkan garis putus-putus
+                    if (col == 1 && (row == 1 || row == 2))
+                    {
+                        e.Graphics.DrawString("............................................................", fs1, Brushes.Black, new PointF(textX - 75, textY - 13));
+                        e.Graphics.DrawString("............................................................", fs1, Brushes.Black, new PointF(textX - 75, textY));
+                    }
                 }
             }
-            
+
             // Membuat barcode dari model number dan serial number
             string qrCode = $"{ModelCode}{SerialNumber}";
             BarcodeWriter barcodeWriter = new BarcodeWriter
@@ -295,11 +299,11 @@ namespace Product_DefectRecord.Views
             int customWidth = 50;
             int customHeight1 = 30; // Tinggi kolom kedua
             int customHeight2 = 15; // Tinggi kolom pertama
-            int customeHeight3 = 15;
+            int customeHeight3 = 15; // TInggi kolom ketiga
             int customX = 225;
             int customY = 220;
-            int customX1 = 225;
-            int customY1 = 200;
+            int customX1 = 223;
+            int customY1 = 203;
 
             // Gambar garis vertikal
             for (int i = 0; i <= 2; i++)
@@ -325,8 +329,12 @@ namespace Product_DefectRecord.Views
                     float customTextX = customXPos;
                     float customTextY = customYPos + 10;
 
-                    // Geser ke tengah untuk teks pada setiap baris
+                    float centerX = 228;
                     customTextX += (customWidth - e.Graphics.MeasureString(customTableData[row, col], fs2).Width) / 2;
+                    if (row == 2)
+                    {
+                        customTextX = centerX - e.Graphics.MeasureString(customTableData[row, col], fs2).Width / 2;
+                    }
                     customTextY += (customHeight1 - e.Graphics.MeasureString(customTableData[row, col], fs2).Height) / 2;
 
                     e.Graphics.DrawString(customTableData[row, col], fs3, Brushes.Black, new PointF(customTextX, customTextY));
@@ -338,12 +346,12 @@ namespace Product_DefectRecord.Views
         // Fungsi untuk membagi teks menjadi beberapa baris
         private string[] SplitTextIntoLines(string text, int maxCharactersPerLine)
         {
-           List<string> lines = new List<string>();
-           for (int i = 0; i < text.Length; i += maxCharactersPerLine)
-           {
-                 lines.Add(text.Substring(i, Math.Min(maxCharactersPerLine, text.Length - i)));
-           }
-           return lines.ToArray();
+            List<string> lines = new List<string>();
+            for (int i = 0; i < text.Length; i += maxCharactersPerLine)
+            {
+                lines.Add(text.Substring(i, Math.Min(maxCharactersPerLine, text.Length - i)));
+            }
+            return lines.ToArray();
         }
 
         private void printDocument1_PrintPage_1(object sender, PrintPageEventArgs e)
