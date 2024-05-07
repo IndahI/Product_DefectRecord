@@ -12,12 +12,22 @@ namespace Product_DefectRecord.Views
         string mode { get; set; }
         List<string> LocationNames { get; set; }
 
+        string ipaddress { get; set; }
+
+        int portaddress { get; set; }
+
         // Events
-        event EventHandler LoadSettings;
         event EventHandler SelectedIndexChanged;
+        event EventHandler LoadSettings;
         event EventHandler HandleRadioButton;
+        event EventHandler SaveIPSettings;
+        event EventHandler SavePortSettings;
+        event EventHandler LoadIP;
+        event EventHandler LoadPort;
 
         // Methods
+        void DisplayIP(string IPaddress);
+        void DisplayPort(int Port);
         void DisplaySetting(string myData);
         void ShowSelectedItem(string item);
         void DataLoaded();

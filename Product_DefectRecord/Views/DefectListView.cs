@@ -13,7 +13,7 @@ namespace Product_DefectRecord.Views
 {
     public partial class DefectListView : Form, IDefectListView
     {
-        private TcpServerWrapper serverWrapper;
+        private TcpClientWrapper clientWrapper;
         private string inspectorId;
         private PrintManualPresenter printManualPresenter;
         public DefectListView()
@@ -110,8 +110,8 @@ namespace Product_DefectRecord.Views
 
         private async void DefectView_Load(object sender, EventArgs e)
         {
-            serverWrapper = new TcpServerWrapper(1234, UpdateCodeBox, UpdateSerialBox); // Passing both update methods
-            await serverWrapper.StartServerAsync();
+            clientWrapper = new TcpClientWrapper(UpdateCodeBox, UpdateSerialBox); // Passing both update methods
+            await clientWrapper.ConnectToServerAsync();
         }
 
         private void DefectListView_keyDown(object sender, KeyEventArgs e)

@@ -129,7 +129,7 @@
     <Compile Include="Views\SettingView.Designer.cs">
       <DependentUpon>SettingView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\TcpServerWrapper.cs" />
+    <Compile Include="Views\TcpClientWrapper.cs" />
     <Compile Include="_Repositories\BaseRepository.cs" />
     <Compile Include="_Repositories\DefectRepository.cs" />
     <Compile Include="_Repositories\LoginRepository.cs" />
@@ -208,16 +208,16 @@
     <None Include="Resources\people.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\settings_white.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\logout_white.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\padlock.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout_white.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

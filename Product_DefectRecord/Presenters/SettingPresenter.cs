@@ -23,6 +23,22 @@ namespace Product_DefectRecord.Presenters
             _view.SelectedIndexChanged += View_SelectedIndexChanged;
             _view.LoadSettings += View_LoadSettings;
             _view.HandleRadioButton += HandleRadioButton;
+            _view.SaveIPSettings += SaveIPSettings;
+            _view.SavePortSettings += SavePortSettings;
+            _view.LoadIP += View_LoadIP;
+            _view.LoadPort += View_LoadPort;
+        }
+
+        private void View_LoadIP(object sender, EventArgs e)
+        {
+            string loadedIP = _smodel.LoadIP();
+            _view.DisplayIP(loadedIP);
+        }
+
+        private void View_LoadPort(object sender, EventArgs e)
+        {
+            int loadedPort = _smodel.LoadPort();
+            _view.DisplayPort(loadedPort);
         }
 
         private void View_LoadSettings(object sender, EventArgs e)
@@ -60,6 +76,16 @@ namespace Product_DefectRecord.Presenters
 
             // Setelah memuat pengaturan, memberi tahu view bahwa data telah dimuat
             _view.DataLoaded();
+        }
+
+        private void SaveIPSettings(object sender, EventArgs e)
+        {
+            _smodel.SaveSettingIP(_view.ipaddress);
+        }
+
+        private void SavePortSettings(object sender, EventArgs e)
+        {
+            _smodel.SaveSettingPort(_view.portaddress);
         }
 
         private void View_SelectedIndexChanged(object sender, EventArgs e)

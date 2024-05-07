@@ -26,17 +26,6 @@ namespace Product_DefectRecord.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-A0O7AHQS\\SQLEXPRESS;Initial Catalog=LSBUDB;Integrated Security" +
-            "=True;TrustServerCertificate=True")]
-        public string LSBUDBConnection {
-            get {
-                return ((string)(this["LSBUDBConnection"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-66EIFJP\\SQLEXPRESS;Initial Catalog=LSBUDB;Integrated Security" +
             "=True;Encrypt=True;TrustServerCertificate=True")]
         public string LSBUDBConnectionString {
@@ -78,6 +67,41 @@ namespace Product_DefectRecord.Properties {
             }
             set {
                 this["Mode"] = value;
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-66EIFJP\\SQLEXPRESS;Initial Catalog=LSBUDB;Integrated Security" +
+            "=True;Encrypt=True;TrustServerCertificate=True")]
+        public string LSBUDBConnection {
+            get {
+                return ((string)(this["LSBUDBConnection"]));
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string ServerIP {
+            get {
+                return ((string)(this["ServerIP"]));
+            }
+            set {
+                this["ServerIP"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int Port {
+            get {
+                return ((int)(this["Port"]));
+            }
+            set {
+                this["Port"] = value;
             }
         }
     }

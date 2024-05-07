@@ -13,7 +13,9 @@ namespace Product_DefectRecord.Models
         public event EventHandler<int> SettingsSavedId;
         public event EventHandler<string> SettingsLoaded;
         public event EventHandler<int> SettingsLoadedId;
-        public event EventHandler<string> SettingsSavedMode; // Event untuk mode disimpan
+        public event EventHandler<string> SettingsSavedMode;
+        public event EventHandler<string> SaveSettingsIP;
+        public event EventHandler<int> SaveSettingsPort;
 
         public void SaveSetting(string myData)
         {
@@ -43,12 +45,39 @@ namespace Product_DefectRecord.Models
             return id;
         }
 
+        public string LoadIP()
+        {
+            string ipaddress = Properties.Settings.Default.ServerIP;
+            OnSettingsLoaded(ipaddress);
+            return ipaddress;
+        }
+
+        public int LoadPort()
+        {
+            int port = Properties.Settings.Default.Port;
+            OnSettingsLoaded(port.ToString());
+            return port;
+        }
+
         public void SaveData(string data)
         {
             Properties.Settings.Default.Mode = data;
             Properties.Settings.Default.Save();
             OnSettingsSavedMode(data);
-            Console.WriteLine(data);
+        }
+
+        public void SaveSettingIP(string serverIP)
+        {
+            Properties.Settings.Default.ServerIP = serverIP;
+            Properties.Settings.Default.Save();
+            OnSettingsSaved(serverIP);
+        }
+
+        public void SaveSettingPort(int port)
+        {
+            Properties.Settings.Default.Port = port;
+            Properties.Settings.Default.Save();
+            OnSaveSettingsPort(port);
         }
 
         public string GetMode()
@@ -66,9 +95,9 @@ namespace Product_DefectRecord.Models
             SettingsSavedId?.Invoke(this, id);
         }
 
-        protected virtual void OnSettingsSavedMode(string data) // Mengubah tipe parameter menjadi string
+        protected virtual void OnSettingsSavedMode(string data)
         {
-            SettingsSavedMode?.Invoke(this, data); // Menggunakan parameter yang sesuai
+            SettingsSavedMode?.Invoke(this, data);
         }
 
         protected virtual void OnSettingsLoaded(string myData)
@@ -79,6 +108,11 @@ namespace Product_DefectRecord.Models
         protected virtual void OnSettingsLoadedId(int id)
         {
             SettingsLoadedId?.Invoke(this, id);
+        }
+
+        protected virtual void OnSaveSettingsPort(int port)
+        {
+            SaveSettingsPort?.Invoke(this, port);
         }
     }
 }
