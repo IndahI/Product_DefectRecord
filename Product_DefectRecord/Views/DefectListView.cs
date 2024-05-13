@@ -22,7 +22,6 @@ namespace Product_DefectRecord.Views
             InitializeComponent();
             AssociateAndRaiseViewEvents();
             printManualPresenter = new PrintManualPresenter(this);
-
         }
 
         //event
@@ -370,6 +369,37 @@ namespace Product_DefectRecord.Views
             click.BackColor = Color.FromArgb(0, 133, 181);
         }
 
+        private void tableLayoutPanel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        public void AddNoData()
+        {
+            // Clear existing data source
+            dataGridView1.DataSource = null;
+
+            // Bersihkan semua baris yang ada di DataGridView
+            dataGridView1.Rows.Clear();
+
+            // Tambahkan satu baris dengan teks "No Data" ke DataGridView
+            DataGridViewRow noDataRow = new DataGridViewRow();
+            noDataRow.CreateCells(dataGridView1);
+            dataGridView1.Columns[0].HeaderText = "No Data";
+            dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView1.Rows.Add(noDataRow);
+        }
+
+        public void RemoveNoData(BindingSource defectList)
+        {
+            // Bersihkan semua baris yang ada di DataGridView
+            dataGridView1.Rows.Clear();
+            dataGridView1.Columns.Clear();
+
+            // Set nilai DataSource menjadi null untuk menghapus sumber data
+            SetDefectListBindingSource(defectList);
+        }
+
         private void textBoxSerial_KeyDown(object sender, KeyEventArgs e)
         {
             // Jika tombol "Enter" ditekan
@@ -392,44 +422,6 @@ namespace Product_DefectRecord.Views
         private void textBoxCode_TextChanged(object sender, EventArgs e)
         {
             PerformModelSearch();
-        }
-
-        private void tableLayoutPanel4_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        public void AddNoData()
-        {
-            // Clear existing data source
-            dataGridView1.DataSource = null;
-
-            // Bersihkan semua baris yang ada di DataGridView
-            dataGridView1.Rows.Clear();
-
-            // Tambahkan satu baris dengan teks "No Data" ke DataGridView
-            DataGridViewRow noDataRow = new DataGridViewRow();
-            noDataRow.CreateCells(dataGridView1);
-            dataGridView1.Columns[0].HeaderText = "No Data";
-            dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridView1.Rows.Add(noDataRow);
-        }
-
-        public void RemoveNoData()
-        {
-            // Iterate through the rows and remove the one with "No Data" text
-            foreach (DataGridViewRow row in dataGridView1.Rows)
-            {
-                if (row.Cells[0].Value != null && row.Cells[0].Value.ToString() == "No Data")
-                {
-                    // Pastikan tidak menghapus header
-                    if (row.Index != -1) // Jika baris bukan header
-                    {
-                        dataGridView1.Rows.Remove(row);
-                        break; // Assuming there's only one "No Data" row, exit the loop after removing it
-                    }
-                }
-            }
         }
     }
 }

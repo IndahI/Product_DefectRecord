@@ -25,7 +25,7 @@ namespace Product_DefectRecord.Views
         event KeyEventHandler KeyDownEvent;
 
         void AddNoData();
-        void RemoveNoData();
+        void RemoveNoData(BindingSource defectList);
         void SetDefectListBindingSource(BindingSource defectList);
         void FilterByPartId(int partId);
         void ShowPopupForm();

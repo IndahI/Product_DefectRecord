@@ -69,22 +69,17 @@ namespace Product_DefectRecord.Presenters
         {
             if (id != 0)
             {
+                // Periksa apakah defectList kosong
+                if (defectList.Count() == 0)
+                {
+                    view.AddNoData();
+                }
+                view.RemoveNoData(defectsBindingSource); // Hapus baris "No Data" 
                 defectList = defectRepository.GetFilter(id);
             }
             else
             {
                 defectList = defectRepository.GetAll();
-            }
-
-            // Periksa apakah defectList kosong
-            if (defectList.Count() == 0)
-            {
-                view.AddNoData();
-            }
-            else
-            {
-                //view.RemoveNoData(); // Hapus baris "No Data" jika ada
-                defectList = defectRepository.GetFilter(id);
             }
 
             // Atur sumber data untuk defectsBindingSource

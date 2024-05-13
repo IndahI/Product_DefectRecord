@@ -34,7 +34,7 @@ public class TcpClientWrapper
             }
             catch (Exception ex)
             {
-                updateUiCallback?.Invoke($"Error connecting to server: {ex.Message}");
+                //updateUiCallback?.Invoke($"Error connecting to server: {ex.Message}");
             }
         }
     }
@@ -49,7 +49,7 @@ public class TcpClientWrapper
         }
         catch (Exception ex)
         {
-            updateUiCallback?.Invoke($"Error sending message to server: {ex.Message}");
+            //updateUiCallback?.Invoke($"Error sending message to server: {ex.Message}");
         }
     }
 
