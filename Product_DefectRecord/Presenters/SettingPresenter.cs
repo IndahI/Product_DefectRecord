@@ -23,10 +23,18 @@ namespace Product_DefectRecord.Presenters
             _view.SelectedIndexChanged += View_SelectedIndexChanged;
             _view.LoadSettings += View_LoadSettings;
             _view.HandleRadioButton += HandleRadioButton;
-            _view.SaveIPSettings += SaveIPSettings;
-            _view.SavePortSettings += SavePortSettings;
+            //_view.SaveIPSettings += SaveIPSettings;
+            //_view.SavePortSettings += SavePortSettings;
             _view.LoadIP += View_LoadIP;
             _view.LoadPort += View_LoadPort;
+            _view.SaveConnect += SaveConnect;
+        }
+
+        private void SaveConnect(object sender, EventArgs e)
+        {
+            _smodel.SaveSettingIP(_view.ipaddress);
+            _smodel.SaveSettingPort(_view.portaddress);
+            MessageBox.Show("Connected to server!", "Connection Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void View_LoadIP(object sender, EventArgs e)
@@ -78,15 +86,15 @@ namespace Product_DefectRecord.Presenters
             _view.DataLoaded();
         }
 
-        private void SaveIPSettings(object sender, EventArgs e)
-        {
-            _smodel.SaveSettingIP(_view.ipaddress);
-        }
+        //private void SaveIPSettings(object sender, EventArgs e)
+        //{
+        //    _smodel.SaveSettingIP(_view.ipaddress);
+        //}
 
-        private void SavePortSettings(object sender, EventArgs e)
-        {
-            _smodel.SaveSettingPort(_view.portaddress);
-        }
+        //private void SavePortSettings(object sender, EventArgs e)
+        //{
+        //    _smodel.SaveSettingPort(_view.portaddress);
+        //}
 
         private void View_SelectedIndexChanged(object sender, EventArgs e)
         {

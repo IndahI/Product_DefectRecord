@@ -1,8 +1,10 @@
 ﻿using Product_DefectRecord._Repositories;
 using Product_DefectRecord.Models;
+using Product_DefectRecord.Presenters;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -64,6 +66,7 @@ namespace Product_DefectRecord.Views
         public event EventHandler SavePortSettings;
         public event EventHandler LoadIP;
         public event EventHandler LoadPort;
+        public event EventHandler SaveConnect;
 
         public void DisplayIP(string IPaddress)
         {
@@ -120,15 +123,26 @@ namespace Product_DefectRecord.Views
                 }
             };
 
-            IPtextBox.TextChanged += (sender, e) =>
-            {
-                // Invoke SaveIPSetting event when IP text changes
-                SaveIPSettings?.Invoke(this, EventArgs.Empty);
-            };
+            //IPtextBox.TextChanged += (sender, e) =>
+            //{
+            //    // Invoke SaveIPSetting event when IP text changes
+            //    SaveIPSettings?.Invoke(this, EventArgs.Empty);
+            //};
 
-            PorttextBox.TextChanged += (sender, e) =>
-            {
-                SavePortSettings?.Invoke(this, EventArgs.Empty);
+            //PorttextBox.TextChanged += (sender, e) =>
+            //{
+            //    SavePortSettings?.Invoke(this, EventArgs.Empty);
+            //};
+
+            btnConnect.Click += delegate 
+            { 
+                SaveConnect?.Invoke(this, EventArgs.Empty);
+                string sqlConnectionString = ConfigurationManager.ConnectionStrings["LSBUDBConnection"].ConnectionString;
+                ILoginView loginView = new LoginView();
+                LoginPresenter loginPresenter = new LoginPresenter(loginView, new LoginRepository(sqlConnectionString));
+                (loginView as Form)?.Show();
+                //Application.Exit();
+                this.Close();
             };
         }
 

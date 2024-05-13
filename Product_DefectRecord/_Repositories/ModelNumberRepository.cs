@@ -26,7 +26,7 @@ namespace Product_DefectRecord._Repositories
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = @"SELECT * FROM Global_Model_Code WHERE modelCode = @modelCode";
+                command.CommandText = @"SELECT * FROM Global_Model_Codes WHERE modelCode = @modelCode";
                 command.Parameters.Add("@modelCode", SqlDbType.VarChar).Value = model.modelCode1;
 
                 using (var reader = command.ExecuteReader())

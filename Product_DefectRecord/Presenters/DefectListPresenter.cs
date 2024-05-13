@@ -2,6 +2,7 @@
 using Product_DefectRecord.Views;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -43,12 +44,12 @@ namespace Product_DefectRecord.Presenters
             var defect = (DefectModel)defectsBindingSource.Current;
             var detailDefect = new
             {
-                //SerialNumber = "12345678",
-                //ModelNumber = "NA-W123JJI34",
-                //ModelCode = "3C",
-                SerialNumber = view.SerialNumber,
-                ModelNumber = view.ModelNumber,
-                ModelCode = view.ModelCode,
+                SerialNumber = "12345678",
+                ModelNumber = "NA-W123JJI34",
+                ModelCode = "3D",
+                //SerialNumber = view.SerialNumber,
+                //ModelNumber = view.ModelNumber,
+                //ModelCode = view.ModelCode,
                 DefectId = defect.Id1,
                 DefectName = defect.DefectName1,
                 InspectorId = view.InspectorId,
@@ -69,16 +70,24 @@ namespace Product_DefectRecord.Presenters
             if (id != 0)
             {
                 defectList = defectRepository.GetFilter(id);
-                if (defectList.Count() == 0)
-                {
-                    MessageBox.Show("No data!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
-                }
             }
             else
             {
                 defectList = defectRepository.GetAll();
             }
+
+            // Periksa apakah defectList kosong
+            if (defectList.Count() == 0)
+            {
+                view.AddNoData();
+            }
+            else
+            {
+                //view.RemoveNoData(); // Hapus baris "No Data" jika ada
+                defectList = defectRepository.GetFilter(id);
+            }
+
+            // Atur sumber data untuk defectsBindingSource
             defectsBindingSource.DataSource = defectList;
         }
 
