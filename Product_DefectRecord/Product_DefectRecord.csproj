@@ -129,6 +129,7 @@
     <Compile Include="Views\SettingView.Designer.cs">
       <DependentUpon>SettingView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\SqlHelper.cs" />
     <Compile Include="Views\TcpClientWrapper.cs" />
     <Compile Include="_Repositories\BaseRepository.cs" />
     <Compile Include="_Repositories\DefectRepository.cs" />

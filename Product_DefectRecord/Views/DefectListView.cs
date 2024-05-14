@@ -17,6 +17,7 @@ namespace Product_DefectRecord.Views
         private string inspectorId;
         private PrintManualPresenter printManualPresenter;
         private BindingSource defectsBindingSource = new BindingSource();
+        private bool showNoData = true;
         public DefectListView()
         {
             InitializeComponent();
@@ -304,13 +305,6 @@ namespace Product_DefectRecord.Views
 
             dataGridView1.CellContentClick += (sender, e) =>
             {
-                //if (dataGridView1.Columns[e.ColumnIndex].Name == "Edit")
-                //{
-                //    EditButtonClicked?.Invoke(this, new EventArgs());
-                //}
-                //else
-                //{
-                //}
                     DataGridViewRow selectedRow = dataGridView1.Rows[e.RowIndex];
                     var selectedPerson = selectedRow.DataBoundItem as DefectModel;
                     CellClicked?.Invoke(this, EventArgs.Empty);
@@ -320,8 +314,12 @@ namespace Product_DefectRecord.Views
 
             dataGridView1.RowPostPaint += (sender, e) =>
             {
-                this.dataGridView1.Rows[e.RowIndex].Cells["No"].Value = (e.RowIndex + 1 ).ToString();
+                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+
+                row.Cells["No"].Value = (e.RowIndex + 1).ToString();
+                row.Cells["No"].Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             };
+
             dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 16, FontStyle.Bold);
             dataGridView1.ColumnHeadersHeight = 40;
 
@@ -382,22 +380,27 @@ namespace Product_DefectRecord.Views
             // Bersihkan semua baris yang ada di DataGridView
             dataGridView1.Rows.Clear();
 
-            // Tambahkan satu baris dengan teks "No Data" ke DataGridView
-            DataGridViewRow noDataRow = new DataGridViewRow();
-            noDataRow.CreateCells(dataGridView1);
             dataGridView1.Columns[0].HeaderText = "No Data";
             dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridView1.Rows.Add(noDataRow);
+            //dataGridView1.Rows.Add(w);
         }
 
         public void RemoveNoData(BindingSource defectList)
         {
             // Bersihkan semua baris yang ada di DataGridView
             dataGridView1.Rows.Clear();
-            dataGridView1.Columns.Clear();
+            dataGridView1.RowPostPaint += (sender, e) =>
+            {
+                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+                    row.Cells["No"].Value = (e.RowIndex + 1).ToString();
+                    row.Cells["No"].Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
+            };
+            dataGridView1.Columns[0].HeaderText = "No";
+            dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             // Set nilai DataSource menjadi null untuk menghapus sumber data
             SetDefectListBindingSource(defectList);
+
         }
 
         private void textBoxSerial_KeyDown(object sender, KeyEventArgs e)

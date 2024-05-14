@@ -93,6 +93,10 @@ namespace Product_DefectRecord.Views
             LoadSettings?.Invoke(this, EventArgs.Empty);
             LoadIP?.Invoke(this, EventArgs.Empty);
             LoadPort?.Invoke(this, EventArgs.Empty);
+
+            cboServer.Items.Add(@".\SQLEXPRESS");
+            cboServer.Items.Add(string.Format(@"{0}\SQLEXPRESS", Environment.MachineName));
+            cboServer.SelectedIndex = 1;
         }
 
         public void InitializeComboBoxEventHandler()
@@ -123,18 +127,7 @@ namespace Product_DefectRecord.Views
                 }
             };
 
-            //IPtextBox.TextChanged += (sender, e) =>
-            //{
-            //    // Invoke SaveIPSetting event when IP text changes
-            //    SaveIPSettings?.Invoke(this, EventArgs.Empty);
-            //};
-
-            //PorttextBox.TextChanged += (sender, e) =>
-            //{
-            //    SavePortSettings?.Invoke(this, EventArgs.Empty);
-            //};
-
-            btnConnect.Click += delegate 
+            btnRestart.Click += delegate 
             { 
                 SaveConnect?.Invoke(this, EventArgs.Empty);
                 string sqlConnectionString = ConfigurationManager.ConnectionStrings["LSBUDBConnection"].ConnectionString;
@@ -143,6 +136,21 @@ namespace Product_DefectRecord.Views
                 (loginView as Form)?.Show();
                 //Application.Exit();
                 this.Close();
+            };
+
+            btnConnect.Click += delegate
+            {
+                string connectionString = string.Format("Data Source={0};Initial Catalog={1};Integrated Security=True;", cboServer.Text, txtDatabase.Text);
+                try
+                {
+                    SqlHelper helper = new SqlHelper(connectionString);
+                    if (helper.IsConnection)
+                        MessageBox.Show("Test Connection succeeded.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Failed to connect to the database. Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             };
         }
 

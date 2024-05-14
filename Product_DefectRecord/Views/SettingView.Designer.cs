@@ -43,10 +43,27 @@
             this.IPtextBox = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.btnRestart = new Product_DefectRecord.Component.RdButton();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.cboServer = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtDatabase = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtUsername = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
             this.btnConnect = new Product_DefectRecord.Component.RdButton();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.rdButton1 = new Product_DefectRecord.Component.RdButton();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tableLayoutPanel3.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // onRadio
@@ -246,45 +263,238 @@
             this.label7.TabIndex = 12;
             this.label7.Text = "*After change IP/Port click button RESTART";
             // 
+            // btnRestart
+            // 
+            this.btnRestart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
+            this.btnRestart.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
+            this.btnRestart.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnRestart.BorderRadius = 20;
+            this.btnRestart.BorderSize = 0;
+            this.btnRestart.FlatAppearance.BorderSize = 0;
+            this.btnRestart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRestart.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRestart.ForeColor = System.Drawing.Color.White;
+            this.btnRestart.Location = new System.Drawing.Point(330, 443);
+            this.btnRestart.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnRestart.Name = "btnRestart";
+            this.btnRestart.Size = new System.Drawing.Size(225, 62);
+            this.btnRestart.TabIndex = 11;
+            this.btnRestart.Text = "Restart";
+            this.btnRestart.TextColor = System.Drawing.Color.White;
+            this.btnRestart.UseVisualStyleBackColor = false;
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 1;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Controls.Add(this.label8, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 0, 1);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(905, 92);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 2;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.97386F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 82.02615F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(528, 306);
+            this.tableLayoutPanel3.TabIndex = 13;
+            // 
+            // label8
+            // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(44, 4);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(440, 46);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Connection Database";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.ColumnCount = 2;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.50191F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70.49809F));
+            this.tableLayoutPanel4.Controls.Add(this.label9, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.cboServer, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.label10, 0, 1);
+            this.tableLayoutPanel4.Controls.Add(this.txtDatabase, 1, 1);
+            this.tableLayoutPanel4.Controls.Add(this.label11, 0, 2);
+            this.tableLayoutPanel4.Controls.Add(this.label12, 0, 3);
+            this.tableLayoutPanel4.Controls.Add(this.txtUsername, 1, 2);
+            this.tableLayoutPanel4.Controls.Add(this.txtPassword, 1, 3);
+            this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel5, 1, 4);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 58);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 5;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 53.68421F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 46.31579F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 42F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 47F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(522, 245);
+            this.tableLayoutPanel4.TabIndex = 1;
+            // 
+            // label9
+            // 
+            this.label9.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(3, 14);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(76, 23);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "Server";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // cboServer
+            // 
+            this.cboServer.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cboServer.FormattingEnabled = true;
+            this.cboServer.Location = new System.Drawing.Point(161, 11);
+            this.cboServer.Name = "cboServer";
+            this.cboServer.Size = new System.Drawing.Size(354, 28);
+            this.cboServer.TabIndex = 1;
+            // 
+            // label10
+            // 
+            this.label10.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(3, 61);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(104, 23);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "Database";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtDatabase
+            // 
+            this.txtDatabase.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtDatabase.Location = new System.Drawing.Point(162, 60);
+            this.txtDatabase.Name = "txtDatabase";
+            this.txtDatabase.Size = new System.Drawing.Size(352, 26);
+            this.txtDatabase.TabIndex = 2;
+            // 
+            // label11
+            // 
+            this.label11.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(3, 104);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(119, 23);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "User Name";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label12
+            // 
+            this.label12.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(3, 149);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(107, 23);
+            this.label12.TabIndex = 0;
+            this.label12.Text = "Password";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtUsername
+            // 
+            this.txtUsername.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtUsername.Location = new System.Drawing.Point(162, 103);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(352, 26);
+            this.txtUsername.TabIndex = 2;
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtPassword.Location = new System.Drawing.Point(162, 147);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
+            this.txtPassword.Size = new System.Drawing.Size(352, 26);
+            this.txtPassword.TabIndex = 2;
+            // 
             // btnConnect
             // 
+            this.btnConnect.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnConnect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
             this.btnConnect.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
             this.btnConnect.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnConnect.BorderRadius = 20;
+            this.btnConnect.BorderRadius = 8;
             this.btnConnect.BorderSize = 0;
             this.btnConnect.FlatAppearance.BorderSize = 0;
             this.btnConnect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConnect.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConnect.ForeColor = System.Drawing.Color.White;
-            this.btnConnect.Location = new System.Drawing.Point(330, 443);
-            this.btnConnect.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnConnect.Location = new System.Drawing.Point(15, 7);
             this.btnConnect.Name = "btnConnect";
-            this.btnConnect.Size = new System.Drawing.Size(225, 62);
-            this.btnConnect.TabIndex = 11;
-            this.btnConnect.Text = "Restart";
+            this.btnConnect.Size = new System.Drawing.Size(150, 40);
+            this.btnConnect.TabIndex = 14;
+            this.btnConnect.Text = "Connect";
             this.btnConnect.TextColor = System.Drawing.Color.White;
             this.btnConnect.UseVisualStyleBackColor = false;
+            // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.ColumnCount = 2;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.Controls.Add(this.btnConnect, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.rdButton1, 1, 0);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(157, 187);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 1;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(362, 55);
+            this.tableLayoutPanel5.TabIndex = 3;
+            // 
+            // rdButton1
+            // 
+            this.rdButton1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.rdButton1.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.rdButton1.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.rdButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rdButton1.BorderRadius = 8;
+            this.rdButton1.BorderSize = 0;
+            this.rdButton1.FlatAppearance.BorderSize = 0;
+            this.rdButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rdButton1.ForeColor = System.Drawing.Color.White;
+            this.rdButton1.Location = new System.Drawing.Point(196, 7);
+            this.rdButton1.Name = "rdButton1";
+            this.rdButton1.Size = new System.Drawing.Size(150, 40);
+            this.rdButton1.TabIndex = 14;
+            this.rdButton1.Text = "Save";
+            this.rdButton1.TextColor = System.Drawing.Color.White;
+            this.rdButton1.UseVisualStyleBackColor = false;
             // 
             // SettingView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(878, 523);
+            this.ClientSize = new System.Drawing.Size(1693, 523);
+            this.Controls.Add(this.tableLayoutPanel3);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.btnConnect);
+            this.Controls.Add(this.btnRestart);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "SettingView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.SettingView_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.tableLayoutPanel4.PerformLayout();
+            this.tableLayoutPanel5.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -306,7 +516,21 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox IPtextBox;
-        private Component.RdButton btnConnect;
+        private Component.RdButton btnRestart;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox cboServer;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtDatabase;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txtUsername;
+        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
+        private Component.RdButton btnConnect;
+        private Component.RdButton rdButton1;
     }
 }

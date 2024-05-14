@@ -20,15 +20,18 @@ namespace Product_DefectRecord.Views
 
         private void AssociateAndRaiseViewEvents()
         {
-            btnLogin.Click += BtnLogin_Click;
-        }
-
-        private void BtnLogin_Click(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrWhiteSpace(Nik))
+            btnLogin.Click += delegate
             {
-                Login?.Invoke(this, EventArgs.Empty);
-            }
+                if(!string.IsNullOrWhiteSpace(Nik))
+            {
+                    Login?.Invoke(this, EventArgs.Empty);
+                }
+            };
+
+            btnExit.Click += delegate
+            {
+                Application.Exit();
+            };
         }
 
         protected override void OnPaintBackground(PaintEventArgs e)
@@ -64,11 +67,6 @@ namespace Product_DefectRecord.Views
         public void HideView()
         {
             this.Hide();
-        }
-
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
         }
     }
 }

@@ -17,6 +17,7 @@ namespace Product_DefectRecord.Presenters
         private BindingSource defectsBindingSource;
         private IEnumerable<DefectModel> defectList;
         private SaveModel _smodel;
+        private bool showNoData = false;
 
         public DefectListPresenter(DefectListDataPresenter data)
         {
@@ -69,13 +70,19 @@ namespace Product_DefectRecord.Presenters
         {
             if (id != 0)
             {
+                view.RemoveNoData(defectsBindingSource); // Hapus baris "No Data" 
+                defectList = defectRepository.GetFilter(id);
                 // Periksa apakah defectList kosong
                 if (defectList.Count() == 0)
                 {
+                    showNoData = true;
                     view.AddNoData();
                 }
-                view.RemoveNoData(defectsBindingSource); // Hapus baris "No Data" 
-                defectList = defectRepository.GetFilter(id);
+                else
+                {
+                    showNoData = false;
+                    view.RemoveNoData(defectsBindingSource);
+                }
             }
             else
             {
@@ -84,6 +91,7 @@ namespace Product_DefectRecord.Presenters
 
             // Atur sumber data untuk defectsBindingSource
             defectsBindingSource.DataSource = defectList;
+
         }
 
         private void ClearAction(object sender, EventArgs e)
