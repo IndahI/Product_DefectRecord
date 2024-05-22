@@ -19,3 +19,4 @@ D:\Perkuliahan\Semester6\Panasonic\Product_DefectRecord\Product_DefectRecord\obj
 D:\Perkuliahan\Semester6\Panasonic\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.pdb
 D:\Perkuliahan\Semester6\Panasonic\Product_DefectRecord\Product_DefectRecord\bin\Debug\Newtonsoft.Json.dll
 D:\Perkuliahan\Semester6\Panasonic\Product_DefectRecord\Product_DefectRecord\bin\Debug\Newtonsoft.Json.xml
+D:\Perkuliahan\Semester6\Panasonic\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.Views.Sementara.resources
