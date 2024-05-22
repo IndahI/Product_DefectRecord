@@ -21,9 +21,9 @@ namespace Product_DefectRecord
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            string sqlConnectionString = ConfigurationManager.ConnectionStrings["LSBUDBConnection"].ConnectionString;
+            string sqlConnectionString = ConfigurationManager.ConnectionStrings["DBConnectionCommon"].ConnectionString;
             ILoginView view = new LoginView();
-            ILoginRepository repository = new LoginRepository(sqlConnectionString);
+            ILoginRepository repository = new LoginRepository();
             new LoginPresenter(view, repository);
 
             Application.Run((Form)view);

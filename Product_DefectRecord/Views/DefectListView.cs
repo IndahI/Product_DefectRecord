@@ -85,7 +85,6 @@ namespace Product_DefectRecord.Views
             if (textBoxSerial.InvokeRequired)
             {
                 textBoxSerial.Invoke((MethodInvoker)(() => UpdateSerialBox(message)));
-                Console.WriteLine(textBoxSerial);
             }
             else
             {
@@ -111,6 +110,7 @@ namespace Product_DefectRecord.Views
 
         private async void DefectView_Load(object sender, EventArgs e)
         {
+            timer1.Start();
             clientWrapper = new TcpClientWrapper(UpdateCodeBox, UpdateSerialBox); // Passing both update methods
             await clientWrapper.ConnectToServerAsync();
         }
@@ -295,9 +295,8 @@ namespace Product_DefectRecord.Views
 
             btnLogout.Click += delegate
             {
-                string sqlConnectionString = ConfigurationManager.ConnectionStrings["LSBUDBConnection"].ConnectionString;
                 ILoginView loginView = new LoginView();
-                LoginPresenter loginPresenter = new LoginPresenter(loginView, new LoginRepository(sqlConnectionString));
+                LoginPresenter loginPresenter = new LoginPresenter(loginView, new LoginRepository());
                 (loginView as Form)?.Show();
                 //Application.Exit();
                 this.Close();
@@ -320,25 +319,29 @@ namespace Product_DefectRecord.Views
                 row.Cells["No"].Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             };
 
-            dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 16, FontStyle.Bold);
+            dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 18, FontStyle.Bold);
             dataGridView1.ColumnHeadersHeight = 40;
 
-            dataGridView1.DefaultCellStyle.Font = new Font("Arial", 14);
+            dataGridView1.DefaultCellStyle.Font = new Font("Arial", 16);
             dataGridView1.RowTemplate.Height = 50;
 
             btnSetting.Click += delegate
             {
-                string sqlConnectionString = ConfigurationManager.ConnectionStrings["LSBUDBConnection"].ConnectionString;
                 ISettingView settingView = SettingView.GetInstance();
-                SettingPresenter settingPresenter = new SettingPresenter(settingView, new SettingModel(new SettingRepository(sqlConnectionString)));
+                SettingPresenter settingPresenter = new SettingPresenter(settingView, new SettingModel(new SettingRepository()));
                 (settingView as Form)?.Show();
             };
 
             btnPrintManual.Click += delegate
             {
                 textBoxSerial.ReadOnly = !textBoxSerial.ReadOnly;
-                Console.WriteLine(IsKeyboardEnabled);
                 textBoxSerial.Focus();
+            };
+
+            timer1.Tick += delegate 
+            {
+                Date.Text = DateTime.Now.ToLongDateString();
+                Time.Text = DateTime.Now.ToLongTimeString();    
             };
         }
 
@@ -365,11 +368,6 @@ namespace Product_DefectRecord.Views
             }
             Control click = (Control)sender;
             click.BackColor = Color.FromArgb(0, 133, 181);
-        }
-
-        private void tableLayoutPanel4_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         public void AddNoData()

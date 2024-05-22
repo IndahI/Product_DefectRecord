@@ -1,30 +1,30 @@
 ﻿using Product_DefectRecord.Models;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Reflection;
 
 namespace Product_DefectRecord._Repositories
 {
-    public class DefectRepository : BaseRepository, IDefectRepository
+    public class DefectRepository : IDefectRepository
     {
+        //Properties
+        private string DBConnectionQC;
+
         //Constructor
-        public DefectRepository(string connetionString)
+        public DefectRepository()
         {
-            this.connectionString = connetionString;
+            DBConnectionQC = ConfigurationManager.ConnectionStrings["DBConnectionQC"].ConnectionString;
         }
         public void Add(dynamic model)
         {
-            using (var connection = new SqlConnection(connectionString))
+            using (var connection = new SqlConnection(DBConnectionQC))
             using (var command = new SqlCommand())
             {
                 connection.Open();
                 command.Connection = connection;
-
-                //command.CommandText = "SELECT Nik FROM Users WHERE Name = @InspectorName";
-                //command.Parameters.Add("@InspectorName", SqlDbType.VarChar).Value = model.InspectorName;
-                //int inspectorId = (int)command.ExecuteScalar();
 
                 command.CommandText = "INSERT INTO Defect_Results (DateTime, SerialNumber, ModelCode, DefectId, InspectorId, ModelNumber, LocationId) values (@DateTime, @SerialNumber, @ModelCode, @DefectId, @InspectorId, @ModelNumber, @LocationId)";
                 command.Parameters.Add("@DateTime", SqlDbType.SmallDateTime).Value = DateTime.Now;
@@ -38,38 +38,10 @@ namespace Product_DefectRecord._Repositories
             }
         }
 
-        public void Delete(int Id)
-        {
-            using (var connection = new SqlConnection(connectionString))
-            using (var command = new SqlCommand())
-            {
-                connection.Open();
-                command.Connection = connection;
-                command.CommandText = "DELETE from Defect_Names WHERE Id = @Id";
-                command.Parameters.Add("@Id", SqlDbType.Int).Value = Id;
-                command.ExecuteNonQuery();
-            }
-        }
-
-        public void Edit(DefectModel defectmodel)
-        {
-            using (var connection = new SqlConnection(connectionString))
-            using (var command = new SqlCommand())
-            {
-                connection.Open();
-                command.Connection = connection;
-                command.CommandText = "UPDATE Defect_Names set Id=@Id, PartId=@PartId, DefectName=@DefectName WHERE Id=@Id";
-                command.Parameters.Add("@Id", SqlDbType.Int).Value = defectmodel.Id1;
-                command.Parameters.Add("@PartId", SqlDbType.VarChar).Value = defectmodel.PartId1;
-                command.Parameters.Add("@DefectName", SqlDbType.VarChar).Value = defectmodel.DefectName1;
-                command.ExecuteNonQuery();
-            }
-        }
-
         public IEnumerable<DefectModel> GetAll()
         {
             var defectList = new List<DefectModel>();
-            using (var connection = new SqlConnection(connectionString))
+            using (var connection = new SqlConnection(DBConnectionQC))
             using (var command = new SqlCommand())
             {
                 connection.Open();
@@ -100,7 +72,7 @@ namespace Product_DefectRecord._Repositories
             var defectList = new List<DefectModel>();
             int defectId = int.TryParse(value, out _) ? Convert.ToInt32(value) : 0;
             string defectName = value;
-            using (var connection = new SqlConnection(connectionString))
+            using (var connection = new SqlConnection(DBConnectionQC))
             using (var command = new SqlCommand())
             {
                 connection.Open();
@@ -130,7 +102,7 @@ namespace Product_DefectRecord._Repositories
         public IEnumerable<DefectModel> GetFilter(int id)
         {
             var defectList = new List<DefectModel>();
-            using (var connection = new SqlConnection(connectionString))
+            using (var connection = new SqlConnection(DBConnectionQC))
             using (var command = new SqlCommand())
             {
                 connection.Open();
@@ -139,7 +111,6 @@ namespace Product_DefectRecord._Repositories
                               "FROM Defect_Names " +
                               "INNER JOIN Parts ON Defect_Names.PartId = Parts.Id " +
                                "WHERE Parts.ChartId = @selectedId " + "ORDER BY Parts.PartName ASC, Priority DESC";
-
                 command.Parameters.AddWithValue("@selectedId", id);
                 using (var reader = command.ExecuteReader())
                 {

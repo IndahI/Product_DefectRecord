@@ -24,7 +24,7 @@ namespace Product_DefectRecord.Views
         event EventHandler SavePortSettings;
         event EventHandler LoadIP;
         event EventHandler LoadPort;
-        event EventHandler SaveConnect;
+        event EventHandler RestartConnect;
 
         // Methods
         void DisplayIP(string IPaddress);

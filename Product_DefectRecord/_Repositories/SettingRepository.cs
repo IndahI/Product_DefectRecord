@@ -1,6 +1,7 @@
 ﻿using Product_DefectRecord.Models;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -10,18 +11,20 @@ using System.Threading.Tasks;
 
 namespace Product_DefectRecord._Repositories
 {
-    public class SettingRepository : BaseRepository, ISettingRepository
+    public class SettingRepository : ISettingRepository
     {
-        public SettingRepository(string connectionString)
+        private string DBConnectionQC;
+        private int locationId;
+        public SettingRepository()
         {
-            this.connectionString = connectionString;
+            DBConnectionQC = ConfigurationManager.ConnectionStrings["DBConnectionQC"].ConnectionString;
         }
 
         public List<string> GetData()
         {
             List<string> dataList = new List<string>();
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(DBConnectionQC))
             {
                 connection.Open();
                 using (SqlCommand command = connection.CreateCommand())
@@ -37,15 +40,13 @@ namespace Product_DefectRecord._Repositories
                     reader.Close();
                 }
             }
-
             return dataList;
         }
-
-        private int locationId;
+    
         public int GetID(string locationName)
         {
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(DBConnectionQC))
             {
                 connection.Open();
                 using (SqlCommand command = connection.CreateCommand())
@@ -62,7 +63,6 @@ namespace Product_DefectRecord._Repositories
                     reader.Close();
                 }
             }
-
             return locationId;
         }
     }

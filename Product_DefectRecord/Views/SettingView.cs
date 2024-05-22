@@ -66,7 +66,7 @@ namespace Product_DefectRecord.Views
         public event EventHandler SavePortSettings;
         public event EventHandler LoadIP;
         public event EventHandler LoadPort;
-        public event EventHandler SaveConnect;
+        public event EventHandler RestartConnect;
 
         public void DisplayIP(string IPaddress)
         {
@@ -93,10 +93,6 @@ namespace Product_DefectRecord.Views
             LoadSettings?.Invoke(this, EventArgs.Empty);
             LoadIP?.Invoke(this, EventArgs.Empty);
             LoadPort?.Invoke(this, EventArgs.Empty);
-
-            cboServer.Items.Add(@".\SQLEXPRESS");
-            cboServer.Items.Add(string.Format(@"{0}\SQLEXPRESS", Environment.MachineName));
-            cboServer.SelectedIndex = 1;
         }
 
         public void InitializeComboBoxEventHandler()
@@ -129,28 +125,18 @@ namespace Product_DefectRecord.Views
 
             btnRestart.Click += delegate 
             { 
-                SaveConnect?.Invoke(this, EventArgs.Empty);
-                string sqlConnectionString = ConfigurationManager.ConnectionStrings["LSBUDBConnection"].ConnectionString;
+                RestartConnect?.Invoke(this, EventArgs.Empty);
+                string sqlConnectionString = ConfigurationManager.ConnectionStrings["DBConnectionCommon"].ConnectionString;
                 ILoginView loginView = new LoginView();
-                LoginPresenter loginPresenter = new LoginPresenter(loginView, new LoginRepository(sqlConnectionString));
+                LoginPresenter loginPresenter = new LoginPresenter(loginView, new LoginRepository());
                 (loginView as Form)?.Show();
                 //Application.Exit();
                 this.Close();
             };
 
-            btnConnect.Click += delegate
+            btnClose.Click += delegate
             {
-                string connectionString = string.Format("Data Source={0};Initial Catalog={1};Integrated Security=True;", cboServer.Text, txtDatabase.Text);
-                try
-                {
-                    SqlHelper helper = new SqlHelper(connectionString);
-                    if (helper.IsConnection)
-                        MessageBox.Show("Test Connection succeeded.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Failed to connect to the database. Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                this.Close();
             };
         }
 

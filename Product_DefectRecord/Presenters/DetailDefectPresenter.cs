@@ -20,7 +20,7 @@ namespace Product_DefectRecord.Presenters
             this.view = view;
             this.repository = repository;
             _smodel = new SaveModel();
-            this.view.SaveEvent += SaveEvent;
+            view.SaveEvent += SaveEvent;
             SetData(detailDefect);
             this.view.Show();
         }
@@ -61,9 +61,9 @@ namespace Product_DefectRecord.Presenters
                     view.InspectorName,
                     view.Location,
                 };
-
-                    new Common.ModelDataValidation().Validate(model);
-                    repository.Add(model);
+                new Common.ModelDataValidation().Validate(model);
+                repository.Add(model);
+                view.SaveEvent -= SaveEvent;
             }
         }
     }

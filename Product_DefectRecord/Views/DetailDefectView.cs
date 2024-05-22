@@ -22,8 +22,6 @@ namespace Product_DefectRecord.Views
         private string message;
         public string currentDate = DateTime.Now.ToString("dd/MM/yyyy");
         public string currentTime = DateTime.Now.ToString("HH:mm:ss");
-
-
         public DetailDefectView()
         {
             InitializeComponent();
@@ -80,25 +78,23 @@ namespace Product_DefectRecord.Views
 
         private void AssociateAndRaiseViewEvents()
         {
-            btnOk.Click += delegate
+            btnPrint.Click += delegate
             {
+                SaveEvent?.Invoke(this, EventArgs.Empty);
 
-                //SaveEvent?.Invoke(this, EventArgs.Empty);
                 currentTime = DateTime.Now.ToString("HH:mm:ss");
-                Console.WriteLine("Waktu sekarang: " + currentTime);
 
                 PrintDocument pd = new PrintDocument();
-
                 pd.PrintPage += printDocument1_PrintPage_1;
+                pd.PrintPage += PrintInformation; 
 
-                pd.PrintPage += (s, ev) => PrintInformation(ev);
-
-                //pd.Print();
-                PrintPreviewDialog printPreviewDialog = new PrintPreviewDialog();
-                printPreviewDialog.Document = pd;
+                // Print preview dialog
+                PrintPreviewDialog printPreviewDialog = new PrintPreviewDialog
+                {
+                   Document = pd
+                };
                 printPreviewDialog.ShowDialog();
-
-                btnOk.Visible = true;
+                //pd.Print();
                 this.Hide();
             };
 
@@ -108,7 +104,8 @@ namespace Product_DefectRecord.Views
             };
         }
 
-        private void PrintInformation(PrintPageEventArgs e)
+
+        private void PrintInformation(object sender, PrintPageEventArgs e)
         {
 
             // Tentukan posisi awal cetak
@@ -306,7 +303,7 @@ namespace Product_DefectRecord.Views
             int customY1 = 203;
 
             // Gambar garis vertikal
-            for (int i = 0; i <= 2; i++)
+            for (int i = 0; i <= 1; i++)
             {
                 e.Graphics.DrawLine(Pens.Black, customX + i * customWidth, customY, customX + i * customWidth, customY + customHeight1 + customHeight2 + customeHeight3);
             }

@@ -27,7 +27,7 @@ namespace Product_DefectRecord.Presenters
             _view.SavePortSettings += SavePortSettings;
             _view.LoadIP += View_LoadIP;
             _view.LoadPort += View_LoadPort;
-            _view.SaveConnect += SaveConnect;
+            _view.RestartConnect += SaveConnect;
         }
 
         private void SaveConnect(object sender, EventArgs e)
@@ -65,13 +65,11 @@ namespace Product_DefectRecord.Presenters
         private void onRadio_Checked()
         {
             _smodel.SaveData(_view.mode);
-            //Console.WriteLine(_view.mode);
         }
 
         private void offRadio_Checked()
         {
             _smodel.SaveData(_view.mode);
-            Console.WriteLine(_view.mode);
         }
 
         private void LoadLocationNames()
@@ -113,7 +111,6 @@ namespace Product_DefectRecord.Presenters
                     // Panggil metode repo di sini dengan selectedLocationName sebagai parameter
                     int locationId = _model.GetLocationId(selectedLocationName);
                     _smodel.SaveId(locationId);
-                    Console.WriteLine(locationId);
                 }
             }
         }

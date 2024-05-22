@@ -9,8 +9,6 @@ namespace Product_DefectRecord.Models
     public interface IDefectRepository
     {
         void Add(dynamic model);
-        void Edit(DefectModel defectmodel);
-        void Delete(int Id);
 
         IEnumerable<DefectModel> GetFilter(int id);
         IEnumerable<DefectModel> GetAll();

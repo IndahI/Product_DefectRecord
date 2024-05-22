@@ -12,7 +12,8 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-    <PublishUrl>publish\</PublishUrl>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>F:\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -22,10 +23,10 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationRevision>1</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -47,7 +48,28 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>2FCF54A7BCE3BDC6169358D39C33FB2A17054E27</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Product_DefectRecord_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
@@ -69,6 +91,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Component\Date.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Component\Gradient.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -88,7 +113,6 @@
     <Compile Include="Presenters\DefectListDataPresenter.cs" />
     <Compile Include="Presenters\DefectListPresenter.cs" />
     <Compile Include="Presenters\DetailDefectPresenter.cs" />
-    <Compile Include="Presenters\EditDefectPresenter.cs" />
     <Compile Include="Presenters\LoginPresenter.cs" />
     <Compile Include="Presenters\PrintManualPresenter.cs" />
     <Compile Include="Presenters\SettingPresenter.cs" />
@@ -97,12 +121,6 @@
     </Compile>
     <Compile Include="Views\DefectListView.Designer.cs">
       <DependentUpon>DefectListView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\EditDefectView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\EditDefectName.Designer.cs">
-      <DependentUpon>EditDefectView.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -131,7 +149,6 @@
     </Compile>
     <Compile Include="Views\SqlHelper.cs" />
     <Compile Include="Views\TcpClientWrapper.cs" />
-    <Compile Include="_Repositories\BaseRepository.cs" />
     <Compile Include="_Repositories\DefectRepository.cs" />
     <Compile Include="_Repositories\LoginRepository.cs" />
     <Compile Include="_Repositories\ModelNumberRepository.cs" />
@@ -155,9 +172,6 @@
     <EmbeddedResource Include="Views\DetailDefectView.resx">
       <DependentUpon>DetailDefectView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\EditDefectView.resx">
-      <DependentUpon>EditDefectView.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Views\LoginView.resx">
       <DependentUpon>LoginView.cs</DependentUpon>
     </EmbeddedResource>
@@ -165,6 +179,8 @@
       <DependentUpon>SettingView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Product_DefectRecord_TemporaryKey.pfx" />
+    <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -29,7 +29,6 @@ namespace Product_DefectRecord.Presenters
             this.view.SearchModelNumber += SearchModelNumber;
             this.view.ClearEvent += ClearAction;
             this.view.DefectFilterEvent += LoadFilterDefect;
-            this.view.EditButtonClicked += EditButtonClicked;
             this.view.CellClicked += CellClicked;
 
             _smodel = new SaveModel();
@@ -45,25 +44,17 @@ namespace Product_DefectRecord.Presenters
             var defect = (DefectModel)defectsBindingSource.Current;
             var detailDefect = new
             {
-                SerialNumber = "12345678",
-                ModelNumber = "NA-W123JJI34",
-                ModelCode = "3D",
-                //SerialNumber = view.SerialNumber,
-                //ModelNumber = view.ModelNumber,
-                //ModelCode = view.ModelCode,
+                SerialNumber = view.SerialNumber,
+                ModelNumber = view.ModelNumber,
+                ModelCode = view.ModelCode,
                 DefectId = defect.Id1,
                 DefectName = defect.DefectName1,
                 InspectorId = view.InspectorId,
                 Inspector = view.Inspector,
                 Location = Location
             };
-
+            var detailDefectView = DetailDefectView.GetInstance();
             new DetailDefectPresenter(DetailDefectView.GetInstance(), defectRepository, detailDefect);
-        }
-
-        private void EditButtonClicked(object sender, EventArgs e)
-        {
-            new EditDefectPresenter(new EditDefectView(), defectRepository, (DefectModel)defectsBindingSource.Current);
         }
 
         private void LoadFilterDefect(object sender, EventArgs e, int id)
@@ -111,8 +102,6 @@ namespace Product_DefectRecord.Presenters
         public delegate void TopDefectEventHandler(object sender, EventArgs e, int id);
         private void SearchModelNumber(object sender, ModelEventArgs e)
         {
-            //string message = e.Message;
-            //var searchModel = repository2.GetModelNumber(ModelCode);
 
             var model = new ModelCode
             {
@@ -124,7 +113,10 @@ namespace Product_DefectRecord.Presenters
             if (searchModel != null)
             {
                 view.ModelNumber = searchModel.ModelNumber;
-                Console.WriteLine("Value of modelnumber: " + view.ModelNumber);
+            }
+            else
+            {
+                view.ModelNumber = "";
             }
         }
 
