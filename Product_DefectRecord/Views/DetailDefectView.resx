@@ -120,4 +120,26 @@
   <metadata name="printDocument1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnCancle.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwa
+        AAABCElEQVQ4T2NQ1jBIUNQwuKukYdjLwMDABMQEQCizkqbRBKD6S4oaRr4MQMYDIP4PwQbzgCrwGALU
+        rGG4FKHe8CzQBYaTkQSA2Gg+UCUWQzA0g3A7WEJRw3AhmsRyBwcHFohGEAA522AxihpNw7lACZhF+Awh
+        qBkGMA1RVDdYqaJltARZDIdmGMDqEmI1wwDQEHXDReialbVwBS4GAIU2mrMheDVqwGIFWAIMFeMzBJtm
+        o3lYvLPa2NiYFaoJBvBFFdaAXYNkCDHxjMcQYEaaiSyhrG44G6gDS2hj8yIw7wAZX2ACuDXDAIYhHxkU
+        1Y2qgU6+o6Ru0AlUQUQ8Aw1RN+gH6VHUMCgBAMnIv2uk6WW0AAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="btnPrint.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwa
+        AAAAxklEQVRIS+2STQrCMBCFcy0PoW6UCl5Bbyj2RvnbtqBvyksZWoOQZKP0g7fIZOYbaGM2/gfn3NF7
+        34cQbiy1A9IL5CPykjRdQvmQ5MyD13Vk5IO1ds+WciA6i0yJJSOWXtlSDkRlcjTc0djjRRxYWpH7LEjH
+        ls9QPg+IiFczxXIBTU81NA3qJTh3UlP3Uw/yXS7In+fASsCUyxMywMGlqF6ewOCJAi3UqX+KkOSWtHnn
+        AmTLJe3kCbWkvTwRY9xJeNz4OYx5A1XAxbY0qX6hAAAAAElFTkSuQmCC
+</value>
+  </data>
 </root>
