@@ -100,6 +100,9 @@
     <Compile Include="Component\RdButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Component\RDPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Models\DefectModel.cs" />
     <Compile Include="Models\IDefectRepository.cs" />
     <Compile Include="Models\IModelNumberRepository.cs" />
