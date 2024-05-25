@@ -299,7 +299,7 @@ namespace Product_DefectRecord.Views
                 LoginPresenter loginPresenter = new LoginPresenter(loginView, new LoginRepository());
                 (loginView as Form)?.Show();
                 //Application.Exit();
-                this.Close();
+                this.Hide();
             };
 
             dataGridView1.CellContentClick += (sender, e) =>
@@ -423,6 +423,11 @@ namespace Product_DefectRecord.Views
         private void textBoxCode_TextChanged(object sender, EventArgs e)
         {
             PerformModelSearch();
+        }
+
+        private void DefectListView_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

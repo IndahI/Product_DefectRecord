@@ -79,13 +79,13 @@ namespace Product_DefectRecord.Views
 
         protected override void OnPaintBackground(PaintEventArgs e)
         {
-            /***
+            
             base.OnPaintBackground(e);
             using (LinearGradientBrush brush = new LinearGradientBrush(this.ClientRectangle, Color.FromArgb(0, 173, 181), Color.FromArgb(238, 238, 238), 90F))
             {
                 e.Graphics.FillRectangle(brush, this.ClientRectangle);
             }
-            ***/
+            
         }
 
         public void ShowMessage(string message)
