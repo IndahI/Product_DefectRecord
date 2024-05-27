@@ -11,16 +11,16 @@ namespace Product_DefectRecord._Repositories
     public class DefectRepository : IDefectRepository
     {
         //Properties
-        private string DBConnectionQC;
+        private string DBConnection;
 
         //Constructor
         public DefectRepository()
         {
-            DBConnectionQC = ConfigurationManager.ConnectionStrings["DBConnectionQC"].ConnectionString;
+            DBConnection = ConfigurationManager.ConnectionStrings["DBConnection"].ConnectionString;
         }
         public void Add(dynamic model)
         {
-            using (var connection = new SqlConnection(DBConnectionQC))
+            using (var connection = new SqlConnection(DBConnection))
             using (var command = new SqlCommand())
             {
                 connection.Open();
@@ -41,7 +41,7 @@ namespace Product_DefectRecord._Repositories
         public IEnumerable<DefectModel> GetAll()
         {
             var defectList = new List<DefectModel>();
-            using (var connection = new SqlConnection(DBConnectionQC))
+            using (var connection = new SqlConnection(DBConnection))
             using (var command = new SqlCommand())
             {
                 connection.Open();
@@ -72,7 +72,7 @@ namespace Product_DefectRecord._Repositories
             var defectList = new List<DefectModel>();
             int defectId = int.TryParse(value, out _) ? Convert.ToInt32(value) : 0;
             string defectName = value;
-            using (var connection = new SqlConnection(DBConnectionQC))
+            using (var connection = new SqlConnection(DBConnection))
             using (var command = new SqlCommand())
             {
                 connection.Open();
@@ -102,7 +102,7 @@ namespace Product_DefectRecord._Repositories
         public IEnumerable<DefectModel> GetFilter(int id)
         {
             var defectList = new List<DefectModel>();
-            using (var connection = new SqlConnection(DBConnectionQC))
+            using (var connection = new SqlConnection(DBConnection))
             using (var command = new SqlCommand())
             {
                 connection.Open();

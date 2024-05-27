@@ -12,26 +12,26 @@ namespace Product_DefectRecord._Repositories
 {
     public class LoginRepository : ILoginRepository
     {
-        private string DBConnectionCommon;
+        private string DBConnection;
         public LoginRepository() 
         { 
-            DBConnectionCommon = ConfigurationManager.ConnectionStrings["DBConnectionCommon"].ConnectionString;
+            DBConnection = ConfigurationManager.ConnectionStrings["DBConnection"].ConnectionString;
         }
 
         public LoginModel GetUserByUsername(string username)
         {
-            using (var connection = new SqlConnection(DBConnectionCommon))
+            using (var connection = new SqlConnection(DBConnection))
             using (var command = new SqlCommand())
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "SELECT NikId, Name, Password FROM Users WHERE NikId = @Nik";
+                command.CommandText = "SELECT Nik, Name, Password FROM Users WHERE Nik = @Nik";
                 command.Parameters.Add("@Nik", SqlDbType.Int).Value = username;
                 using (var reader = command.ExecuteReader())
                 {
                     if (reader.Read())
                     {
-                        string nik = reader["NikId"].ToString();
+                        string nik = reader["Nik"].ToString();
                         string name = reader["Name"].ToString();
                         string password = reader["Password"].ToString();
 

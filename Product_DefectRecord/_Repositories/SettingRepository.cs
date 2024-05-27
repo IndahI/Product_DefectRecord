@@ -13,18 +13,18 @@ namespace Product_DefectRecord._Repositories
 {
     public class SettingRepository : ISettingRepository
     {
-        private string DBConnectionQC;
+        private string DBConnection;
         private int locationId;
         public SettingRepository()
         {
-            DBConnectionQC = ConfigurationManager.ConnectionStrings["DBConnectionQC"].ConnectionString;
+            DBConnection = ConfigurationManager.ConnectionStrings["DBConnection"].ConnectionString;
         }
 
         public List<string> GetData()
         {
             List<string> dataList = new List<string>();
 
-            using (SqlConnection connection = new SqlConnection(DBConnectionQC))
+            using (SqlConnection connection = new SqlConnection(DBConnection))
             {
                 connection.Open();
                 using (SqlCommand command = connection.CreateCommand())
@@ -46,7 +46,7 @@ namespace Product_DefectRecord._Repositories
         public int GetID(string locationName)
         {
 
-            using (SqlConnection connection = new SqlConnection(DBConnectionQC))
+            using (SqlConnection connection = new SqlConnection(DBConnection))
             {
                 connection.Open();
                 using (SqlCommand command = connection.CreateCommand())
