@@ -16,7 +16,7 @@ namespace Product_DefectRecord._Repositories
         public string DBConnection;
         public ModelNumberRepository()
         {
-            DBConnection = ConfigurationManager.ConnectionStrings["DBConnection"].ConnectionString;
+            DBConnection = ConfigurationManager.ConnectionStrings["DBCommon"].ConnectionString;
         }
 
         public ModelCode GetModelNumber(ModelCode model)
@@ -28,7 +28,7 @@ namespace Product_DefectRecord._Repositories
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = @"SELECT * FROM Global_Model_Codes WHERE modelCode = @modelCode";
+                command.CommandText = @"SELECT * FROM GlobalModelCodes WHERE modelCodeId = @modelCode";
                 command.Parameters.Add("@modelCode", SqlDbType.VarChar).Value = model.modelCode1;
 
                 using (var reader = command.ExecuteReader())
@@ -37,7 +37,7 @@ namespace Product_DefectRecord._Repositories
                     {
                         modelCode = new ModelCode();
                         modelCode.ModelNumber = reader["ModelNumber"].ToString();
-                        modelCode.modelCode1 = reader["modelCode"].ToString();
+                        modelCode.modelCode1 = reader["modelCodeId"].ToString();
                     }
                 }
             }

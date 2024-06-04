@@ -17,7 +17,7 @@ namespace Product_DefectRecord._Repositories
         private int locationId;
         public SettingRepository()
         {
-            DBConnection = ConfigurationManager.ConnectionStrings["DBConnection"].ConnectionString;
+            DBConnection = ConfigurationManager.ConnectionStrings["DBCommon"].ConnectionString;
         }
 
         public List<string> GetData()
