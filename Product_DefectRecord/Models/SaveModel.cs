@@ -13,7 +13,6 @@ namespace Product_DefectRecord.Models
         public event EventHandler<int> SettingsSavedId;
         public event EventHandler<string> SettingsLoaded;
         public event EventHandler<int> SettingsLoadedId;
-        public event EventHandler<string> SettingsSavedMode;
         public event EventHandler<string> SaveSettingsIP;
         public event EventHandler<int> SaveSettingsPort;
 
@@ -63,7 +62,6 @@ namespace Product_DefectRecord.Models
         {
             Properties.Settings.Default.Mode = data;
             Properties.Settings.Default.Save();
-            OnSettingsSavedMode(data);
         }
 
         public void SaveSettingIP(string serverIP)
@@ -93,11 +91,6 @@ namespace Product_DefectRecord.Models
         protected virtual void OnSettingsSavedId(int id)
         {
             SettingsSavedId?.Invoke(this, id);
-        }
-
-        protected virtual void OnSettingsSavedMode(string data)
-        {
-            SettingsSavedMode?.Invoke(this, data);
         }
 
         protected virtual void OnSettingsLoaded(string myData)

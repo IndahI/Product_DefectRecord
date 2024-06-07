@@ -119,7 +119,7 @@
             this.btnStatus.Location = new System.Drawing.Point(8, 88);
             this.btnStatus.Margin = new System.Windows.Forms.Padding(4, 5, 4, 0);
             this.btnStatus.Name = "btnStatus";
-            this.btnStatus.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.btnStatus.Padding = new System.Windows.Forms.Padding(3);
             this.btnStatus.Size = new System.Drawing.Size(373, 84);
             this.btnStatus.TabIndex = 5;
             this.btnStatus.Text = "No data";
@@ -205,7 +205,7 @@
             this.btnClear.Location = new System.Drawing.Point(389, 88);
             this.btnClear.Margin = new System.Windows.Forms.Padding(4, 5, 4, 0);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.btnClear.Padding = new System.Windows.Forms.Padding(3);
             this.btnClear.Size = new System.Drawing.Size(297, 84);
             this.btnClear.TabIndex = 4;
             this.btnClear.Text = " Clear Data";
@@ -1213,7 +1213,7 @@
             this.Controls.Add(this.tableLayoutPanel4);
             this.Controls.Add(this.Panel3);
             this.Controls.Add(this.tableLayoutPanel2);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Sementara";
             this.Text = "Sementara";
             this.tableLayoutPanel5.ResumeLayout(false);

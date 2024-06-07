@@ -72,6 +72,17 @@ namespace Product_DefectRecord.Views
             set {  }
         }
 
+        public Color BackColorStatus 
+        { 
+            get { return btnStatus.BackColor; } 
+            set {btnStatus.BackColor = value; }
+        }
+        public Color ForeColorStatus 
+        { 
+            get { return btnStatus.ForeColor; }
+            set { btnStatus.ForeColor = value; }
+        }
+
         // Call this method when you need to perform a model search
         private void PerformModelSearch()
         {
@@ -308,6 +319,7 @@ namespace Product_DefectRecord.Views
                     var selectedPerson = selectedRow.DataBoundItem as DefectModel;
                     CellClicked?.Invoke(this, EventArgs.Empty);
                     btnStatus.Text = "Save And Print";
+                    btnStatus.BackColor = Color.FromArgb(230, 255, 148);
                     //textBoxDefectName.Text = selectedPerson.DefectName1;
             };
 
@@ -364,10 +376,10 @@ namespace Product_DefectRecord.Views
         {
             foreach (Control c in Panel3.Controls)
             {
-                c.BackColor = Color.FromArgb(0, 173, 181);
+                c.BackColor = Color.FromArgb(64, 165, 120);
             }
             Control click = (Control)sender;
-            click.BackColor = Color.FromArgb(0, 133, 181);
+            click.BackColor = Color.FromArgb(157, 222, 139);
         }
 
         public void AddNoData()
@@ -380,7 +392,6 @@ namespace Product_DefectRecord.Views
 
             dataGridView1.Columns[0].HeaderText = "No Data";
             dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            //dataGridView1.Rows.Add(w);
         }
 
         public void RemoveNoData(BindingSource defectList)
@@ -401,33 +412,10 @@ namespace Product_DefectRecord.Views
 
         }
 
-        private void textBoxSerial_KeyDown(object sender, KeyEventArgs e)
-        {
-            // Jika tombol "Enter" ditekan
-            if (e.KeyCode == Keys.Enter)
-            {
-                // Jika enter ditekan, kirim Keys.Enter
-                KeyDownEvent?.Invoke(this, new KeyEventArgs(Keys.Enter));
-            }
-            else
-            {
-                // Jika bukan tombol "Enter", maka pasti karakter yang dimasukkan
-                // Jika yang dimasukkan adalah angka, kirim Keys.None
-                if (int.TryParse(textBoxSerial.Text, out int _))
-                {
-                    KeyDownEvent?.Invoke(this, new KeyEventArgs(Keys.None));
-                }
-            }
-        }
-
-        private void textBoxCode_TextChanged(object sender, EventArgs e)
-        {
-            PerformModelSearch();
-        }
-
         private void DefectListView_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }
+
     }
 }

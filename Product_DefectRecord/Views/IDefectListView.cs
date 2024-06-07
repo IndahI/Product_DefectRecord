@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 using static Product_DefectRecord.Presenters.DefectListPresenter;
 
@@ -15,6 +16,8 @@ namespace Product_DefectRecord.Views
         string Inspector { get; set; }
         string StatusText { get; set; }
         bool IsKeyboardEnabled { get; set; }
+        Color BackColorStatus { get; set; }
+        Color ForeColorStatus { get; set; }
 
         //event
         event EventHandler<ModelEventArgs> SearchModelNumber;

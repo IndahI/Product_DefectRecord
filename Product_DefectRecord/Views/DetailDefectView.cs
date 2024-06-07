@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Product_DefectRecord.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,10 +23,12 @@ namespace Product_DefectRecord.Views
         private string message;
         public string currentDate = DateTime.Now.ToString("dd/MM/yyyy");
         public string currentTime = DateTime.Now.ToString("HH:mm:ss");
+        private SaveModel _saveModel;
         public DetailDefectView()
         {
             InitializeComponent();
             AssociateAndRaiseViewEvents();
+            _saveModel = new SaveModel();
         }
 
         public string SerialNumber
@@ -74,28 +77,39 @@ namespace Product_DefectRecord.Views
             get { return int.Parse(textLocation.Text); }
             set { textLocation.Text = value.ToString(); }
         }
+
         public event EventHandler SaveEvent;
 
         private void AssociateAndRaiseViewEvents()
         {
             btnPrint.Click += delegate
             {
+
+                string mode = _saveModel.GetMode();
                 SaveEvent?.Invoke(this, EventArgs.Empty);
 
-                currentTime = DateTime.Now.ToString("HH:mm:ss");
-
-                PrintDocument pd = new PrintDocument();
-                pd.PrintPage += printDocument1_PrintPage_1;
-                pd.PrintPage += PrintInformation; 
-
-                // Print preview dialog
-                PrintPreviewDialog printPreviewDialog = new PrintPreviewDialog
+                if(mode == "on")
                 {
-                   Document = pd
-                };
-                printPreviewDialog.ShowDialog();
-                //pd.Print();
-                this.Hide();
+                    currentTime = DateTime.Now.ToString("HH:mm:ss");
+
+                    PrintDocument pd = new PrintDocument();
+                    pd.PrintPage += printDocument1_PrintPage_1;
+                    pd.PrintPage += PrintInformation; 
+
+                    // Print preview dialog
+                    PrintPreviewDialog printPreviewDialog = new PrintPreviewDialog
+                    {
+                       Document = pd
+                    };
+                    printPreviewDialog.ShowDialog();
+                    //pd.Print();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Mode print dalam keadaan OFF tidak bisa melakukan Print");
+                }
+
             };
 
             btnCancle.Click += delegate

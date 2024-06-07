@@ -87,6 +87,7 @@ namespace Product_DefectRecord.Presenters
 
         private void ClearAction(object sender, EventArgs e)
         {
+            view.BackColorStatus = Color.FromArgb(230, 255, 148);
             view.StatusText = "No Data";
             view.SerialNumber = "";
             view.ModelNumber = "";

@@ -39,7 +39,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.Panel3 = new System.Windows.Forms.TableLayoutPanel();
             this.btnP = new Product_DefectRecord.Component.RdButton();
             this.btnY = new Product_DefectRecord.Component.RdButton();
@@ -76,7 +75,6 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnPrintManual = new Product_DefectRecord.Component.RdButton();
             this.btnClear = new Product_DefectRecord.Component.RdButton();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -87,8 +85,9 @@
             this.textBoxInspector = new System.Windows.Forms.TextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnSetting = new Product_DefectRecord.Component.RdButton();
+            this.btnPrintManual = new Product_DefectRecord.Component.RdButton();
             this.btnLogout = new Product_DefectRecord.Component.RdButton();
+            this.btnSetting = new Product_DefectRecord.Component.RdButton();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.btnStatus = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
@@ -109,7 +108,7 @@
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(103)))), ((int)(((byte)(105)))));
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 360F));
@@ -124,7 +123,7 @@
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1716, 43);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1716, 95);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // Time
@@ -133,7 +132,7 @@
             this.Time.AutoSize = true;
             this.Time.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Time.ForeColor = System.Drawing.Color.White;
-            this.Time.Location = new System.Drawing.Point(1543, 5);
+            this.Time.Location = new System.Drawing.Point(1543, 31);
             this.Time.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Time.Name = "Time";
             this.Time.Size = new System.Drawing.Size(78, 32);
@@ -147,7 +146,7 @@
             this.Date.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Date.ForeColor = System.Drawing.Color.White;
             this.Date.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Date.Location = new System.Drawing.Point(1230, 5);
+            this.Date.Location = new System.Drawing.Point(1230, 31);
             this.Date.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Date.Name = "Date";
             this.Date.Size = new System.Drawing.Size(76, 32);
@@ -159,9 +158,10 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(6, 0);
+            this.label1.Location = new System.Drawing.Point(6, 26);
             this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(603, 43);
@@ -176,7 +176,7 @@
             this.label7.Location = new System.Drawing.Point(53, 39);
             this.label7.Margin = new System.Windows.Forms.Padding(0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(129, 36);
+            this.label7.Size = new System.Drawing.Size(221, 33);
             this.label7.TabIndex = 1;
             this.label7.Text = "Model Number";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -187,7 +187,7 @@
             this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(103)))), ((int)(((byte)(105)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
@@ -200,15 +200,15 @@
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.GridColor = System.Drawing.Color.Gray;
-            this.dataGridView1.Location = new System.Drawing.Point(175, 282);
+            this.dataGridView1.Location = new System.Drawing.Point(175, 334);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 62;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(133)))), ((int)(((byte)(181)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(222)))), ((int)(((byte)(139)))));
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(1716, 779);
+            this.dataGridView1.Size = new System.Drawing.Size(1716, 727);
             this.dataGridView1.TabIndex = 3;
             // 
             // No
@@ -219,18 +219,6 @@
             this.No.Name = "No";
             this.No.ReadOnly = true;
             this.No.Width = 70;
-            // 
-            // tableLayoutPanel4
-            // 
-            this.tableLayoutPanel4.ColumnCount = 1;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(1520, 926);
-            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(18, 0, 0, 0);
-            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 1;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(1367, 665);
-            this.tableLayoutPanel4.TabIndex = 18;
             // 
             // Panel3
             // 
@@ -276,7 +264,7 @@
             this.Panel3.Controls.Add(this.btnI, 1, 0);
             this.Panel3.Controls.Add(this.btnF, 0, 0);
             this.Panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Panel3.Location = new System.Drawing.Point(175, 163);
+            this.Panel3.Location = new System.Drawing.Point(175, 215);
             this.Panel3.Margin = new System.Windows.Forms.Padding(9, 12, 9, 12);
             this.Panel3.Name = "Panel3";
             this.Panel3.RowCount = 2;
@@ -288,8 +276,8 @@
             // 
             // btnP
             // 
-            this.btnP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
-            this.btnP.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
+            this.btnP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(165)))), ((int)(((byte)(120)))));
+            this.btnP.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(165)))), ((int)(((byte)(120)))));
             this.btnP.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btnP.BorderRadius = 6;
             this.btnP.BorderSize = 0;
@@ -310,8 +298,8 @@
             // 
             // btnY
             // 
-            this.btnY.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
-            this.btnY.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
+            this.btnY.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(165)))), ((int)(((byte)(120)))));
+            this.btnY.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(165)))), ((int)(((byte)(120)))));
             this.btnY.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btnY.BorderRadius = 6;
             this.btnY.BorderSize = 0;
@@ -332,8 +320,8 @@
             // 
             // btnV
             // 
-            this.btnV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
-            this.btnV.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
+            this.btnV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(165)))), ((int)(((byte)(120)))));
+            this.btnV.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(165)))), ((int)(((byte)(120)))));
             this.btnV.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btnV.BorderRadius = 6;
             this.btnV.BorderSize = 0;
@@ -354,8 +342,8 @@
             // 
             // btnS
             // 
-            this.btnS.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
-            this.btnS.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
+            this.btnS.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(165)))), ((int)(((byte)(120)))));
+            this.btnS.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(165)))), ((int)(((byte)(120)))));
             this.btnS.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btnS.BorderRadius = 6;
             this.btnS.BorderSize = 0;
@@ -376,8 +364,8 @@
             // 
             // btnR
             // 
-            this.btnR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
-            this.btnR.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
+            this.btnR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(165)))), ((int)(((byte)(120)))));
+            this.btnR.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(165)))), ((int)(((byte)(120)))));
             this.btnR.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btnR.BorderRadius = 6;
             this.btnR.BorderSize = 0;
@@ -398,8 +386,8 @@
             // 
             // btnU
             // 
-            this.btnU.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
-            this.btnU.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
+            this.btnU.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(165)))), ((int)(((byte)(120)))));
+            this.btnU.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(165)))), ((int)(((byte)(120)))));
             this.btnU.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btnU.BorderRadius = 6;
             this.btnU.BorderSize = 0;
@@ -420,8 +408,8 @@
             // 
             // btnT
             // 
-            this.btnT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
-            this.btnT.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
+            this.btnT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(165)))), ((int)(((byte)(120)))));
+            this.btnT.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(165)))), ((int)(((byte)(120)))));
             this.btnT.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btnT.BorderRadius = 6;
             this.btnT.BorderSize = 0;
@@ -442,8 +430,8 @@
             // 
             // btnC
             // 
-            this.btnC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
-            this.btnC.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
+            this.btnC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(165)))), ((int)(((byte)(120)))));
+            this.btnC.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(165)))), ((int)(((byte)(120)))));
             this.btnC.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btnC.BorderRadius = 6;
             this.btnC.BorderSize = 0;
@@ -464,8 +452,8 @@
             // 
             // btnB
             // 
-            this.btnB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
-            this.btnB.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
+            this.btnB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(165)))), ((int)(((byte)(120)))));
+            this.btnB.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(165)))), ((int)(((byte)(120)))));
             this.btnB.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btnB.BorderRadius = 6;
             this.btnB.BorderSize = 0;
@@ -486,8 +474,8 @@
             // 
             // btnA
             // 
-            this.btnA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
-            this.btnA.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
+            this.btnA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(165)))), ((int)(((byte)(120)))));
+            this.btnA.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(165)))), ((int)(((byte)(120)))));
             this.btnA.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btnA.BorderRadius = 6;
             this.btnA.BorderSize = 0;
@@ -508,8 +496,8 @@
             // 
             // btnD
             // 
-            this.btnD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
-            this.btnD.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
+            this.btnD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(165)))), ((int)(((byte)(120)))));
+            this.btnD.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(165)))), ((int)(((byte)(120)))));
             this.btnD.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btnD.BorderRadius = 6;
             this.btnD.BorderSize = 0;
@@ -530,8 +518,8 @@
             // 
             // btnG
             // 
-            this.btnG.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
-            this.btnG.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
+            this.btnG.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(165)))), ((int)(((byte)(120)))));
+            this.btnG.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(165)))), ((int)(((byte)(120)))));
             this.btnG.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btnG.BorderRadius = 6;
             this.btnG.BorderSize = 0;
@@ -552,8 +540,8 @@
             // 
             // btnH
             // 
-            this.btnH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
-            this.btnH.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
+            this.btnH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(165)))), ((int)(((byte)(120)))));
+            this.btnH.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(165)))), ((int)(((byte)(120)))));
             this.btnH.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btnH.BorderRadius = 6;
             this.btnH.BorderSize = 0;
@@ -574,8 +562,8 @@
             // 
             // btnE
             // 
-            this.btnE.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
-            this.btnE.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
+            this.btnE.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(165)))), ((int)(((byte)(120)))));
+            this.btnE.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(165)))), ((int)(((byte)(120)))));
             this.btnE.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btnE.BorderRadius = 6;
             this.btnE.BorderSize = 0;
@@ -596,8 +584,8 @@
             // 
             // btnX
             // 
-            this.btnX.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
-            this.btnX.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
+            this.btnX.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(165)))), ((int)(((byte)(120)))));
+            this.btnX.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(165)))), ((int)(((byte)(120)))));
             this.btnX.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btnX.BorderRadius = 6;
             this.btnX.BorderSize = 0;
@@ -618,8 +606,8 @@
             // 
             // btnW
             // 
-            this.btnW.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
-            this.btnW.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
+            this.btnW.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(165)))), ((int)(((byte)(120)))));
+            this.btnW.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(165)))), ((int)(((byte)(120)))));
             this.btnW.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btnW.BorderRadius = 6;
             this.btnW.BorderSize = 0;
@@ -640,8 +628,8 @@
             // 
             // btnQ
             // 
-            this.btnQ.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
-            this.btnQ.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
+            this.btnQ.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(165)))), ((int)(((byte)(120)))));
+            this.btnQ.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(165)))), ((int)(((byte)(120)))));
             this.btnQ.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btnQ.BorderRadius = 6;
             this.btnQ.BorderSize = 0;
@@ -662,8 +650,8 @@
             // 
             // btnN
             // 
-            this.btnN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
-            this.btnN.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
+            this.btnN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(165)))), ((int)(((byte)(120)))));
+            this.btnN.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(165)))), ((int)(((byte)(120)))));
             this.btnN.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btnN.BorderRadius = 6;
             this.btnN.BorderSize = 0;
@@ -684,8 +672,8 @@
             // 
             // btnZ
             // 
-            this.btnZ.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
-            this.btnZ.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
+            this.btnZ.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(165)))), ((int)(((byte)(120)))));
+            this.btnZ.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(165)))), ((int)(((byte)(120)))));
             this.btnZ.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btnZ.BorderRadius = 6;
             this.btnZ.BorderSize = 0;
@@ -706,8 +694,8 @@
             // 
             // btnO
             // 
-            this.btnO.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
-            this.btnO.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
+            this.btnO.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(165)))), ((int)(((byte)(120)))));
+            this.btnO.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(165)))), ((int)(((byte)(120)))));
             this.btnO.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btnO.BorderRadius = 6;
             this.btnO.BorderSize = 0;
@@ -728,8 +716,8 @@
             // 
             // btnM
             // 
-            this.btnM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
-            this.btnM.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
+            this.btnM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(165)))), ((int)(((byte)(120)))));
+            this.btnM.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(165)))), ((int)(((byte)(120)))));
             this.btnM.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btnM.BorderRadius = 6;
             this.btnM.BorderSize = 0;
@@ -750,8 +738,8 @@
             // 
             // btnL
             // 
-            this.btnL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
-            this.btnL.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
+            this.btnL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(165)))), ((int)(((byte)(120)))));
+            this.btnL.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(165)))), ((int)(((byte)(120)))));
             this.btnL.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btnL.BorderRadius = 6;
             this.btnL.BorderSize = 0;
@@ -772,8 +760,8 @@
             // 
             // btnK
             // 
-            this.btnK.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
-            this.btnK.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
+            this.btnK.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(165)))), ((int)(((byte)(120)))));
+            this.btnK.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(165)))), ((int)(((byte)(120)))));
             this.btnK.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btnK.BorderRadius = 6;
             this.btnK.BorderSize = 0;
@@ -794,8 +782,8 @@
             // 
             // btnJ
             // 
-            this.btnJ.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
-            this.btnJ.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
+            this.btnJ.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(165)))), ((int)(((byte)(120)))));
+            this.btnJ.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(165)))), ((int)(((byte)(120)))));
             this.btnJ.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btnJ.BorderRadius = 6;
             this.btnJ.BorderSize = 0;
@@ -816,8 +804,8 @@
             // 
             // btnI
             // 
-            this.btnI.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
-            this.btnI.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
+            this.btnI.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(165)))), ((int)(((byte)(120)))));
+            this.btnI.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(165)))), ((int)(((byte)(120)))));
             this.btnI.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btnI.BorderRadius = 6;
             this.btnI.BorderSize = 0;
@@ -838,8 +826,8 @@
             // 
             // btnF
             // 
-            this.btnF.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
-            this.btnF.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
+            this.btnF.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(165)))), ((int)(((byte)(120)))));
+            this.btnF.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(165)))), ((int)(((byte)(120)))));
             this.btnF.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btnF.BorderRadius = 6;
             this.btnF.BorderSize = 0;
@@ -866,10 +854,9 @@
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel5, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(175, 43);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(1, 2, 9, 0);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(175, 95);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0, 8, 0, 0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1716, 83);
@@ -877,11 +864,11 @@
             // 
             // tableLayoutPanel3
             // 
-            this.tableLayoutPanel3.ColumnCount = 4;
+            this.tableLayoutPanel3.ColumnCount = 3;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 47F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 37F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 63F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel3.Controls.Add(this.textBoxSerial, 2, 0);
             this.tableLayoutPanel3.Controls.Add(this.textBoxModel, 2, 1);
             this.tableLayoutPanel3.Controls.Add(this.label7, 1, 1);
@@ -889,34 +876,34 @@
             this.tableLayoutPanel3.Controls.Add(this.pictureBox3, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.pictureBox4, 0, 1);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(7, 0);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(1, 0);
             this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(1, 0, 0, 0);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.Padding = new System.Windows.Forms.Padding(6, 0, 6, 8);
+            this.tableLayoutPanel3.Padding = new System.Windows.Forms.Padding(6, 0, 0, 8);
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 53.33333F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 46.66667F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(665, 83);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(668, 83);
             this.tableLayoutPanel3.TabIndex = 10;
             // 
             // textBoxSerial
             // 
             this.textBoxSerial.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxSerial.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxSerial.Location = new System.Drawing.Point(270, 3);
+            this.textBoxSerial.Location = new System.Drawing.Point(283, 3);
             this.textBoxSerial.Name = "textBoxSerial";
             this.textBoxSerial.ReadOnly = true;
-            this.textBoxSerial.Size = new System.Drawing.Size(359, 35);
+            this.textBoxSerial.Size = new System.Drawing.Size(382, 35);
             this.textBoxSerial.TabIndex = 0;
             // 
             // textBoxModel
             // 
             this.textBoxModel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxModel.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxModel.Location = new System.Drawing.Point(270, 42);
+            this.textBoxModel.Location = new System.Drawing.Point(283, 42);
             this.textBoxModel.Name = "textBoxModel";
             this.textBoxModel.ReadOnly = true;
-            this.textBoxModel.Size = new System.Drawing.Size(359, 35);
+            this.textBoxModel.Size = new System.Drawing.Size(382, 35);
             this.textBoxModel.TabIndex = 0;
             // 
             // label6
@@ -926,7 +913,7 @@
             this.label6.Location = new System.Drawing.Point(53, 0);
             this.label6.Margin = new System.Windows.Forms.Padding(0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(129, 39);
+            this.label6.Size = new System.Drawing.Size(218, 33);
             this.label6.TabIndex = 1;
             this.label6.Text = "Serial Number";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -959,68 +946,49 @@
             this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel6, 1, 0);
             this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel7, 0, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(672, 2);
-            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(0, 2, 6, 8);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(669, 0);
+            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(0, 0, 0, 4);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.Padding = new System.Windows.Forms.Padding(0, 0, 6, 0);
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 46.73913F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(1038, 73);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(1047, 79);
             this.tableLayoutPanel5.TabIndex = 1;
             // 
             // tableLayoutPanel6
             // 
-            this.tableLayoutPanel6.ColumnCount = 2;
+            this.tableLayoutPanel6.ColumnCount = 1;
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Controls.Add(this.btnPrintManual, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.btnClear, 1, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(731, 3);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(735, 3);
+            this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(298, 67);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(306, 73);
             this.tableLayoutPanel6.TabIndex = 9;
-            // 
-            // btnPrintManual
-            // 
-            this.btnPrintManual.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(189)))), ((int)(((byte)(255)))));
-            this.btnPrintManual.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(189)))), ((int)(((byte)(255)))));
-            this.btnPrintManual.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
-            this.btnPrintManual.BorderRadius = 6;
-            this.btnPrintManual.BorderSize = 1;
-            this.btnPrintManual.FlatAppearance.BorderSize = 0;
-            this.btnPrintManual.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrintManual.Font = new System.Drawing.Font("Arial Rounded MT Bold", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrintManual.ForeColor = System.Drawing.Color.White;
-            this.btnPrintManual.Location = new System.Drawing.Point(6, 1);
-            this.btnPrintManual.Margin = new System.Windows.Forms.Padding(6, 1, 2, 8);
-            this.btnPrintManual.Name = "btnPrintManual";
-            this.btnPrintManual.Size = new System.Drawing.Size(106, 58);
-            this.btnPrintManual.TabIndex = 1;
-            this.btnPrintManual.Text = "Print Manual";
-            this.btnPrintManual.TextColor = System.Drawing.Color.White;
-            this.btnPrintManual.UseVisualStyleBackColor = false;
             // 
             // btnClear
             // 
-            this.btnClear.BackColor = System.Drawing.Color.Yellow;
-            this.btnClear.BackgroundColor = System.Drawing.Color.Yellow;
+            this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(255)))), ((int)(((byte)(148)))));
+            this.btnClear.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(255)))), ((int)(((byte)(148)))));
             this.btnClear.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
             this.btnClear.BorderRadius = 5;
             this.btnClear.BorderSize = 1;
+            this.btnClear.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnClear.FlatAppearance.BorderSize = 0;
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClear.Font = new System.Drawing.Font("Arial Rounded MT Bold", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnClear.Image = ((System.Drawing.Image)(resources.GetObject("btnClear.Image")));
-            this.btnClear.Location = new System.Drawing.Point(155, 1);
-            this.btnClear.Margin = new System.Windows.Forms.Padding(6, 1, 6, 0);
+            this.btnClear.Location = new System.Drawing.Point(0, 1);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.btnClear.Name = "btnClear";
             this.btnClear.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnClear.Size = new System.Drawing.Size(103, 58);
+            this.btnClear.Size = new System.Drawing.Size(306, 72);
             this.btnClear.TabIndex = 4;
             this.btnClear.Text = " Clear Data";
             this.btnClear.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1033,7 +1001,7 @@
             this.tableLayoutPanel7.ColumnCount = 3;
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.78717F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 89.21283F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 374F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 385F));
             this.tableLayoutPanel7.Controls.Add(this.pictureBox1, 0, 0);
             this.tableLayoutPanel7.Controls.Add(this.label8, 1, 0);
             this.tableLayoutPanel7.Controls.Add(this.pictureBox2, 0, 1);
@@ -1042,12 +1010,12 @@
             this.tableLayoutPanel7.Controls.Add(this.textBoxInspector, 2, 1);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel7.Location = new System.Drawing.Point(6, 0);
-            this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(6, 0, 2, 0);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 2;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(716, 73);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(727, 79);
             this.tableLayoutPanel7.TabIndex = 8;
             // 
             // pictureBox1
@@ -1075,7 +1043,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Product_DefectRecord.Properties.Resources.people;
-            this.pictureBox2.Location = new System.Drawing.Point(3, 42);
+            this.pictureBox2.Location = new System.Drawing.Point(3, 48);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(30, 28);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1086,7 +1054,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Arial Rounded MT Bold", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(36, 39);
+            this.label9.Location = new System.Drawing.Point(36, 45);
             this.label9.Margin = new System.Windows.Forms.Padding(0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(151, 33);
@@ -1101,7 +1069,7 @@
             this.textBoxCode.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxCode.Location = new System.Drawing.Point(344, 3);
             this.textBoxCode.Name = "textBoxCode";
-            this.textBoxCode.Size = new System.Drawing.Size(369, 35);
+            this.textBoxCode.Size = new System.Drawing.Size(380, 35);
             this.textBoxCode.TabIndex = 3;
             // 
             // textBoxInspector
@@ -1109,9 +1077,9 @@
             this.textBoxInspector.BackColor = System.Drawing.SystemColors.Control;
             this.textBoxInspector.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxInspector.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxInspector.Location = new System.Drawing.Point(344, 42);
+            this.textBoxInspector.Location = new System.Drawing.Point(344, 48);
             this.textBoxInspector.Name = "textBoxInspector";
-            this.textBoxInspector.Size = new System.Drawing.Size(369, 35);
+            this.textBoxInspector.Size = new System.Drawing.Size(380, 35);
             this.textBoxInspector.TabIndex = 4;
             // 
             // timer1
@@ -1120,39 +1088,47 @@
             // 
             // tableLayoutPanel8
             // 
+            this.tableLayoutPanel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(103)))), ((int)(((byte)(105)))));
             this.tableLayoutPanel8.ColumnCount = 1;
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel8.Controls.Add(this.btnSetting, 0, 1);
-            this.tableLayoutPanel8.Controls.Add(this.btnLogout, 0, 2);
+            this.tableLayoutPanel8.Controls.Add(this.btnPrintManual, 0, 3);
+            this.tableLayoutPanel8.Controls.Add(this.btnLogout, 0, 3);
+            this.tableLayoutPanel8.Controls.Add(this.btnSetting, 0, 2);
             this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Left;
             this.tableLayoutPanel8.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
-            this.tableLayoutPanel8.RowCount = 3;
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.86012F));
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 77.13988F));
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 102F));
+            this.tableLayoutPanel8.RowCount = 4;
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 73.2852F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 26.7148F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 93F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 612F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 109F));
             this.tableLayoutPanel8.Size = new System.Drawing.Size(175, 1061);
             this.tableLayoutPanel8.TabIndex = 19;
             // 
-            // btnSetting
+            // btnPrintManual
             // 
-            this.btnSetting.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnSetting.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnSetting.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnSetting.BorderRadius = 5;
-            this.btnSetting.BorderSize = 0;
-            this.btnSetting.FlatAppearance.BorderSize = 0;
-            this.btnSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSetting.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSetting.ForeColor = System.Drawing.Color.White;
-            this.btnSetting.Location = new System.Drawing.Point(3, 222);
-            this.btnSetting.Name = "btnSetting";
-            this.btnSetting.Size = new System.Drawing.Size(131, 40);
-            this.btnSetting.TabIndex = 0;
-            this.btnSetting.Text = "Setting";
-            this.btnSetting.TextColor = System.Drawing.Color.White;
-            this.btnSetting.UseVisualStyleBackColor = false;
+            this.btnPrintManual.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(103)))), ((int)(((byte)(105)))));
+            this.btnPrintManual.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(103)))), ((int)(((byte)(105)))));
+            this.btnPrintManual.BorderColor = System.Drawing.Color.Transparent;
+            this.btnPrintManual.BorderRadius = 6;
+            this.btnPrintManual.BorderSize = 0;
+            this.btnPrintManual.FlatAppearance.BorderSize = 0;
+            this.btnPrintManual.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrintManual.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrintManual.ForeColor = System.Drawing.Color.White;
+            this.btnPrintManual.Image = ((System.Drawing.Image)(resources.GetObject("btnPrintManual.Image")));
+            this.btnPrintManual.Location = new System.Drawing.Point(0, 340);
+            this.btnPrintManual.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
+            this.btnPrintManual.Name = "btnPrintManual";
+            this.btnPrintManual.Size = new System.Drawing.Size(175, 92);
+            this.btnPrintManual.TabIndex = 3;
+            this.btnPrintManual.Text = "Print Manual";
+            this.btnPrintManual.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnPrintManual.TextColor = System.Drawing.Color.White;
+            this.btnPrintManual.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnPrintManual.UseVisualStyleBackColor = false;
             // 
             // btnLogout
             // 
@@ -1165,22 +1141,49 @@
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogout.ForeColor = System.Drawing.Color.White;
-            this.btnLogout.Location = new System.Drawing.Point(3, 961);
+            this.btnLogout.Image = global::Product_DefectRecord.Properties.Resources.logout_white;
+            this.btnLogout.Location = new System.Drawing.Point(3, 954);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(131, 40);
+            this.btnLogout.Size = new System.Drawing.Size(169, 68);
             this.btnLogout.TabIndex = 1;
             this.btnLogout.Text = "Logout";
+            this.btnLogout.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnLogout.TextColor = System.Drawing.Color.White;
+            this.btnLogout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnLogout.UseVisualStyleBackColor = false;
+            // 
+            // btnSetting
+            // 
+            this.btnSetting.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(103)))), ((int)(((byte)(105)))));
+            this.btnSetting.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(103)))), ((int)(((byte)(105)))));
+            this.btnSetting.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnSetting.BorderRadius = 5;
+            this.btnSetting.BorderSize = 0;
+            this.btnSetting.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSetting.FlatAppearance.BorderSize = 0;
+            this.btnSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSetting.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSetting.ForeColor = System.Drawing.Color.White;
+            this.btnSetting.Image = ((System.Drawing.Image)(resources.GetObject("btnSetting.Image")));
+            this.btnSetting.Location = new System.Drawing.Point(3, 249);
+            this.btnSetting.Name = "btnSetting";
+            this.btnSetting.Size = new System.Drawing.Size(169, 87);
+            this.btnSetting.TabIndex = 0;
+            this.btnSetting.Text = "Setting";
+            this.btnSetting.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnSetting.TextColor = System.Drawing.Color.White;
+            this.btnSetting.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnSetting.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel9
             // 
-            this.tableLayoutPanel9.ColumnCount = 1;
+            this.tableLayoutPanel9.ColumnCount = 2;
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 1048F));
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel9.Controls.Add(this.btnStatus, 0, 0);
             this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel9.Location = new System.Drawing.Point(175, 126);
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(175, 178);
             this.tableLayoutPanel9.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 1;
@@ -1192,12 +1195,14 @@
             // btnStatus
             // 
             this.btnStatus.AutoSize = true;
-            this.btnStatus.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStatus.BackColor = System.Drawing.Color.White;
+            this.btnStatus.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnStatus.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStatus.Location = new System.Drawing.Point(3, 0);
             this.btnStatus.Name = "btnStatus";
-            this.btnStatus.Size = new System.Drawing.Size(81, 27);
+            this.btnStatus.Size = new System.Drawing.Size(662, 37);
             this.btnStatus.TabIndex = 0;
-            this.btnStatus.Text = "Status";
+            this.btnStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // DefectListView
             // 
@@ -1208,7 +1213,6 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.Panel3);
             this.Controls.Add(this.tableLayoutPanel9);
-            this.Controls.Add(this.tableLayoutPanel4);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.tableLayoutPanel8);
@@ -1253,7 +1257,6 @@
         private Component.RdButton btnS;
         private Component.RdButton btnR;
         private Component.RdButton btnU;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.TableLayoutPanel Panel3;
         private Component.RdButton btnP;
         private Component.RdButton btnY;
@@ -1287,7 +1290,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
-        private Component.RdButton btnPrintManual;
         private System.Windows.Forms.Label Date;
         private System.Windows.Forms.Label Time;
         private System.Windows.Forms.Timer timer1;
@@ -1299,10 +1301,11 @@
         private System.Windows.Forms.TextBox textBoxInspector;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
-        private System.Windows.Forms.Label btnStatus;
-        private Component.RdButton btnSetting;
-        private Component.RdButton btnLogout;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
+        private Component.RdButton btnPrintManual;
+        private Component.RdButton btnLogout;
+        private Component.RdButton btnSetting;
+        private System.Windows.Forms.Label btnStatus;
     }
 }
