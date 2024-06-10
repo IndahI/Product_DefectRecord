@@ -11,6 +11,7 @@ namespace Product_DefectRecord.Views
 {
     public partial class LoginView : Form, ILoginView
     {
+        public bool isClickedOnce = true;
         public LoginView()
         {
             InitializeComponent();
@@ -74,6 +75,22 @@ namespace Product_DefectRecord.Views
             btnExit.Click += delegate
             {
                 Application.Exit();
+            };
+
+            hiddenPass.Click += delegate
+            {
+                if (isClickedOnce)
+                {
+                    hiddenPass.Image = Properties.Resources.hidden;
+                    textBoxPassword.PasswordChar = '\0';
+                    isClickedOnce = false;
+                }
+                else
+                {
+                    hiddenPass.Image = Properties.Resources.eye;
+                    textBoxPassword.PasswordChar = '*';
+                    isClickedOnce = true;
+                }
             };
         }
 

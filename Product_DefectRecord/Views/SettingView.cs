@@ -126,7 +126,6 @@ namespace Product_DefectRecord.Views
             btnRestart.Click += delegate 
             { 
                 RestartConnect?.Invoke(this, EventArgs.Empty);
-                string sqlConnectionString = ConfigurationManager.ConnectionStrings["DBConnectionCommon"].ConnectionString;
                 ILoginView loginView = new LoginView();
                 LoginPresenter loginPresenter = new LoginPresenter(loginView, new LoginRepository());
                 (loginView as Form)?.Show();

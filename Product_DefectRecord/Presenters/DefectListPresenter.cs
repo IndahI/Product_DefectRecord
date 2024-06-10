@@ -103,7 +103,6 @@ namespace Product_DefectRecord.Presenters
         public delegate void TopDefectEventHandler(object sender, EventArgs e, int id);
         private void SearchModelNumber(object sender, ModelEventArgs e)
         {
-
             var model = new ModelCode
             {
                 modelCode1 = view.ModelCode

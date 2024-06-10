@@ -18,6 +18,7 @@ namespace Product_DefectRecord.Views
         private PrintManualPresenter printManualPresenter;
         private BindingSource defectsBindingSource = new BindingSource();
         private bool showNoData = true;
+        private string latestReceivedData;
         public DefectListView()
         {
             InitializeComponent();
@@ -304,7 +305,26 @@ namespace Product_DefectRecord.Views
                 }
             };
 
-            btnLogout.Click += delegate
+            textBoxSerial.KeyDown += (sender, e) =>
+            {
+                KeysConverter keysConverter = new KeysConverter();
+                if (e.KeyCode == Keys.Enter)
+                {
+                    latestReceivedData = textBoxSerial.Text;
+                    SerialNumber = latestReceivedData.Substring(2);
+                    ModelCode = latestReceivedData.Substring(0,2);
+                    PerformModelSearch();
+                    
+                }
+                else
+                {
+                    // Akumulasi karakter hingga tombol Enter ditekan
+                    string character = keysConverter.ConvertToString(e.KeyCode);
+                    latestReceivedData += character;
+                }
+            };
+
+           btnLogout.Click += delegate
             {
                 ILoginView loginView = new LoginView();
                 LoginPresenter loginPresenter = new LoginPresenter(loginView, new LoginRepository());
