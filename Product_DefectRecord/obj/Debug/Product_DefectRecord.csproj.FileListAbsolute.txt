@@ -64,3 +64,4 @@ D:\Product_DefectRecord\versi Juni\Product_DefectRecord\Product_DefectRecord\obj
 D:\Product_DefectRecord\versi Juni\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_.BBEB9712.Up2Date
 D:\Product_DefectRecord\versi Juni\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.exe
 D:\Product_DefectRecord\versi Juni\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.pdb
+D:\Perkuliahan\Semester6\Panasonic\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.Views.PrintRecord.resources

@@ -32,6 +32,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.rdPanel2 = new Product_DefectRecord.Component.RDPanel();
             this.hiddenPass = new System.Windows.Forms.PictureBox();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
@@ -43,13 +44,12 @@
             this.btnExit = new Product_DefectRecord.Component.RdButton();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.rdPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.hiddenPass)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
@@ -57,11 +57,11 @@
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Verdana", 44.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Helvetica", 44.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(13, 6);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(773, 72);
+            this.label3.Size = new System.Drawing.Size(670, 71);
             this.label3.TabIndex = 3;
             this.label3.Text = "Product Defect Record";
             // 
@@ -70,11 +70,11 @@
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Verdana", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Helvetica", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(780, 18);
+            this.label4.Location = new System.Drawing.Point(683, 18);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(678, 48);
+            this.label4.Size = new System.Drawing.Size(586, 47);
             this.label4.TabIndex = 4;
             this.label4.Text = "Lundry System Business Unit";
             // 
@@ -88,6 +88,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1370, 83);
             this.panel1.TabIndex = 12;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(1370, 749);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 16;
+            this.pictureBox3.TabStop = false;
             // 
             // rdPanel2
             // 
@@ -113,8 +124,9 @@
             // 
             // hiddenPass
             // 
+            this.hiddenPass.BackColor = System.Drawing.Color.Transparent;
             this.hiddenPass.Image = global::Product_DefectRecord.Properties.Resources.eye;
-            this.hiddenPass.Location = new System.Drawing.Point(542, 185);
+            this.hiddenPass.Location = new System.Drawing.Point(548, 185);
             this.hiddenPass.Name = "hiddenPass";
             this.hiddenPass.Size = new System.Drawing.Size(30, 50);
             this.hiddenPass.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -136,20 +148,20 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Verdana", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Helvetica", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(140, 196);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(171, 35);
+            this.label2.Size = new System.Drawing.Size(152, 35);
             this.label2.TabIndex = 23;
             this.label2.Text = "Password";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Verdana", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Helvetica", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(140, 117);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 35);
+            this.label1.Size = new System.Drawing.Size(65, 35);
             this.label1.TabIndex = 22;
             this.label1.Text = "NIK";
             // 
@@ -158,11 +170,11 @@
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Verdana", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Helvetica", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.Location = new System.Drawing.Point(133, 31);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(412, 45);
+            this.label5.Size = new System.Drawing.Size(343, 45);
             this.label5.TabIndex = 15;
             this.label5.Text = "Login Inspector ID";
             // 
@@ -174,7 +186,7 @@
             this.textBoxNik.Font = new System.Drawing.Font("Verdana", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxNik.Location = new System.Drawing.Point(317, 117);
             this.textBoxNik.Name = "textBoxNik";
-            this.textBoxNik.Size = new System.Drawing.Size(255, 33);
+            this.textBoxNik.Size = new System.Drawing.Size(218, 33);
             this.textBoxNik.TabIndex = 21;
             // 
             // btnLogin
@@ -243,17 +255,6 @@
             this.pictureBox1.TabIndex = 16;
             this.pictureBox1.TabStop = false;
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(1370, 749);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 16;
-            this.pictureBox3.TabStop = false;
-            // 
             // LoginView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -269,12 +270,12 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.rdPanel2.ResumeLayout(false);
             this.rdPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.hiddenPass)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }

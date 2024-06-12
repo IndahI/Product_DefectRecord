@@ -134,12 +134,19 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\ILoginView.cs" />
+    <Compile Include="Views\IPrintRecord.cs" />
     <Compile Include="Views\ISettingView.cs" />
     <Compile Include="Views\LoginView.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\LoginView.Designer.cs">
       <DependentUpon>LoginView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PrintRecord.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\PrintRecord.Designer.cs">
+      <DependentUpon>PrintRecord.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\PopUp.Designer.cs">
       <DependentUpon>DetailDefectView.cs</DependentUpon>
@@ -183,6 +190,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\LoginView.resx">
       <DependentUpon>LoginView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PrintRecord.resx">
+      <DependentUpon>PrintRecord.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Sementara.resx">
       <DependentUpon>Sementara.cs</DependentUpon>
