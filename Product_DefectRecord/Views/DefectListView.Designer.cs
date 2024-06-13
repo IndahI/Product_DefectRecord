@@ -39,8 +39,9 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.btnLogout = new Product_DefectRecord.Component.RdButton();
-            this.btnPrintManual = new Product_DefectRecord.Component.RdButton();
+            this.btnRecord = new Product_DefectRecord.Component.RdButton();
             this.btnSetting = new Product_DefectRecord.Component.RdButton();
+            this.btnPrint = new Product_DefectRecord.Component.RdButton();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -135,8 +136,9 @@
             this.tableLayoutPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(103)))), ((int)(((byte)(105)))));
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Controls.Add(this.btnPrint, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.btnLogout, 0, 3);
-            this.tableLayoutPanel2.Controls.Add(this.btnPrintManual, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnRecord, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnSetting, 0, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
@@ -187,29 +189,29 @@
             this.btnLogout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnLogout.UseVisualStyleBackColor = false;
             // 
-            // btnPrintManual
+            // btnRecord
             // 
-            this.btnPrintManual.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(103)))), ((int)(((byte)(105)))));
-            this.btnPrintManual.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(103)))), ((int)(((byte)(105)))));
-            this.btnPrintManual.BorderColor = System.Drawing.Color.Transparent;
-            this.btnPrintManual.BorderRadius = 6;
-            this.btnPrintManual.BorderSize = 0;
-            this.btnPrintManual.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnPrintManual.FlatAppearance.BorderSize = 0;
-            this.btnPrintManual.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrintManual.Font = new System.Drawing.Font("Helvetica", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrintManual.ForeColor = System.Drawing.Color.White;
-            this.btnPrintManual.Image = ((System.Drawing.Image)(resources.GetObject("btnPrintManual.Image")));
-            this.btnPrintManual.Location = new System.Drawing.Point(0, 1);
-            this.btnPrintManual.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
-            this.btnPrintManual.Name = "btnPrintManual";
-            this.btnPrintManual.Size = new System.Drawing.Size(121, 83);
-            this.btnPrintManual.TabIndex = 4;
-            this.btnPrintManual.Text = "Print Manual";
-            this.btnPrintManual.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnPrintManual.TextColor = System.Drawing.Color.White;
-            this.btnPrintManual.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnPrintManual.UseVisualStyleBackColor = false;
+            this.btnRecord.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(103)))), ((int)(((byte)(105)))));
+            this.btnRecord.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(103)))), ((int)(((byte)(105)))));
+            this.btnRecord.BorderColor = System.Drawing.Color.Transparent;
+            this.btnRecord.BorderRadius = 6;
+            this.btnRecord.BorderSize = 0;
+            this.btnRecord.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRecord.FlatAppearance.BorderSize = 0;
+            this.btnRecord.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRecord.Font = new System.Drawing.Font("Helvetica", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRecord.ForeColor = System.Drawing.Color.White;
+            this.btnRecord.Image = ((System.Drawing.Image)(resources.GetObject("btnRecord.Image")));
+            this.btnRecord.Location = new System.Drawing.Point(0, 1);
+            this.btnRecord.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
+            this.btnRecord.Name = "btnRecord";
+            this.btnRecord.Size = new System.Drawing.Size(121, 83);
+            this.btnRecord.TabIndex = 4;
+            this.btnRecord.Text = "Record";
+            this.btnRecord.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnRecord.TextColor = System.Drawing.Color.White;
+            this.btnRecord.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnRecord.UseVisualStyleBackColor = false;
             // 
             // btnSetting
             // 
@@ -234,6 +236,30 @@
             this.btnSetting.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnSetting.UseVisualStyleBackColor = true;
             // 
+            // btnPrint
+            // 
+            this.btnPrint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(103)))), ((int)(((byte)(105)))));
+            this.btnPrint.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(103)))), ((int)(((byte)(105)))));
+            this.btnPrint.BorderColor = System.Drawing.Color.Transparent;
+            this.btnPrint.BorderRadius = 6;
+            this.btnPrint.BorderSize = 0;
+            this.btnPrint.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnPrint.FlatAppearance.BorderSize = 0;
+            this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrint.Font = new System.Drawing.Font("Helvetica", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrint.ForeColor = System.Drawing.Color.White;
+            this.btnPrint.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.Image")));
+            this.btnPrint.Location = new System.Drawing.Point(0, 167);
+            this.btnPrint.Margin = new System.Windows.Forms.Padding(0, 1, 0, 0);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(121, 295);
+            this.btnPrint.TabIndex = 6;
+            this.btnPrint.Text = "Print";
+            this.btnPrint.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnPrint.TextColor = System.Drawing.Color.White;
+            this.btnPrint.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnPrint.UseVisualStyleBackColor = false;
+            // 
             // DefectListView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -251,7 +277,7 @@
             this.Text = "Production Defect Record Laundry System";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.DefectListView_FormClosed);
-            this.Load += new System.EventHandler(this.DefectView_Load);
+            this.Load += new System.EventHandler(this.DefectListView_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -272,8 +298,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private Component.RdButton btnLogout;
-        private Component.RdButton btnPrintManual;
+        private Component.RdButton btnRecord;
         private Component.RdButton btnSetting;
         private System.Windows.Forms.SplitContainer splitContainer1;
+        private Component.RdButton btnPrint;
     }
 }

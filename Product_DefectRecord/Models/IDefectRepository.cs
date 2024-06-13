@@ -13,5 +13,7 @@ namespace Product_DefectRecord.Models
         IEnumerable<DefectModel> GetFilter(int id);
         IEnumerable<DefectModel> GetAll();
         IEnumerable<DefectModel> GetByValue(string value);
+        IEnumerable<DefectResultModel> GetAllResult();
+        IEnumerable<DefectResultModel> GetFilterResult(DateTime selectedDate);
     }
 }

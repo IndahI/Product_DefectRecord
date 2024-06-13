@@ -11,9 +11,9 @@ namespace Product_DefectRecord.Models
     {
         private SettingRepository _repository;
 
-        public SettingModel(SettingRepository repository)
+        public SettingModel()
         {
-            _repository = repository;
+            _repository = new SettingRepository();
         }
 
         public List<string> GetLocationNames()

@@ -14,6 +14,7 @@ namespace Product_DefectRecord.Views
         bool IsLoginSuccessful { get; }
         void ShowMessage(string message);
         void HideView();
+        void Show();
         event EventHandler Login;
     }
 }

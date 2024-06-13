@@ -10,12 +10,12 @@ namespace Product_DefectRecord.Presenters
 {
     public class DefectListDataPresenter
     {
-        public IDefectListView View { get; }
+        public IPrintRecord View { get; }
         public IDefectRepository DefectRepository { get; }
         public IModelNumberRepository ModelNumberRepository { get; }
         public LoginModel User { get; }
 
-        public DefectListDataPresenter(IDefectListView view, IDefectRepository defectRepository, IModelNumberRepository modelNumberRepository, LoginModel user)
+        public DefectListDataPresenter(IPrintRecord view, IDefectRepository defectRepository, IModelNumberRepository modelNumberRepository, LoginModel user)
         {
             View = view;
             DefectRepository = defectRepository;

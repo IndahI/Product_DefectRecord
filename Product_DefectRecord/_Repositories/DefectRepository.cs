@@ -5,6 +5,9 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Reflection;
+using System.Windows.Forms;
+using ZXing.QrCode.Internal;
+
 
 namespace Product_DefectRecord._Repositories
 {
@@ -18,6 +21,115 @@ namespace Product_DefectRecord._Repositories
         {
             DBConnection = ConfigurationManager.ConnectionStrings["DBConnection"].ConnectionString;
         }
+
+        public IEnumerable<DefectResultModel> GetAllResult()
+        {
+            var resultList = new List<DefectResultModel>();
+            using (var connection = new SqlConnection(DBConnection))
+            using (var command = new SqlCommand())
+            {
+                connection.Open();
+                command.Connection = connection;
+                command.CommandText =
+                    "SELECT " +
+                    "    DR.Id, " +
+                    "    DN.Id AS DefectId, " +
+                    "    DR.DateTime, " +
+                    "    DR.ModelNumber, " +
+                    "    DR.ModelCode, " +
+                    "    DR.SerialNumber, " +
+                    "    DR.LocationId, " +
+                    "    DN.DefectName, " +
+                    "    U.Name AS InspectorName " +
+                    "FROM " +
+                    "    Defect_Results DR " +
+                    "INNER JOIN " +
+                    "    LSBU_Common.dbo.Users U ON DR.InspectorId = U.NikId " +
+                    "INNER JOIN " +
+                    "    Defect_Names DN ON DR.DefectId = DN.Id " +
+                    "WHERE " +
+                    "    CONVERT(date, DR.DateTime) = CONVERT(date, GETDATE())"+
+                    "ORDER BY " +
+                    "    DR.Id DESC";
+
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        var resultModel = new DefectResultModel
+                        {
+                            Id = reader["Id"].ToString(),
+                            Defect = reader["DefectName"].ToString(),
+                            Date = reader["DateTime"].ToString(),
+                            ModelNumber = reader["ModelNumber"].ToString(),
+                            ModelCode = reader["ModelCode"].ToString(),
+                            SerialNumber = reader["SerialNumber"].ToString(),
+                            LocationId = reader["LocationId"].ToString(),
+                            Inspector = reader["InspectorName"].ToString()
+                        };
+                        resultList.Add(resultModel);
+                    }
+                }
+            }
+
+            return resultList;
+        }
+
+        public IEnumerable<DefectResultModel> GetFilterResult(DateTime selectedDate)
+        {
+            var resultList = new List<DefectResultModel>();
+            using (var connection = new SqlConnection(DBConnection))
+            using (var command = new SqlCommand())
+            {
+                connection.Open();
+                command.Connection = connection;
+                command.CommandText =
+                    "SELECT " +
+                    "    DR.Id, " +
+                    "    DN.Id AS DefectId, " +
+                    "    DR.DateTime, " +
+                    "    DR.ModelNumber, " +
+                    "    DR.ModelCode, " +
+                    "    DR.SerialNumber, " +
+                    "    DR.LocationId, " +
+                    "    DN.DefectName, " +
+                    "    U.Name AS InspectorName " +
+                    "FROM " +
+                    "    Defect_Results DR " +
+                    "INNER JOIN " +
+                    "    LSBU_Common.dbo.Users U ON DR.InspectorId = U.NikId " +
+                    "INNER JOIN " +
+                    "    Defect_Names DN ON DR.DefectId = DN.Id " +
+                    "WHERE " +
+                    "    CAST(DR.DateTime AS DATE) = @SelectedDate " +
+                    "ORDER BY " +
+                    "    DR.Id DESC";
+
+                command.Parameters.Add("@SelectedDate", SqlDbType.Date).Value = selectedDate.Date;
+
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        var resultModel = new DefectResultModel
+                        {
+                            Id = reader["Id"].ToString(),
+                            Defect = reader["DefectName"].ToString(),
+                            Date = reader["DateTime"].ToString(),
+                            ModelNumber = reader["ModelNumber"].ToString(),
+                            ModelCode = reader["ModelCode"].ToString(),
+                            SerialNumber = reader["SerialNumber"].ToString(),
+                            LocationId = reader["LocationId"].ToString(),
+                            Inspector = reader["InspectorName"].ToString()
+                        };
+                        resultList.Add(resultModel);
+                    }
+                }
+            }
+
+            return resultList;
+        }
+
         public void Add(dynamic model)
         {
             using (var connection = new SqlConnection(DBConnection))

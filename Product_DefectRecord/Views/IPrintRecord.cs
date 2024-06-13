@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static Product_DefectRecord.Presenters.DefectListPresenter;
+using static Product_DefectRecord.Presenters.PrintRecordPresenter;
 
 namespace Product_DefectRecord.Views
 {
@@ -21,6 +22,7 @@ namespace Product_DefectRecord.Views
         bool IsKeyboardEnabled { get; set; }
         Color BackColorStatus { get; set; }
         Color ForeColorStatus { get; set; }
+        DateTime SelectedDate { get; }
 
         //event
         event EventHandler<ModelEventArgs> SearchModelNumber;
@@ -29,22 +31,14 @@ namespace Product_DefectRecord.Views
         event EventHandler EditButtonClicked;
         event EventHandler CellClicked;
         event KeyEventHandler KeyDownEvent;
+        event EventHandler SearchFilter;
 
+        void SelectTabPageByIndex(int data);
         void AddNoData();
         void RemoveNoData(BindingSource defectList);
         void SetDefectListBindingSource(BindingSource defectList);
+        void SetDefectListBindingSource2(BindingSource resultList);
         void ShowPopupForm();
         void Show();
     }
-
-    //public class ModelEventArgs : EventArgs
-    //{
-    //    public string Message { get; set; }
-
-    //    public ModelEventArgs(string message)
-    //    {
-    //        Message = message;
-    //    }
-    //}
-
 }

@@ -13,101 +13,94 @@ namespace Product_DefectRecord.Views
 {
     public partial class DefectListView : Form, IDefectListView
     {
-        private TcpClientWrapper clientWrapper;
-        private string inspectorId;
-        private PrintManualPresenter printManualPresenter;
-        private BindingSource defectsBindingSource = new BindingSource();
-        private bool showNoData = true;
-        private string latestReceivedData;
+        private PrintRecordPresenter printRecordPresenter;
         public LoginModel _user;
         public DefectListView(LoginModel user)
         {
-            InitializeComponent();
             _user = user;
-            AssociateAndRaiseViewEvents();
-            printManualPresenter = new PrintManualPresenter(this);
+            InitializeComponent();
             InitializeTabControl();
+            HandleAction();
         }
 
-        //event
-        public event EventHandler<ModelEventArgs> SearchModelNumber;
-        public event EventHandler ClearEvent;
-        public event TopDefectEventHandler DefectFilterEvent;
-        public event EventHandler EditButtonClicked;
-        public event EventHandler CellClicked;
-        public event KeyEventHandler KeyDownEvent;
-
-        private void AssociateAndRaiseViewEvents()
-        {
-            throw new NotImplementedException();
-        }
-
-
-        private void InitializeTabControl()
+        public void InitializeTabControl()
         {
             PrintRecord printRecord = new PrintRecord();
             DefectListDataPresenter presenterData = new DefectListDataPresenter(printRecord, new DefectRepository(), new ModelNumberRepository(), _user);
+            printRecordPresenter = new PrintRecordPresenter(presenterData); // Inisialisasi variabel instance
+            splitContainer1.Panel2.Controls.Add(printRecord);
+            printRecord.Dock = DockStyle.Fill;
         }
-        // Call this method when you need to perform a model search
-        private void PerformModelSearch()
+
+        private void HandleAction() 
         {
-            // Raise the event with the data from the view
-            //SearchModelNumber?.Invoke(this, new ModelEventArgs(SerialNumber));
+            btnRecord.Click += delegate
+            {
+                int selectedTabPageIndex = 1;
+                printRecordPresenter.ChangeTabPage(selectedTabPageIndex);
+                //btnHome.BackColor = Color.FromArgb(0, 133, 181);
+                //btnRePrint.BackColor = Color.FromArgb(0, 35, 105);
+            };
+
+            btnPrint.Click += delegate
+            {
+                int selectedTabPageIndex = 0;
+                printRecordPresenter.ChangeTabPage(selectedTabPageIndex);
+                //btnHome.BackColor = Color.FromArgb(0, 133, 181);
+                //btnRePrint.BackColor = Color.FromArgb(0, 35, 105);
+            };
+
+            timer1.Tick += delegate
+            {
+                Time.Text = DateTime.Now.ToLongTimeString();
+                Date.Text = DateTime.Now.ToLongDateString();
+            };
+
+            btnSetting.Click += (sender, e) =>
+            {
+                ISettingView settingView = SettingView.GetInstance();
+                SettingPresenter settingPresenter = new SettingPresenter(settingView, new SettingModel());
+                (settingView as Form)?.Show();
+            };
+
+            btnLogout.Click += (sender, e) =>
+            {
+                // Menyembunyikan view saat ini
+                this.Hide();
+
+                // Membuat dan menampilkan form login baru
+                ILoginView loginView = new LoginView();
+                LoginPresenter loginPresenter = new LoginPresenter(loginView, new LoginRepository());
+                loginView.Show();
+
+                // Menutup form saat ini
+                //this.Close();
+            };
         }
 
-
-        private async void DefectView_Load(object sender, EventArgs e)
+        // Singleton pattern (open a single form instance)
+        private static DefectListView instance;
+        public static DefectListView GetInstance(LoginModel loginModel)
         {
-            timer1.Start();
-            //clientWrapper = new TcpClientWrapper(UpdateCodeBox, UpdateSerialBox); // Passing both update methods
-            await clientWrapper.ConnectToServerAsync();
+            if (instance == null || instance.IsDisposed)
+                instance = new DefectListView(loginModel);
+            else
+            {
+                if (instance.WindowState == FormWindowState.Minimized)
+                    instance.WindowState = FormWindowState.Normal;
+                instance.BringToFront();
+            }
+            return instance;
         }
-
-        public void SetDefectListBindingSource(BindingSource defectList)
-        {
-            //dataGridView1.DataSource = defectList;
-        }
-
-        //public void ShowPopupForm()
-        //{
-        //    DetailDefectView popupForm = new DetailDefectView();
-        //    popupForm.ShowDialog();
-        //}
-
-        //public void AddNoData()
-        //{
-        //    // Clear existing data source
-        //    dataGridView1.DataSource = null;
-
-        //    // Bersihkan semua baris yang ada di DataGridView
-        //    dataGridView1.Rows.Clear();
-
-        //    dataGridView1.Columns[0].HeaderText = "No Data";
-        //    dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-        //}
-
-        //public void RemoveNoData(BindingSource defectList)
-        //{
-        //    // Bersihkan semua baris yang ada di DataGridView
-        //    dataGridView1.Rows.Clear();
-        //    dataGridView1.RowPostPaint += (sender, e) =>
-        //    {
-        //        DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
-        //            row.Cells["No"].Value = (e.RowIndex + 1).ToString();
-        //            row.Cells["No"].Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
-        //    };
-        //    dataGridView1.Columns[0].HeaderText = "No";
-        //    dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-        //    // Set nilai DataSource menjadi null untuk menghapus sumber data
-        //    SetDefectListBindingSource(defectList);
-
-        //}
 
         private void DefectListView_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }
 
+        private void DefectListView_Load(object sender, EventArgs e)
+        {
+            timer1.Start();
+        }
     }
 }

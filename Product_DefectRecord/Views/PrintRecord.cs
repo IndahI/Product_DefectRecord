@@ -15,15 +15,16 @@ namespace Product_DefectRecord.Views
     public partial class PrintRecord : UserControl, IPrintRecord
     {
         private string latestReceivedData;
-        private TcpClientWrapper clientWrapper;
-        private PrintManualPresenter printManualPresenter;
-        private BindingSource defectBindingSource = new BindingSource();
+        private TCPConnection connection;
+
         private string inspectorId;
 
         public PrintRecord()
         {
             InitializeComponent();
             AssociateAndRaiseViewEvents();
+            tabControl1.ItemSize = new Size(0, 1);
+            tabControl1.SizeMode = TabSizeMode.Fixed;
             //printManualPresenter = new PrintManualPresenter(this);
         }
 
@@ -77,12 +78,23 @@ namespace Product_DefectRecord.Views
             set { btnStatus.ForeColor = value; }
         }
 
+        public DateTime SelectedDate => dtFromDate.Value;
+
         public event EventHandler<ModelEventArgs> SearchModelNumber;
         public event EventHandler ClearEvent;
         public event EventHandler EditButtonClicked;
         public event EventHandler CellClicked;
-        public event DefectListPresenter.TopDefectEventHandler DefectFilterEvent;
+        public event PrintRecordPresenter.TopDefectEventHandler DefectFilterEvent;
         public event KeyEventHandler KeyDownEvent;
+        public event EventHandler SearchFilter;
+
+        public void SelectTabPageByIndex(int data)
+        {
+            if (data >= 0 && data < tabControl1.TabPages.Count)
+            {
+                tabControl1.SelectedIndex = data;
+            }
+        }
 
         public void AddNoData()
         {
@@ -118,6 +130,11 @@ namespace Product_DefectRecord.Views
             dataGridView1.DataSource = defectList;
         }
 
+        public void SetDefectListBindingSource2(BindingSource resultList)
+        {
+            dataGridView2.DataSource = resultList;
+        }
+
         public void ShowPopupForm()
         {
             DetailDefectView popupForm = new DetailDefectView();
@@ -131,6 +148,16 @@ namespace Product_DefectRecord.Views
             {
                 ClearEvent?.Invoke(this, EventArgs.Empty);
                 textBoxSerial.Focus();
+            };
+
+            btnSearch.Click += (sender, e) =>
+            {
+                SearchFilter?.Invoke(sender, e);
+            };
+
+            btnPrintManual.Click += delegate
+            {
+                textBoxSerial.ReadOnly = false;
             };
 
             btnA.Click += delegate
@@ -339,6 +366,20 @@ namespace Product_DefectRecord.Views
 
             dataGridView1.DefaultCellStyle.Font = new Font("Arial", 16);
             dataGridView1.RowTemplate.Height = 50;
+
+            dataGridView2.RowPostPaint += (sender, e) =>
+            {
+                DataGridViewRow row = dataGridView2.Rows[e.RowIndex];
+
+                row.Cells["No2"].Value = (e.RowIndex + 1).ToString();
+                row.Cells["No2"].Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            };
+
+            dataGridView2.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 18, FontStyle.Bold);
+            dataGridView2.ColumnHeadersHeight = 40;
+
+            dataGridView2.DefaultCellStyle.Font = new Font("Arial", 16);
+            dataGridView2.RowTemplate.Height = 50;
         }
 
         private void ChangeColorButton(object sender, EventArgs e)
@@ -359,8 +400,8 @@ namespace Product_DefectRecord.Views
 
         private async void PrintRecord_Load(object sender, EventArgs e)
         {
-            clientWrapper = new TcpClientWrapper(UpdateCodeBox, UpdateSerialBox); // Passing both update methods
-            await clientWrapper.ConnectToServerAsync();
+            connection = new TCPConnection(UpdateCodeBox, UpdateSerialBox); // Passing both update methods
+            await connection.ConnectToServerAsync();
         }
         private void UpdateCodeBox(string message)
         {

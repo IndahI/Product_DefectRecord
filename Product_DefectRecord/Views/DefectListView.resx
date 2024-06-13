@@ -121,7 +121,25 @@
     <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnPrintManual.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnPrint.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
+        4wAAAOMBD+bfpwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAKjSURBVFhHY8AK
+        QhvYGIJadgDxXyD+TzQObjnPENQqCTWFAhDUYsEd2Xnz95+/v/8TCTacugm0vOUrQ2DLDcodEdhmL5LQ
+        ewFqNlEA5AD+uL7zPn3bDgAdcpPBr0EKahoZgAIH7H7x/z/cEaEt0lATSQQUOoByR1DBAZQ5ggwH3Hr2
+        9hFjcOsbx/b1+926Nh+AYbbwjrvghOndLgg1nQhAhgNAABQK/u2r9nu1Lj+AjJlD256CzISaTgQg0wG4
+        AMisUQcMcgcEtXozBLaWw3FQ6wzW0LZHiZM3H6AGBpkFMhPFjuBmL4jlgc3ZLOGdt2Tylh+gJ2YO7bgN
+        dEQmqOLZYT/p8umELf//0wqHrfr8ynv+k5vxm//9gYmB7ATZDXLAPuepN88ja6AmNm4/doQxqOUNR2jT
+        HdaIrisxG359BYmD7ATZjeIAnwXPb6uUbT4Aw6oVWw9Erf32HtlAUjFjSNuLs+uj7vw/GvBfKan2hH7T
+        gUMgcewOmP8UJS3IF67eT7kDWl+c2wBxgHJizXG8DqAFNm49Ao4CzrDG26zh3VfxRgGtcNjqTy+95z2+
+        jpwIsToAPQ3QAoPswO0AaBoQSJp+VCFzytN5e88foAYGmQUyE2Q2yA6cDoBhp2m3Lvi2r6RaUQwyC2Qm
+        sh1DxwG3n717DFTzE4ix9wXw4J6Nx49S7ABqAEIOWKRcumF//JZ/f+nlAJBdiiXr9zMENS9kYAhuVwJW
+        laeADkHphsEccP/l+6cSSRPOiCX2nyUVLz5w+TTMAchmAzHQLqCdoc2KkCoZHQAbDzAHgLpnoMbmqmPX
+        zpKK333+/gHuAFJbRDAHUAOQ4wBL84r5N4F6/0CMoAj8AZkFDHYLqOlEAFD3PLBlJySuUOKOHAwyYwfY
+        TAzAwAAA825syzu76vEAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="btnRecord.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
         4wAAAOMBD+bfpwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAKjSURBVFhHY8AK

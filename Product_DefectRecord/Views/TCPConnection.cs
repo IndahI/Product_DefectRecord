@@ -7,12 +7,12 @@ using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using Product_DefectRecord.Properties;
 
-public class TcpClientWrapper
+public class TCPConnection
 {
     private Action<string> updateUiCallback;
     private Action<string> updateUiCallback2;
 
-    public TcpClientWrapper(Action<string> updateUiCallback, Action<string> updateUiCallback2)
+    public TCPConnection(Action<string> updateUiCallback, Action<string> updateUiCallback2)
     {
         this.updateUiCallback = updateUiCallback;
         this.updateUiCallback2 = updateUiCallback2;

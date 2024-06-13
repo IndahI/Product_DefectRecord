@@ -10,20 +10,20 @@ namespace Product_DefectRecord.Presenters
 {
     public class LoginPresenter
     {
-        private readonly ILoginView _view;
+        private readonly ILoginView _loginView;
         private readonly ILoginRepository _userRepository;
 
         public LoginPresenter(ILoginView view, ILoginRepository userRepository)
         {
-            _view = view;
+            _loginView = view;
             _userRepository = userRepository;
-            _view.Login += async (s, e) => await LoginAsync();
+            _loginView.Login += async (s, e) => await LoginAsync();
         }
 
         private async Task LoginAsync()
         {
-            string nik = _view.Nik;
-            string password = _view.Password;
+            string nik = _loginView.Nik;
+            string password = _loginView.Password;
 
             LoginModel user = _userRepository.GetUserByUsername(nik);
 
@@ -43,13 +43,9 @@ namespace Product_DefectRecord.Presenters
             else  // Login successful
             {
                 Console.WriteLine($"Login successful for user: {user.Name}");
-                IDefectListView defectListView = new DefectListView();
-                IDefectRepository defectRepository = new DefectRepository();
-                IModelNumberRepository modelNumberRepository = new ModelNumberRepository();
-                DefectListDataPresenter presenterData = new DefectListDataPresenter(defectListView, defectRepository, modelNumberRepository, user);
-
-                DefectListPresenter presenter = new DefectListPresenter(presenterData);
-                _view.HideView();
+                _loginView.HideView();
+                IDefectListView defectListView = DefectListView.GetInstance(user);
+                defectListView.Show();
             }
         }
     }

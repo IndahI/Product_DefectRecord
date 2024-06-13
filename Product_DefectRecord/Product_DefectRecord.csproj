@@ -104,6 +104,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Models\DefectModel.cs" />
+    <Compile Include="Models\DefectResultModel.cs" />
     <Compile Include="Models\IDefectRepository.cs" />
     <Compile Include="Models\IModelNumberRepository.cs" />
     <Compile Include="Models\ILoginRepository.cs" />
@@ -117,7 +118,7 @@
     <Compile Include="Presenters\DefectListPresenter.cs" />
     <Compile Include="Presenters\DetailDefectPresenter.cs" />
     <Compile Include="Presenters\LoginPresenter.cs" />
-    <Compile Include="Presenters\PrintManualPresenter.cs" />
+    <Compile Include="Presenters\PrintRecordPresenter.cs" />
     <Compile Include="Presenters\SettingPresenter.cs" />
     <Compile Include="Views\DefectListView.cs">
       <SubType>Form</SubType>
@@ -164,7 +165,7 @@
       <DependentUpon>SettingView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\SqlHelper.cs" />
-    <Compile Include="Views\TcpClientWrapper.cs" />
+    <Compile Include="Views\TCPConnection.cs" />
     <Compile Include="_Repositories\DefectRepository.cs" />
     <Compile Include="_Repositories\LoginRepository.cs" />
     <Compile Include="_Repositories\ModelNumberRepository.cs" />
