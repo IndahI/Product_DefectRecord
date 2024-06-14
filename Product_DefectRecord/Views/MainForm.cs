@@ -6,16 +6,19 @@ using System;
 using System.Configuration;
 using System.Drawing;
 using System.Windows.Forms;
-using static Product_DefectRecord.Presenters.DefectListPresenter;
+using static Product_DefectRecord.Presenters.MainFormPresenter;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Product_DefectRecord.Views
 {
-    public partial class DefectListView : Form, IDefectListView
+    public partial class MainForm : Form, IMainFormView
     {
         private PrintRecordPresenter printRecordPresenter;
         public LoginModel _user;
-        public DefectListView(LoginModel user)
+        private PrintRecord printRecord;
+        private TCPConnection connection;
+
+        public MainForm(LoginModel user)
         {
             _user = user;
             InitializeComponent();
@@ -26,10 +29,11 @@ namespace Product_DefectRecord.Views
         public void InitializeTabControl()
         {
             PrintRecord printRecord = new PrintRecord();
-            DefectListDataPresenter presenterData = new DefectListDataPresenter(printRecord, new DefectRepository(), new ModelNumberRepository(), _user);
+            MainFormDataPresenter presenterData = new MainFormDataPresenter(printRecord, new DefectRepository(), new ModelNumberRepository(), _user);
             printRecordPresenter = new PrintRecordPresenter(presenterData); // Inisialisasi variabel instance
             splitContainer1.Panel2.Controls.Add(printRecord);
             printRecord.Dock = DockStyle.Fill;
+            connection = new TCPConnection(printRecord.UpdateCodeBox, printRecord.UpdateSerialBox);
         }
 
         private void HandleAction() 
@@ -38,16 +42,16 @@ namespace Product_DefectRecord.Views
             {
                 int selectedTabPageIndex = 1;
                 printRecordPresenter.ChangeTabPage(selectedTabPageIndex);
-                //btnHome.BackColor = Color.FromArgb(0, 133, 181);
-                //btnRePrint.BackColor = Color.FromArgb(0, 35, 105);
+                btnRecord.BackColor = Color.FromArgb(64, 165, 120);
+                btnPrint.BackColor = Color.FromArgb(0, 103, 105);
             };
 
             btnPrint.Click += delegate
             {
                 int selectedTabPageIndex = 0;
                 printRecordPresenter.ChangeTabPage(selectedTabPageIndex);
-                //btnHome.BackColor = Color.FromArgb(0, 133, 181);
-                //btnRePrint.BackColor = Color.FromArgb(0, 35, 105);
+                btnPrint.BackColor = Color.FromArgb(64, 165, 120);
+                btnRecord.BackColor = Color.FromArgb(0, 103, 105);
             };
 
             timer1.Tick += delegate
@@ -65,30 +69,41 @@ namespace Product_DefectRecord.Views
 
             btnLogout.Click += (sender, e) =>
             {
-                // Menyembunyikan view saat ini
-                this.Hide();
+                connection.CloseConnection();
+
+                printRecordPresenter.UnassociateViewEvents();
+                ResetBinding();
+
+                this.Close();
 
                 // Membuat dan menampilkan form login baru
                 ILoginView loginView = new LoginView();
                 LoginPresenter loginPresenter = new LoginPresenter(loginView, new LoginRepository());
-                loginView.Show();
+                (loginView as Form)?.Show();
 
-                // Menutup form saat ini
-                //this.Close();
+                _user = loginPresenter.User;
+                InitializeTabControl();
             };
         }
 
+        private void ResetBinding()
+        {
+            printRecordPresenter.ResetDataBinding();
+        }
+
         // Singleton pattern (open a single form instance)
-        private static DefectListView instance;
-        public static DefectListView GetInstance(LoginModel loginModel)
+        private static MainForm instance;
+        public static MainForm GetInstance(LoginModel loginModel)
         {
             if (instance == null || instance.IsDisposed)
-                instance = new DefectListView(loginModel);
+                instance = new MainForm(loginModel);
             else
             {
                 if (instance.WindowState == FormWindowState.Minimized)
                     instance.WindowState = FormWindowState.Normal;
                 instance.BringToFront();
+                instance._user = loginModel; // Set new user
+                instance.InitializeTabControl();
             }
             return instance;
         }

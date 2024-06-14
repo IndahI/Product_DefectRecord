@@ -7,7 +7,6 @@ D:\Perkuliahan\Semester6\Panasonic\Product_DefectRecord\Product_DefectRecord\bin
 D:\Perkuliahan\Semester6\Panasonic\Product_DefectRecord\Product_DefectRecord\bin\Debug\zxing.presentation.xml
 D:\Perkuliahan\Semester6\Panasonic\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.csproj.AssemblyReference.cache
 D:\Perkuliahan\Semester6\Panasonic\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.Component.Gradient.resources
-D:\Perkuliahan\Semester6\Panasonic\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.Views.DefectListView.resources
 D:\Perkuliahan\Semester6\Panasonic\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.Properties.Resources.resources
 D:\Perkuliahan\Semester6\Panasonic\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.Views.DetailDefectView.resources
 D:\Perkuliahan\Semester6\Panasonic\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.Views.LoginView.resources
@@ -66,3 +65,4 @@ D:\Product_DefectRecord\versi Juni\Product_DefectRecord\Product_DefectRecord\obj
 D:\Product_DefectRecord\versi Juni\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.pdb
 D:\Perkuliahan\Semester6\Panasonic\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.Views.PrintRecord.resources
 D:\Product_DefectRecord\versi Juni\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.Views.PrintRecord.resources
+D:\Perkuliahan\Semester6\Panasonic\Product_DefectRecord\Product_DefectRecord\obj\Debug\Product_DefectRecord.Views.MainForm.resources

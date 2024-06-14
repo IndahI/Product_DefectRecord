@@ -22,7 +22,7 @@ namespace Product_DefectRecord.Presenters
         private IEnumerable<DefectResultModel> resultList;
         private SaveModel _smodel;
         private bool showNoData = false;
-        public PrintRecordPresenter(DefectListDataPresenter data) 
+        public PrintRecordPresenter(MainFormDataPresenter data) 
         {
             this.view = data.View;
             this.defectRepository = data.DefectRepository;
@@ -37,8 +37,9 @@ namespace Product_DefectRecord.Presenters
             this.view.SearchModelNumber += SearchModelNumber;
             this.view.ClearEvent += ClearAction;
             this.view.DefectFilterEvent += LoadFilterDefect;
-            this.view.CellClicked += CellClicked;
+            //this.view.CellClicked += CellClicked;
             this.view.SearchFilter += SearchFilter;
+            this.view.CheckProperties += CheckProperties;
 
             this.view.SetDefectListBindingSource(defectsBindingSource);
             this.view.SetDefectListBindingSource2(defectsBindingSource2);
@@ -49,25 +50,42 @@ namespace Product_DefectRecord.Presenters
             this.view.Show();
         }
 
+        private void CheckProperties(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(view.ModelNumber))
+            {
+                view.StatusText = "Model Number dan Mode Code Harus terisi";
+                view.BackColorStatus = Color.Orange;
+                view.ForeColorStatus = Color.Black;
+                return;
+            }
+
+            view.StatusText = "Simpan dan Print";
+            view.BackColorStatus = Color.Green;
+            view.ForeColorStatus = Color.White;
+            CellClicked();
+        }
+
         public void SearchFilter(object sender, EventArgs e)
         {
             resultList = defectRepository.GetFilterResult(view.SelectedDate);
             defectsBindingSource2.DataSource = resultList;
-            view.SetDefectListBindingSource(defectsBindingSource2);
+            view.SetDefectListBindingSource2(defectsBindingSource2);
         }
 
         public void LoadAllResultDefect()
         {
             resultList = defectRepository.GetAllResult();
             defectsBindingSource2.DataSource = resultList;
+            view.SetDefectListBindingSource2(defectsBindingSource2);
         }
 
-        public void ChangeTabPage(int index)
+        public void ChangeTabPage(int index)    
         {
             view.SelectTabPageByIndex(index);
         }
 
-        private void CellClicked(object sender, EventArgs e)
+        private void CellClicked()
         {
             int Location = _smodel.LoadId();
             var defect = (DefectModel)defectsBindingSource.Current;
@@ -84,6 +102,7 @@ namespace Product_DefectRecord.Presenters
             };
             var detailDefectView = DetailDefectView.GetInstance();
             new DetailDefectPresenter(DetailDefectView.GetInstance(), defectRepository, detailDefect);
+            detailDefectView.DataSaved += (s, e) => LoadAllResultDefect();
         }
 
         private void LoadFilterDefect(object sender, EventArgs e, int id)
@@ -116,7 +135,7 @@ namespace Product_DefectRecord.Presenters
 
         private void ClearAction(object sender, EventArgs e)
         {
-            view.BackColorStatus = Color.FromArgb(230, 255, 148);
+            view.BackColorStatus = Color.Orange;
             view.StatusText = "No Data";
             view.SerialNumber = "";
             view.ModelNumber = "";
@@ -147,6 +166,31 @@ namespace Product_DefectRecord.Presenters
             {
                 view.ModelNumber = "";
             }
+        }
+
+        public void UnassociateViewEvents()
+        {
+            view.SearchModelNumber -= SearchModelNumber;
+            view.CheckProperties -= CheckProperties;
+            view.SearchFilter -= SearchFilter;
+        }
+
+        public void ResetDataBinding()
+        {
+            //defectsBindingSource.DataSource = null;
+            defectsBindingSource2.DataSource = null;
+            view.SetDefectListBindingSource2(null);
+
+            ClearViewFields();
+            LoadAllResultDefect();
+        }
+
+        public void ClearViewFields()
+        {
+            view.SerialNumber = "";
+            view.ModelCode = "";
+            view.ModelNumber = "";
+            view.StatusText = "";
         }
     }
 }

@@ -16,8 +16,10 @@ namespace Product_DefectRecord.Views
     {
         private string latestReceivedData;
         private TCPConnection connection;
-
+        private bool disableEvent = false;
+        private bool buttonClickedOnce = false;
         private string inspectorId;
+        public DateTime SelectedDate => dtFromDate.Value;
 
         public PrintRecord()
         {
@@ -25,7 +27,6 @@ namespace Product_DefectRecord.Views
             AssociateAndRaiseViewEvents();
             tabControl1.ItemSize = new Size(0, 1);
             tabControl1.SizeMode = TabSizeMode.Fixed;
-            //printManualPresenter = new PrintManualPresenter(this);
         }
 
         //properties
@@ -57,8 +58,8 @@ namespace Product_DefectRecord.Views
 
         public string StatusText
         {
-            get { return btnStatus.Text; }
-            set { btnStatus.Text = value; }
+            get { return textBoxStatus.Text; }
+            set { textBoxStatus.Text = value; }
         }
 
         public bool IsKeyboardEnabled
@@ -69,16 +70,15 @@ namespace Product_DefectRecord.Views
 
         public Color BackColorStatus
         {
-            get { return btnStatus.BackColor; }
-            set { btnStatus.BackColor = value; }
+            get { return textBoxStatus.BackColor; }
+            set { textBoxStatus.BackColor = value; }
         }
         public Color ForeColorStatus
         {
-            get { return btnStatus.ForeColor; }
-            set { btnStatus.ForeColor = value; }
+            get { return textBoxStatus.ForeColor; }
+            set { textBoxStatus.ForeColor = value; }
         }
 
-        public DateTime SelectedDate => dtFromDate.Value;
 
         public event EventHandler<ModelEventArgs> SearchModelNumber;
         public event EventHandler ClearEvent;
@@ -87,6 +87,7 @@ namespace Product_DefectRecord.Views
         public event PrintRecordPresenter.TopDefectEventHandler DefectFilterEvent;
         public event KeyEventHandler KeyDownEvent;
         public event EventHandler SearchFilter;
+        public event EventHandler CheckProperties;
 
         public void SelectTabPageByIndex(int data)
         {
@@ -146,8 +147,11 @@ namespace Product_DefectRecord.Views
             //Clear
             btnClear.Click += delegate
             {
-                ClearEvent?.Invoke(this, EventArgs.Empty);
-                textBoxSerial.Focus();
+                if (buttonClickedOnce)
+                {
+                    ClearEvent?.Invoke(this, EventArgs.Empty);
+                    textBoxSerial.Focus();
+                }
             };
 
             btnSearch.Click += (sender, e) =>
@@ -157,7 +161,36 @@ namespace Product_DefectRecord.Views
 
             btnPrintManual.Click += delegate
             {
-                textBoxSerial.ReadOnly = false;
+                if (!buttonClickedOnce)
+                {
+                    disableEvent = true;
+                    btnPrintManual.BackColor = Color.FromArgb(230, 255, 148);
+                    btnPrintManual.ForeColor = Color.Black;
+                    btnPrintManual.Text = "Auto Print";
+                    textBoxSerial.ReadOnly = false;
+                    textBoxSerial.Focus();
+
+                    SerialNumber = "";
+                    ModelNumber = "";
+                    ModelCode = "";
+
+                    buttonClickedOnce = true;
+                }
+                else
+                {
+                    disableEvent = false;
+                    btnPrintManual.BackColor = Color.FromArgb(64, 165, 120);
+                    textBoxStatus.Text = "";
+                    textBoxStatus.BackColor = SystemColors.Control;
+                    btnPrintManual.Text = "Print Manual";
+                    textBoxSerial.ReadOnly = true;   
+
+                    SerialNumber = "";
+                    ModelNumber = "";
+                    ModelCode = "";
+
+                    buttonClickedOnce = false;
+                }
             };
 
             btnA.Click += delegate
@@ -320,7 +353,7 @@ namespace Product_DefectRecord.Views
             {
                 if (!string.IsNullOrWhiteSpace(textBoxSerial.Text))
                 {
-                    btnStatus.Text = "...";
+                    textBoxStatus.Text = "...";
                 }
             };
 
@@ -347,10 +380,7 @@ namespace Product_DefectRecord.Views
             {
                 DataGridViewRow selectedRow = dataGridView1.Rows[e.RowIndex];
                 var selectedPerson = selectedRow.DataBoundItem as DefectModel;
-                CellClicked?.Invoke(this, EventArgs.Empty);
-                btnStatus.Text = "Save And Print";
-                btnStatus.BackColor = Color.FromArgb(230, 255, 148);
-                //textBoxDefectName.Text = selectedPerson.DefectName1;
+                CheckProperties?.Invoke(this, new EventArgs());
             };
 
             dataGridView1.RowPostPaint += (sender, e) =>
@@ -403,7 +433,7 @@ namespace Product_DefectRecord.Views
             connection = new TCPConnection(UpdateCodeBox, UpdateSerialBox); // Passing both update methods
             await connection.ConnectToServerAsync();
         }
-        private void UpdateCodeBox(string message)
+        public void UpdateCodeBox(string message)
         {
             // Invoke UI updates on the UI thread
             if (textBoxCode.InvokeRequired)
@@ -416,7 +446,7 @@ namespace Product_DefectRecord.Views
             }
             PerformModelSearch();
         }
-        private void UpdateSerialBox(string message)
+        public void UpdateSerialBox(string message)
         {
             // Invoke UI updates on the UI thread
             if (textBoxSerial.InvokeRequired)

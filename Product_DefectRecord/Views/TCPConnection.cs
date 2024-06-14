@@ -11,6 +11,8 @@ public class TCPConnection
 {
     private Action<string> updateUiCallback;
     private Action<string> updateUiCallback2;
+    private TcpClient client;
+    private NetworkStream stream;
 
     public TCPConnection(Action<string> updateUiCallback, Action<string> updateUiCallback2)
     {
@@ -23,33 +25,31 @@ public class TCPConnection
         string serverIp = Settings.Default.ServerIP; // Retrieve IP from user settings
         int port = Settings.Default.Port;
 
-        using (TcpClient client = new TcpClient())
-        {
-            try
-            {
-                await client.ConnectAsync(serverIp, port);
-                await SendMessageToServerAsync(client, "Hello from client!");
-
-                await HandleServerResponseAsync(client);
-            }
-            catch (Exception ex)
-            {
-                //updateUiCallback?.Invoke($"Error connecting to server: {ex.Message}");
-            }
-        }
-    }
-
-    private async Task SendMessageToServerAsync(TcpClient client, string message)
-    {
+        client = new TcpClient();
         try
         {
-            NetworkStream stream = client.GetStream();
-            byte[] data = Encoding.UTF8.GetBytes(message);
-            await stream.WriteAsync(data, 0, data.Length);
+            await client.ConnectAsync(serverIp, port);
+            //await SendMessageToServerAsync(client, "Hello from client!");
+
+            await HandleServerResponseAsync(client);
         }
         catch (Exception ex)
         {
-            //updateUiCallback?.Invoke($"Error sending message to server: {ex.Message}");
+            //updateUiCallback?.Invoke($"Error connecting to server: {ex.Message}");
+        }
+    }
+
+    public void CloseConnection()
+    {
+        if (stream != null)
+        {
+            stream.Close();
+            stream = null;
+        }
+        if (client != null)
+        {
+            client.Close();
+            client = null;
         }
     }
 

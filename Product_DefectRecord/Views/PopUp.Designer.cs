@@ -163,9 +163,8 @@
             this.textSerial.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textSerial.Location = new System.Drawing.Point(271, 0);
             this.textSerial.Name = "textSerial";
-            this.textSerial.Size = new System.Drawing.Size(215, 29);
+            this.textSerial.Size = new System.Drawing.Size(0, 29);
             this.textSerial.TabIndex = 7;
-            this.textSerial.Text = "NA- W140BBZ2H";
             // 
             // textModel
             // 
@@ -173,9 +172,8 @@
             this.textModel.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textModel.Location = new System.Drawing.Point(271, 55);
             this.textModel.Name = "textModel";
-            this.textModel.Size = new System.Drawing.Size(146, 29);
+            this.textModel.Size = new System.Drawing.Size(0, 29);
             this.textModel.TabIndex = 8;
-            this.textModel.Text = "Base Crack";
             // 
             // textInspec
             // 
@@ -183,9 +181,8 @@
             this.textInspec.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textInspec.Location = new System.Drawing.Point(271, 165);
             this.textInspec.Name = "textInspec";
-            this.textInspec.Size = new System.Drawing.Size(153, 29);
+            this.textInspec.Size = new System.Drawing.Size(0, 29);
             this.textInspec.TabIndex = 9;
-            this.textInspec.Text = "Tri Prasetyo";
             // 
             // label13
             // 
@@ -203,9 +200,8 @@
             this.textDefect.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textDefect.Location = new System.Drawing.Point(271, 110);
             this.textDefect.Name = "textDefect";
-            this.textDefect.Size = new System.Drawing.Size(163, 29);
+            this.textDefect.Size = new System.Drawing.Size(0, 29);
             this.textDefect.TabIndex = 6;
-            this.textDefect.Text = "2309000034";
             // 
             // label4
             // 

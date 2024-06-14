@@ -63,6 +63,9 @@ namespace Product_DefectRecord.Presenters
                 };
                 new Common.ModelDataValidation().Validate(model);
                 repository.Add(model);
+
+                view.OnDataSaved(); 
+
                 view.SaveEvent -= SaveEvent;
             }
         }

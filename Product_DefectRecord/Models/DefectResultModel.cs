@@ -17,6 +17,7 @@ namespace Product_DefectRecord.Models
         private string modelCode;
         private string serialNumber;
         private string date;
+        private string time;
         private string inspector;
         private string locationId;
 
@@ -64,6 +65,13 @@ namespace Product_DefectRecord.Models
             set => date = value;
         }
 
+        [DisplayName("Time")]
+        public string Time
+        {
+            get => time;
+            set => time = value;
+        }
+
         [DisplayName("Inspector")]
         public string Inspector
         {
@@ -71,7 +79,7 @@ namespace Product_DefectRecord.Models
             set => inspector = value;
         }
 
-        [DisplayName("Location Id")]
+        [DisplayName("Location")]
         public string LocationId
         {
             get => locationId;

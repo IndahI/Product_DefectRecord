@@ -38,13 +38,15 @@ namespace Product_DefectRecord._Repositories
                     "    DR.ModelNumber, " +
                     "    DR.ModelCode, " +
                     "    DR.SerialNumber, " +
-                    "    DR.LocationId, " +
+                    "    L.LocationName AS LocationId, " +
                     "    DN.DefectName, " +
                     "    U.Name AS InspectorName " +
                     "FROM " +
                     "    Defect_Results DR " +
                     "INNER JOIN " +
                     "    LSBU_Common.dbo.Users U ON DR.InspectorId = U.NikId " +
+                    "INNER JOIN " +
+                    "   LSBU_Common.dbo.Locations L ON DR.LocationId = L.Id " +
                     "INNER JOIN " +
                     "    Defect_Names DN ON DR.DefectId = DN.Id " +
                     "WHERE " +
@@ -56,11 +58,13 @@ namespace Product_DefectRecord._Repositories
                 {
                     while (reader.Read())
                     {
+                        var dateTime = (DateTime)reader["DateTime"];
                         var resultModel = new DefectResultModel
                         {
                             Id = reader["Id"].ToString(),
                             Defect = reader["DefectName"].ToString(),
-                            Date = reader["DateTime"].ToString(),
+                            Date = dateTime.ToString("yyyy-MM-dd"),
+                            Time = dateTime.ToString("HH:mm:ss"),
                             ModelNumber = reader["ModelNumber"].ToString(),
                             ModelCode = reader["ModelCode"].ToString(),
                             SerialNumber = reader["SerialNumber"].ToString(),
@@ -91,13 +95,15 @@ namespace Product_DefectRecord._Repositories
                     "    DR.ModelNumber, " +
                     "    DR.ModelCode, " +
                     "    DR.SerialNumber, " +
-                    "    DR.LocationId, " +
+                    "    L.LocationName AS LocationId, " +
                     "    DN.DefectName, " +
                     "    U.Name AS InspectorName " +
                     "FROM " +
                     "    Defect_Results DR " +
                     "INNER JOIN " +
                     "    LSBU_Common.dbo.Users U ON DR.InspectorId = U.NikId " +
+                    "INNER JOIN " +
+                    "   LSBU_Common.dbo.Locations L ON DR.LocationId = L.Id " +
                     "INNER JOIN " +
                     "    Defect_Names DN ON DR.DefectId = DN.Id " +
                     "WHERE " +
@@ -111,11 +117,13 @@ namespace Product_DefectRecord._Repositories
                 {
                     while (reader.Read())
                     {
+                        var dateTime = (DateTime)reader["DateTime"];
                         var resultModel = new DefectResultModel
                         {
                             Id = reader["Id"].ToString(),
                             Defect = reader["DefectName"].ToString(),
-                            Date = reader["DateTime"].ToString(),
+                            Date = dateTime.ToString("yyyy-MM-dd"),
+                            Time = dateTime.ToString("HH:mm:ss"),
                             ModelNumber = reader["ModelNumber"].ToString(),
                             ModelCode = reader["ModelCode"].ToString(),
                             SerialNumber = reader["SerialNumber"].ToString(),
@@ -139,14 +147,14 @@ namespace Product_DefectRecord._Repositories
                 command.Connection = connection;
 
                 command.CommandText = "INSERT INTO Defect_Results (DateTime, SerialNumber, ModelCode, DefectId, InspectorId, ModelNumber, LocationId) values (@DateTime, @SerialNumber, @ModelCode, @DefectId, @InspectorId, @ModelNumber, @LocationId)";
-                command.Parameters.Add("@DateTime", SqlDbType.SmallDateTime).Value = DateTime.Now;
+                command.Parameters.Add("@DateTime", SqlDbType.DateTime).Value = DateTime.Now;
                 command.Parameters.Add("@SerialNumber", SqlDbType.VarChar).Value = model.SerialNumber;
                 command.Parameters.Add("@ModelCode", SqlDbType.VarChar).Value = model.ModelCode;
                 command.Parameters.Add("@DefectId", SqlDbType.Int).Value = model.DefectId;
                 command.Parameters.Add("@InspectorId", SqlDbType.VarChar).Value = model.InspectorId;
                 command.Parameters.Add("@ModelNumber", SqlDbType.VarChar).Value = model.ModelNumber;
                 command.Parameters.Add("@LocationId", SqlDbType.Int).Value = model.Location;
-                command.ExecuteNonQuery();
+                command.ExecuteNonQuery();  
             }
         }
 

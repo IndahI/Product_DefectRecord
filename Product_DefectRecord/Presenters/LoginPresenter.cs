@@ -12,6 +12,8 @@ namespace Product_DefectRecord.Presenters
     {
         private readonly ILoginView _loginView;
         private readonly ILoginRepository _userRepository;
+        private LoginModel _user;
+        public LoginModel User => _user;
 
         public LoginPresenter(ILoginView view, ILoginRepository userRepository)
         {
@@ -42,9 +44,11 @@ namespace Product_DefectRecord.Presenters
             }
             else  // Login successful
             {
-                Console.WriteLine($"Login successful for user: {user.Name}");
+                _user = user;
+
+                Console.WriteLine(user.Name);
                 _loginView.HideView();
-                IDefectListView defectListView = DefectListView.GetInstance(user);
+                IMainFormView defectListView = MainForm.GetInstance(user);
                 defectListView.Show();
             }
         }

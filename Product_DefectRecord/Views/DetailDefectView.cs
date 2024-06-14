@@ -24,6 +24,7 @@ namespace Product_DefectRecord.Views
         public string currentDate = DateTime.Now.ToString("dd/MM/yyyy");
         public string currentTime = DateTime.Now.ToString("HH:mm:ss");
         private SaveModel _saveModel;
+
         public DetailDefectView()
         {
             InitializeComponent();
@@ -79,6 +80,7 @@ namespace Product_DefectRecord.Views
         }
 
         public event EventHandler SaveEvent;
+        public event EventHandler DataSaved;
 
         private void AssociateAndRaiseViewEvents()
         {
@@ -386,6 +388,11 @@ namespace Product_DefectRecord.Views
                 instance.BringToFront();
             }
             return instance;
+        }
+
+        public void OnDataSaved()
+        {
+            DataSaved?.Invoke(this, EventArgs.Empty);
         }
     }
 }

@@ -114,21 +114,21 @@
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\SettingModel.cs" />
     <Compile Include="Presenters\Common\ModelDataValidation.cs" />
-    <Compile Include="Presenters\DefectListDataPresenter.cs" />
-    <Compile Include="Presenters\DefectListPresenter.cs" />
+    <Compile Include="Presenters\MainFormDataPresenter.cs" />
+    <Compile Include="Presenters\MainFormPresenter.cs" />
     <Compile Include="Presenters\DetailDefectPresenter.cs" />
     <Compile Include="Presenters\LoginPresenter.cs" />
     <Compile Include="Presenters\PrintRecordPresenter.cs" />
     <Compile Include="Presenters\SettingPresenter.cs" />
-    <Compile Include="Views\DefectListView.cs">
+    <Compile Include="Views\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\DefectListView.Designer.cs">
-      <DependentUpon>DefectListView.cs</DependentUpon>
+    <Compile Include="Views\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Views\IDefectListView.cs" />
+    <Compile Include="Views\IMainFormView.cs" />
     <Compile Include="Views\IEditDefectView.cs" />
     <Compile Include="Views\IDetailDefectView.cs" />
     <Compile Include="Views\DetailDefectView.cs">
@@ -173,8 +173,8 @@
     <EmbeddedResource Include="Component\Gradient.resx">
       <DependentUpon>Gradient.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\DefectListView.resx">
-      <DependentUpon>DefectListView.cs</DependentUpon>
+    <EmbeddedResource Include="Views\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

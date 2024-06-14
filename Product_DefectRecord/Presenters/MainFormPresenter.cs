@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace Product_DefectRecord.Presenters
 {
-    public class DefectListPresenter
+    public class MainFormPresenter
     {
-        public DefectListPresenter()
+        public MainFormPresenter()
         {
             
         }

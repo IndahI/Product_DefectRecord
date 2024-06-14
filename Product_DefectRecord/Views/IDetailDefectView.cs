@@ -20,6 +20,8 @@ namespace Product_DefectRecord.Views
         string Message { get; set; }
 
         event EventHandler SaveEvent;
+        event EventHandler DataSaved;
         void Show();
+        void OnDataSaved();
     }
 }

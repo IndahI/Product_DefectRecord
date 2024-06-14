@@ -1,16 +1,12 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-using static Product_DefectRecord.Presenters.DefectListPresenter;
+using static Product_DefectRecord.Presenters.MainFormPresenter;
 
 namespace Product_DefectRecord.Views
 {
-    public interface IDefectListView
+    public interface IMainFormView
     {
-        //void AddNoData();
-        //void RemoveNoData(BindingSource defectList);
-        //void SetDefectListBindingSource(BindingSource defectList);
-        //void ShowPopupForm();
         void Show();
     }
 

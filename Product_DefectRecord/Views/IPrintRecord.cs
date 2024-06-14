@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static Product_DefectRecord.Presenters.DefectListPresenter;
+using static Product_DefectRecord.Presenters.MainFormPresenter;
 using static Product_DefectRecord.Presenters.PrintRecordPresenter;
 
 namespace Product_DefectRecord.Views
@@ -32,6 +32,7 @@ namespace Product_DefectRecord.Views
         event EventHandler CellClicked;
         event KeyEventHandler KeyDownEvent;
         event EventHandler SearchFilter;
+        event EventHandler CheckProperties;
 
         void SelectTabPageByIndex(int data);
         void AddNoData();
